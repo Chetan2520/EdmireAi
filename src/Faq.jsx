@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MessageCircle, Clock, DollarSign, BookOpen, Users } from 'lucide-react';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function FAQ() {
+  const faqRefs = useRef([]);
+
   const faqs = [
     {
       IconComponent: Clock,
@@ -41,6 +47,29 @@ export default function FAQ() {
     }
   ];
 
+  useEffect(() => {
+    faqRefs.current.forEach((el, index) => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 50 }, 
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.8, 
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4">
       <div className="max-w-7xl mx-auto">
@@ -60,7 +89,8 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-sm p-6 hover:shadow-md transition-shadow"
+              ref={(el) => (faqRefs.current[index] = el)}
+              className="bg-white rounded-2xl shadow-sm p-6 hover:shadow-md transition-shadow opacity-0"
             >
               <div className="flex items-start gap-4">
                 <div className={`${faq.bgColor} rounded-xl p-3 flex-shrink-0`}>
