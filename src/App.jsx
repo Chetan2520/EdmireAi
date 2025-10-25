@@ -19,11 +19,12 @@ const App = () => {
     <WhyChooseUs/>
     <Programs/>
       <PremiumVideoSection/>
-      {/* 
       <VedantuComparison/>
+<Footer/> 
+      {/* 
       <Faq/>
 <HelpSection/>
-<Footer/> */}
+*/}
     </div>
   )
 }
