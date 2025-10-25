@@ -1,172 +1,185 @@
-import React, { useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { ArrowRight, Play, Star } from 'lucide-react';
+import { FaWhatsappSquare } from 'react-icons/fa';
+import { BsWhatsapp } from 'react-icons/bs';
 
-const Hero = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+const ExamPrepHero = () => {
+  const heroRef = useRef(null);
+  const headingRef = useRef(null);
+  const subheadingRef = useRef(null);
+  const ctaRef = useRef(null);
+  const imageRef = useRef(null);
+  const floatingRef = useRef([]);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  useEffect(() => {
+    // Load GSAP from CDN
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+    script.async = true;
+    
+    script.onload = () => {
+      const { gsap } = window;
+      
+      // Initial animations
+      gsap.from(headingRef.current, {
+        opacity: 0,
+        y: 60,
+        duration: 1.2,
+        ease: 'power3.out'
+      });
 
-  const toggleMobile = () => {
-    setMobileOpen(!mobileOpen);
-  };
+      gsap.from(subheadingRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        delay: 0.4,
+        ease: 'power3.out'
+      });
+
+      gsap.from(ctaRef.current.children, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.7,
+        stagger: 0.2,
+        ease: 'power3.out'
+      });
+
+      gsap.from(imageRef.current, {
+        opacity: 0,
+        x: 100,
+        duration: 1.3,
+        delay: 0.6,
+        ease: 'power3.out'
+      });
+
+      // Floating animation for decorative elements
+      floatingRef.current.forEach((el, i) => {
+        if (el) {
+          gsap.to(el, {
+            y: -25,
+            duration: 2.5 + i * 0.5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'power1.inOut',
+            delay: i * 0.4
+          });
+        }
+      });
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
-    <div className="bg-amber-50 min-h-screen">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-orange-600">Edmirai</h1>
-          
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8 text-gray-700 relative">
-            <div className="relative">
-              <span 
-                className="hover:text-orange-600 cursor-pointer flex items-center gap-1" 
-                onClick={toggleDropdown}
-              >
-                Programs
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-              </span>
-              <div className={`absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-200 overflow-hidden transition-all duration-300 ease-in-out ${
-                isDropdownOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-              }`}>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 1</a>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 2</a>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 3</a>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 4</a>
-              </div>
+    <div ref={heroRef} className=" bg-white relative overflow-hidden flex items-center">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div 
+          ref={el => floatingRef.current[0] = el}
+          className="absolute top-20 left-10 w-32 h-32 bg-orange-100 rounded-full opacity-40 blur-3xl"
+        />
+        <div 
+          ref={el => floatingRef.current[1] = el}
+          className="absolute top-1/3 right-20 w-40 h-40 bg-orange-200 rounded-full opacity-30 blur-3xl"
+        />
+        <div 
+          ref={el => floatingRef.current[2] = el}
+          className="absolute bottom-32 left-1/4 w-36 h-36 bg-orange-100 rounded-full opacity-40 blur-3xl"
+        />
+        <div 
+          ref={el => floatingRef.current[3] = el}
+          className="absolute top-1/2 right-1/3 w-28 h-28 bg-orange-50 rounded-full opacity-50 blur-2xl"
+        />
+      </div>
+
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column */}
+          <div>
+            <div className="inline-flex items-center space-x-2 bg-orange-50 px-5 py-2.5 rounded-full mb-8">
+              <Star className="w-4 h-4 text-orange-500 fill-orange-500" />
+              <span className="text-orange-600 font-semibold text-sm">India's #1 Exam Prep Platform</span>
             </div>
-            <span className="hover:text-orange-600 cursor-pointer">Why Edmirai?</span>
-            <span className="hover:text-orange-600 cursor-pointer">Become a Teacher</span>
-            <span className="hover:text-orange-600 cursor-pointer">Blogs</span>
-          </nav>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-gray-700"
-            onClick={toggleMobile}
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            <h1 
+              ref={headingRef}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"
+            >
+              Crack Your Dream Exam with
+              {/* <span className="text-orange-500">  Edmire Ai</span> */}
+     <span class="text-orange-500 font-bold"> Edmire Ai</span>
+            </h1>
 
-          <button className="hidden sm:inline-block bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition text-sm">
-            Login
-          </button>
-        </div>
+            <p 
+              ref={subheadingRef}
+              className="text-sm md:text-base text-gray-600 mb-8 leading-relaxed max-w-xl"
+            >
+              Join thousands of successful students. Get personalized learning paths, live classes from top educators, and comprehensive test series to excel in your exams.
+            </p>
 
-        {/* Mobile Nav */}
-        {mobileOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <nav className="px-4 py-4 space-y-4 text-gray-700 relative">
-              <div className="relative">
-                <span 
-                  className="flex items-center gap-1 cursor-pointer" 
-                  onClick={toggleDropdown}
-                >
-                  Programs
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-                </span>
-                <div className={`mt-2 w-full bg-gray-50 rounded-md py-2 z-10 border border-gray-200 overflow-hidden transition-all duration-300 ease-in-out ${
-                  isDropdownOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-                }`}>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 1</a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 2</a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 3</a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">Program 4</a>
+            <div ref={ctaRef} className="flex flex-wrap gap-5">
+             <button className="group px-10 py-4 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-orange-600 transition-all font-bold text-lg flex items-center space-x-3 shadow-2xl shadow-orange-200 hover:shadow-orange-300 transform hover:-translate-y-1 hover:scale-105">
+  <span>Book a Free Demo</span>
+  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+</button>
+
+              <button className="px-10 py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-green-600 hover:bg-orange-50 transition-all font-bold text-lg flex items-center space-x-3 shadow-lg transform hover:-translate-y-1">
+                <BsWhatsapp className="w-6 h-6 text-green-600" />
+                <span>Chat on Whatsapp</span>
+              </button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-12 flex flex-wrap items-center gap-8 text-gray-600">
+              <div className="flex items-center space-x-3">
+                <div className="flex -space-x-3">
+                  <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                    50K+
+                  </div>
                 </div>
+                <span className="text-sm font-medium">Joined this month</span>
               </div>
-              <span className="block hover:text-orange-600 cursor-pointer">Why Edmirai?</span>
-              <span className="block hover:text-orange-600 cursor-pointer">Become a Teacher</span>
-              <span className="block hover:text-orange-600 cursor-pointer">Blogs</span>
-              <button className="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition">
-                Login
-              </button>
-            </nav>
-          </div>
-        )}
-      </header>
-
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-8 sm:py-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12">
-        {/* Left Text Content */}
-        <div className="lg:w-1/2 space-y-4 sm:space-y-6 relative z-10 text-center lg:text-left">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
-            India&apos;s Leading
-            <br className="hidden sm:block" />
-            <span className="block sm:inline">Online Learning</span>
-            <br className="hidden lg:block" />
-            <span className="block lg:inline">Platform</span>
-          </h2>
-          <p className="text-xl sm:text-2xl text-gray-600 font-medium">Smarter Learning, Better Results.</p>
-          
-          {/* Feature Bubbles - Responsive positioning */}
-          <div className="absolute inset-0 pointer-events-none hidden lg:block">
-            {/* Bubble 1: One-to-One - Top right */}
-            <div className="absolute top-[-20px] right-[-100px] w-28 h-28 bg-orange-100 rounded-full flex items-center justify-center text-xs font-medium text-orange-600 shadow-lg transform -rotate-12">
-              One-to-One
+              <div className="flex items-center space-x-2">
+                <div className="flex space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-500 " />
+                  ))}
+                </div>
+                <span className="text-sm font-medium">4.9/5 from 10,000+ reviews</span>
+              </div>
             </div>
-            {/* Bubble 2: Live Classes - Upper right */}
-            <div className="absolute top-[120px] right-[-60px] w-28 h-28 bg-orange-100 rounded-full flex items-center justify-center text-xs font-medium text-orange-600 shadow-lg transform rotate-8">
-              Live Classes
-            </div>
-            {/* Bubble 3: Live Doubt Solving - Mid right */}
-            <div className="absolute top-[280px] right-[-120px] w-28 h-28 bg-orange-100 rounded-full flex items-center justify-center text-xs font-medium text-orange-600 shadow-lg transform -rotate-6">
-              Live Doubt
-              <br />
-              Solving
-            </div>
-            {/* Bubble 4: Personalised AI Tutor - Bottom right */}
-            <div className="absolute bottom-[20px] right-[20px] w-28 h-28 bg-orange-100 rounded-full flex items-center justify-center text-xs font-medium text-orange-600 shadow-lg">
-              Personalised
-              <br />
-              AI Tutor
-            </div>
-            {/* Simple curve lines using SVG for connection */}
-            <svg className="absolute top-0 left-0 w-full h-full opacity-30" viewBox="0 0 800 600">
-              {/* Curve to One-to-One */}
-              <path d="M 200 100 Q 400 50 600 100" stroke="orange" strokeWidth="2" fill="none" />
-              {/* Curve to Live Classes */}
-              <path d="M 200 250 Q 450 200 600 280" stroke="orange" strokeWidth="2" fill="none" />
-              {/* Curve to Live Doubt Solving */}
-              <path d="M 200 350 Q 500 320 550 420" stroke="orange" strokeWidth="2" fill="none" />
-              {/* Curve to AI Tutor */}
-              <path d="M 200 450 Q 400 480 600 500" stroke="orange" strokeWidth="2" fill="none" />
-            </svg>
           </div>
 
-          <div className="space-y-4 pt-4 sm:pt-8">
-            <p className="text-lg sm:text-xl font-semibold text-gray-800">JEE & NEET Exam Prep App</p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold w-full sm:w-auto hover:bg-orange-600 transition">
-                Book a Free Demo Now
-              </button>
-              <button className="bg-green-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold flex items-center justify-center space-x-2 w-full sm:w-auto hover:bg-green-600 transition">
-                <span>💬</span>
-                <span className="hidden sm:inline">Chat on WhatsApp</span>
-                <span className="sm:hidden">WhatsApp</span>
-              </button>
+          {/* Right Column - Image */}
+          <div ref={imageRef} className="relative">
+            <div className="relative">
+              {/* Main image */}
+              <div className="relative rounded-3xl overflow-hidden ">
+                <img 
+                  src="/Hero.png" 
+                  alt="Students studying together"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
             </div>
           </div>
         </div>
-
-        {/* Right Image */}
-        <div className="lg:w-1/2 relative mt-8 lg:mt-0 w-full">
-          <img
-            src="https://thumbs.dreamstime.com/b/portrait-cute-asian-teen-long-hair-wearing-white-shirt-sitting-online-studying-laptop-computer-table-camera-to-234886535.jpg"
-            alt="Young Asian woman using laptop for online learning"
-            className="w-full h-auto rounded-lg shadow-xl max-w-md mx-auto lg:max-w-none"
-          />
-          {/* Overlay Badge: Exam Prep App */}
-          <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-white p-2 sm:p-3 rounded-lg shadow-lg border border-gray-200">
-            <p className="text-xs sm:text-sm font-semibold text-gray-800">Exam Prep App</p>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };
 
-export default Hero;
+export default ExamPrepHero;
