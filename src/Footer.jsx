@@ -13,7 +13,7 @@ export default function CueMathFooter() {
   return (
     <div className="w-full bg-gray-50">
       {/* Top Section - Game Cards */}
-      <div className="bg-gray-200 py-3 md:py-4 lg:py-8 px-3 md:px-4 lg:px-6">
+      {/* <div className="bg-gray-200 py-3 md:py-4 lg:py-8 px-3 md:px-4 lg:px-6">
         <div className="max-w-6xl mx-auto flex justify-center items-center gap-3 md:gap-4 lg:gap-12 flex-wrap">
           <div className="text-center cursor-pointer transition-transform hover:-translate-y-3 flex-shrink-0">
             <div className="w-20 h-20 md:w-22 md:h-22 lg:w-28 lg:h-28 rounded-full bg-gray-900 flex items-center justify-center mx-auto mb-2 md:mb-3 lg:mb-4 overflow-hidden">
@@ -48,7 +48,7 @@ export default function CueMathFooter() {
             <h3 className="text-xs md:text-sm lg:text-xs font-semibold uppercase tracking-wider text-gray-700 px-1">Mental Math</h3>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Content Section */}
       <div className="flex flex-col lg:flex-row bg-white">
