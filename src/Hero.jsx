@@ -101,7 +101,7 @@ const ExamPrepHero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-5 lg:gap-16 items-center">
           {/* Left Column */}
           <div>
             <div className="inline-flex items-center space-x-2 bg-orange-50 px-5 py-2.5 rounded-full mb-8">
@@ -111,7 +111,7 @@ const ExamPrepHero = () => {
 
             <h1 
               ref={headingRef}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-2 lg:mb-6"
             >
               Crack Your Dream Exam with
               {/* <span className="text-orange-500">  Edmire Ai</span> */}
@@ -120,32 +120,32 @@ const ExamPrepHero = () => {
 
             <p 
               ref={subheadingRef}
-              className="text-sm md:text-base text-gray-600 mb-8 leading-relaxed max-w-xl"
+              className="text-sm md:text-base text-gray-600 mb-5 lg:mb-8 leading-relaxed max-w-xl"
             >
               Join thousands of successful students. Get personalized learning paths, live classes from top educators, and comprehensive test series to excel in your exams.
             </p>
 
-            <div ref={ctaRef} className="flex flex-wrap gap-5">
-             <button className="group px-10 py-4 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-orange-600 transition-all font-bold text-lg flex items-center space-x-3 shadow-2xl shadow-orange-200 hover:shadow-orange-300 transform hover:-translate-y-1 hover:scale-105">
+            <div ref={ctaRef} className="flex flex-wrap gap-3 lg:gap-5">
+             <button className="group px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-orange-600 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-2xl shadow-orange-200 hover:shadow-orange-300 transform hover:-translate-y-1 hover:scale-105">
   <span>Book a Free Demo</span>
-  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+  <ArrowRight className="w-6 h-4 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
 </button>
 
-              <button className="px-10 py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-green-600 hover:bg-orange-50 transition-all font-bold text-lg flex items-center space-x-3 shadow-lg transform hover:-translate-y-1">
-                <BsWhatsapp className="w-6 h-6 text-green-600" />
+              <button className="px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-green-600 hover:bg-orange-50 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-lg transform hover:-translate-y-1">
+                <BsWhatsapp className="w-6 h-4 lg:w-6 lg:h-6 text-green-600" />
                 <span>Chat on Whatsapp</span>
               </button>
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-12 flex flex-wrap items-center gap-8 text-gray-600">
+            <div className="mt-5 lg:mt-12 flex flex-wrap items-center gap-3 lg:gap-8 text-gray-600">
               <div className="flex items-center space-x-3">
                 <div className="flex -space-x-3">
-                  <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                  <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
+                  <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
+                  <div className="w-7 h-7 lg:w-10 lg:h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white flex items-center justify-center text-white text-[8px] lg:text-xs font-bold">
                     50K+
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const ExamPrepHero = () => {
               <div className="flex items-center space-x-2">
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-500 " />
+                    <Star key={i} className="w-4 h-4 lg:w-5 lg:h-10 text-yellow-500 " />
                   ))}
                 </div>
                 <span className="text-sm font-medium">4.9/5 from 10,000+ reviews</span>

@@ -51,24 +51,24 @@ export default function KidsCourses() {
   ];
 
   return (
-    <div className="min-h-screen bg-white p-8">
+    <div className="min-h-screen bg-white p-3 lg:p-8">
       <div className="max-w-7xl mx-auto">
         <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-12 shadow-2xl">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             
             {/* Left side - Updated Content */}
             <div className="lg:w-1/2 text-white">
-              <h1 className="text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-2xl lg:text-5xl font-bold mb-3 lg:mb-6 leading-tight">
                 Fun & Engaging <span className="text-orange-400">Courses for Kids</span>
               </h1>
               
-              <p className="text-gray-300 text-xs lg:text-sm mb-8 leading-relaxed">
+              <p className="text-gray-300 text-[10px] md:text-xs lg:text-sm mb-5 lg:mb-8 leading-relaxed">
                 Our carefully crafted programs help children from Nursery to 12th grade explore, learn, and grow. From playful learning in early grades to exam preparation in higher grades, we nurture curiosity and confidence at every stage.
               </p>
               
             
               
-              <button className="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg mb-4">
+              <button className="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg mb-0 lg:mb-4">
                 Explore Courses
               </button>
               
@@ -89,18 +89,18 @@ export default function KidsCourses() {
                     )}
                     
                     <div className="flex flex-col items-start gap-3 mt-2">
-                      <div className={`${course.iconColor} bg-white rounded-xl p-3 shadow-md`}>
+                      <div className={`${course.iconColor} bg-white rounded-xl p-1 lg:p-2 shadow-md`}>
                         <course.Icon className="w-8 h-8" strokeWidth={2} />
                       </div>
                       
                       <div className="flex-1">
-                        <p className={`text-xs font-semibold mb-1 ${course.titleColor || 'text-blue-600'}`}>
+                        <p className={`text-xs  font-semibold mb-1 ${course.titleColor || 'text-blue-600'}`}>
                           {course.title}
                         </p>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">
+                        <h3 className="text-sm lg:text-lg font-bold text-gray-900 mb-2">
                           {course.subtitle}
                         </h3>
-                        <p className="text-gray-600 text-xs mb-4">
+                        <p className="text-gray-600 text-[10px] md:text-xs lg:text-sm  mb-4">
                           {course.description}
                         </p>
                         

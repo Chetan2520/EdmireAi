@@ -56,7 +56,7 @@ const PremiumVideoSection = () => {
   };
 
   return (
-    <div ref={containerRef} className="relative bg-white py-32 overflow-hidden">
+    <div ref={containerRef} className="relative bg-white py-10 lg:py-32 overflow-hidden">
       {/* Subtle grid background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-30" 
@@ -80,7 +80,7 @@ const PremiumVideoSection = () => {
             
 
             {/* Heading */}
-            <h2 className="animate-item text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+            <h2 className="animate-item text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Learn.
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900">
@@ -91,7 +91,7 @@ const PremiumVideoSection = () => {
             </h2>
 
             {/* Description */}
-            <p className="animate-item text-lg text-gray-600 mb-10 leading-relaxed">
+            <p className="animate-item text-sm lg:text-lg text-gray-600 mb-0 lg:mb-10 leading-relaxed">
               Where innovation meets education. Experience live classes reimagined for the modern learner.
             </p>
 

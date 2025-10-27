@@ -4,7 +4,7 @@ const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-main font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
             Why  <span className="text-orange-600">EdmireAI</span>?
           </h2>
           <p className="text-sm lg:text-base text-gray-600 max-w-2xl mx-auto">
