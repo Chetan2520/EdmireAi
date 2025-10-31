@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-export default function BusBookingFAQ() {
+export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   const itemRefs = useRef([]);
   const containerRef = useRef(null);

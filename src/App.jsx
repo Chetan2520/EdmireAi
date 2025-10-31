@@ -6,7 +6,6 @@ import Navbar from './Navbar';
 import WhyChooseUs from './WhyChooseUs';
 import KidsCourses from './KidsCourses';
 import Program1 from './Program1';
-import FAQ from './FAQ';
 import PremiumVideoSection from './PremiumVideoSection ';
 import VedantuComparison from './VedantuComparison';
 // Note: Removed unused imports like HelpSection and Programs for cleanliness
@@ -26,7 +25,7 @@ const App = () => {
               <KidsCourses />
               <WhyChooseUs />
               <VedantuComparison/>
-              <FAQ/>
+              {/* <FAQ */}
             </div>
           }
         />
