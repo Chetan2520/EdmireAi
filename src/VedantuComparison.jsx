@@ -71,7 +71,7 @@ export default function VedantuComparison() {
 
         <div ref={containerRef} className="bg-white rounded-2xl shadow-lg overflow-hidden">
           {/* Header */}
-          <div ref={headerRef} className="grid grid-cols-1 sm:grid-cols-4 bg-gradient-to-r from-orange-500 to-orange-600">
+          <div ref={headerRef} className="grid grid-cols-1 sm:grid-cols-4 bg-gradient-to-r from-slate-500 to-zinc-900">
             <div className="px-4 sm:px-6 py-3 sm:py-4 font-semibold text-white text-left">Features</div>
             <div className="hidden sm:table-cell px-4 sm:px-6 py-3 sm:py-4 font-semibold text-white text-center">Vedantu 1:1</div>
             <div className="hidden sm:table-cell px-4 sm:px-6 py-3 sm:py-4 font-semibold text-white text-center bg-slate-700">Traditional</div>
@@ -101,21 +101,21 @@ export default function VedantuComparison() {
                 {feature.vedantu ? (
                   <Check className="text-green-500 w-5 h-5 sm:w-6 sm:h-6" />
                 ) : (
-                  <X className="text-red-500 w-5 h-5 sm:w-6 sm:h-6" />
+                  <X className="text-red-900 w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </div>
               <div className="hidden sm:flex justify-center items-center px-4 sm:px-6 py-3 sm:py-4 bg-slate-50">
                 {feature.traditional ? (
                   <Check className="text-green-500 w-5 h-5 sm:w-6 sm:h-6" />
                 ) : (
-                  <X className="text-red-500 w-5 h-5 sm:w-6 sm:h-6" />
+                  <X className="text-red-900 w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </div>
               <div className="hidden sm:flex justify-center items-center px-4 sm:px-6 py-3 sm:py-4 bg-slate-100">
                 {feature.other ? (
                   <Check className="text-green-500 w-5 h-5 sm:w-6 sm:h-6" />
                 ) : (
-                  <X className="text-red-500 w-5 h-5 sm:w-6 sm:h-6" />
+                  <X className="text-red-900 w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </div>
               {/* Mobile row */}
@@ -124,21 +124,21 @@ export default function VedantuComparison() {
                   {feature.vedantu ? (
                     <Check className="text-green-500 w-5 h-5" />
                   ) : (
-                    <X className="text-red-500 w-5 h-5" />
+                    <X className="text-red-900 w-5 h-5" />
                   )}
                 </div>
                 <div className="flex justify-center items-center col-span-1 bg-slate-50">
                   {feature.traditional ? (
                     <Check className="text-green-500 w-5 h-5" />
                   ) : (
-                    <X className="text-red-500 w-5 h-5" />
+                    <X className="text-red-900 w-5 h-5" />
                   )}
                 </div>
                 <div className="flex justify-center items-center col-span-1 bg-slate-100">
                   {feature.other ? (
                     <Check className="text-green-500 w-5 h-5" />
                   ) : (
-                    <X className="text-red-500 w-5 h-5" />
+                    <X className="text-red-900 w-5 h-5" />
                   )}
                 </div>
               </div>

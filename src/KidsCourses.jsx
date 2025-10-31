@@ -9,7 +9,7 @@ export default function KidsCourses() {
       subtitle: 'Playful learning',
       description: 'Playful learning environment fostering creativity and basic skills with experienced teachers.',
       bgColor: 'bg-pink-50',
-      badgeColor: 'bg-red-500',
+      badgeColor: 'bg-red-900',
       iconColor: 'text-yellow-500',
       image: 'https://www.shutterstock.com/image-photo/cute-little-children-hugging-nursery-260nw-2420206409.jpg'
     },
@@ -59,7 +59,7 @@ export default function KidsCourses() {
             {/* Left side - Updated Content */}
             <div className="lg:w-1/2 text-white">
               <h1 className="text-2xl lg:text-5xl font-bold mb-3 lg:mb-6 leading-tight">
-                Fun & Engaging <span className="text-orange-400">Courses for Kids</span>
+                Fun & Engaging <span className="text-white">Courses for Kids</span>
               </h1>
               
               <p className="text-gray-300 text-[10px] md:text-xs lg:text-sm mb-5 lg:mb-8 leading-relaxed">
@@ -104,7 +104,7 @@ export default function KidsCourses() {
                           {course.description}
                         </p>
                         
-                        <button className="bg-orange-500 hover:bg-orange-600 cursor-pointer text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm w-full">
+                        <button className="bg-red-900 hover:bg-red-900 cursor-pointer text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm w-full">
                           Explore
                         </button>
                       </div>

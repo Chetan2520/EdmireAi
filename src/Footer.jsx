@@ -79,29 +79,29 @@ export default function CueMathFooter() {
           <div className="flex-1 min-w-0 lg:min-w-[140px]">
             <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">About CueMath</h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">About Us</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Our Journey</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">FAQs</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Pricing</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">About Us</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Our Journey</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">FAQs</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Pricing</a></li>
             </ul>
           </div>
 
           <div className="flex-1 min-w-0 lg:min-w-[140px]">
             <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Our Programs</h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Math Tutors</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">English</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Science</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Coding</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Tutors</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">English</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Science</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Coding</a></li>
             </ul>
           </div>
 
           <div className="flex-1 min-w-0 lg:min-w-[140px]">
             <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Resources</h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Blogs</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Math Puzzles</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">MathFit 100 Puzzles</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Blogs</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Puzzles</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">MathFit 100 Puzzles</a></li>
             </ul>
           </div>
         </div>
@@ -115,27 +115,27 @@ export default function CueMathFooter() {
           <div className="flex-1 min-w-0 lg:min-w-[140px]">
             <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Events</h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Math Fests</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Math Webinars</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Fests</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Webinars</a></li>
             </ul>
           </div>
 
           <div className="flex-1 min-w-0 lg:min-w-[140px]">
             <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Math Tutoring</h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Online Math Classes</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Online Math Courses</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Online Math Tutors</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Math Tuition</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Math Tutors India</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Online Math Classes</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Online Math Courses</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Online Math Tutors</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Tuition</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Tutors India</a></li>
             </ul>
           </div>
 
           <div className="flex-1 min-w-0 lg:min-w-[140px]">
             <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Partner With Us</h3>
             <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Become a volunteer/affiliate</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-orange-600 transition-colors block py-0.5">Become a Tutor</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Become a volunteer/affiliate</a></li>
+              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Become a Tutor</a></li>
             </ul>
           </div>
         </div>

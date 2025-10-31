@@ -131,7 +131,7 @@ const PremiumVideoSection = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="flex items-center space-x-2 mb-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                          <div className="w-2 h-2 bg-red-900 rounded-full animate-pulse"></div>
                           <span className="text-gray-900 text-sm font-medium">LIVE NOW</span>
                         </div>
                         <h3 className="text-gray-900 text-xl font-bold mb-1">Advanced Mathematics</h3>

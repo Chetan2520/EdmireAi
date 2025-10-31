@@ -4,6 +4,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showPrograms, setShowPrograms] = useState(false);
   const [showMobilePrograms, setShowMobilePrograms] = useState(false);
+  const [hideTimeout, setHideTimeout] = useState(null);
 
   return (
     <>
@@ -13,23 +14,23 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <div className="text-xl sm:text-2xl font-bold">
-                {/* <span className="text-orange-600" style={{ fontFamily: 'cursive' }}>Edmire</span>
+                {/* <span className="text-red-900" style={{ fontFamily: 'cursive' }}>Edmire</span>
                 <span className="text-gray-800">Ai</span> */}
-                <img src='/logo.jpg' className='w-36 h-12'></img>
+                <img src='/logo2.jpg' className='w-36 h-12'></img>
               </div>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-1 lg:space-x-4">
               <a
-                href="#home"
-                className="text-gray-800 hover:text-orange-600 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+                href="/"
+                className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
               >
                 Home
               </a>
               <a
                 href="#why"
-                className="text-gray-800 hover:text-orange-600 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+                className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
               >
                 Why EdmireAI
               </a>
@@ -37,11 +38,22 @@ export default function Navbar() {
               {/* Programs Dropdown */}
               <div
                 className="relative"
-                onMouseEnter={() => setShowPrograms(true)}
-                onMouseLeave={() => setShowPrograms(false)}
+                onMouseEnter={() => {
+                  if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                    setHideTimeout(null);
+                  }
+                  setShowPrograms(true);
+                }}
+                onMouseLeave={() => {
+                  const timeoutId = setTimeout(() => {
+                    setShowPrograms(false);
+                  }, 150);
+                  setHideTimeout(timeoutId);
+                }}
               >
                 <button
-                  className="text-gray-800 hover:text-orange-600 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base flex items-center gap-1"
+                  className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base flex items-center gap-1"
                 >
                   Programs
                   <svg
@@ -54,7 +66,7 @@ export default function Navbar() {
                   </svg>
                 </button>
                 <div
-                  className={`absolute top-full left-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-xl py-2 min-w-[180px] transition-all duration-200 ${
+                  className={`absolute top-full left-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-xl py-2 min-w-[300px] transition-all duration-200 ${
                     showPrograms
                       ? 'opacity-100 translate-y-0 visible'
                       : 'opacity-0 -translate-y-2 invisible pointer-events-none'
@@ -62,48 +74,47 @@ export default function Navbar() {
                 >
                   <a
                     href="#ai-basics"
-                    className="block text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold px-4 py-2 text-sm"
+                    className="block text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold px-4 py-2 text-sm"
                   >
-                    AI Basics
-                  </a>
+One to One Live Classes                  </a>
                   <a
                     href="#ml-program"
-                    className="block text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold px-4 py-2 text-sm"
+                    className="block text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold px-4 py-2 text-sm"
                   >
-                    ML Program
+                    Personalised AI Tutor
                   </a>
                   <a
                     href="#data-science"
-                    className="block text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold px-4 py-2 text-sm"
+                    className="block text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold px-4 py-2 text-sm"
                   >
-                    Data Science
+                    Live Doubt Solving
                   </a>
                   <a
                     href="#ai-tools"
-                    className="block text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold px-4 py-2 text-sm"
+                    className="block text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold px-4 py-2 text-sm"
                   >
-                    AI Tools Mastery
+                   JEE & NEET Exam Prep App
                   </a>
                 </div>
               </div>
 
               <a
                 href="#teacher"
-                className="text-gray-800 hover:text-orange-600 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+                className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
               >
                 Become a Teacher
               </a>
               <a
-                href="#blog"
-                className="text-gray-800 hover:text-orange-600 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+                href="contact"
+                className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
               >
-                Blog
+               Contact Us
               </a>
             </div>
 
             {/* Login Button - Desktop */}
             <div className="hidden md:flex items-center">
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 lg:px-6 py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all text-sm lg:text-base">
+              <button className="bg-gradient-to-r from-red-900 to-red-900 text-white px-4 lg:px-6 py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all text-sm lg:text-base">
                 Login
               </button>
             </div>
@@ -111,7 +122,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-orange-600 hover:text-orange-700 transition p-2"
+              className="md:hidden text-red-900 hover:text-red-700 transition p-2"
               aria-label="Toggle menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,12 +155,12 @@ export default function Navbar() {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <div className="text-2xl font-bold">
-              <span className="text-orange-600" style={{ fontFamily: 'cursive' }}>Edmire</span>
+              <span className="text-red-900" style={{ fontFamily: 'cursive' }}>Edmire</span>
               <span className="text-gray-800">Ai</span>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-orange-600 hover:text-orange-700 transition p-2"
+              className="text-red-900 hover:text-red-700 transition p-2"
               aria-label="Close menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,16 +173,16 @@ export default function Navbar() {
           <div className="flex-1 overflow-y-auto p-4">
             <div className="flex flex-col space-y-1">
               <a
-                href="#home"
+                href="/"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold py-3 px-4 rounded-lg"
+                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
               >
                 Home
               </a>
               <a
                 href="#why"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold py-3 px-4 rounded-lg"
+                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
               >
                 Why EdmireAI
               </a>
@@ -183,7 +194,7 @@ export default function Navbar() {
                     e.preventDefault();
                     setShowMobilePrograms(!showMobilePrograms);
                   }}
-                  className="w-full text-left text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold py-3 px-4 rounded-lg flex items-center justify-between"
+                  className="w-full text-left text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg flex items-center justify-between"
                 >
                   Programs
                   <svg
@@ -204,30 +215,30 @@ export default function Navbar() {
                     <a
                       href="#ai-basics"
                       onClick={() => setIsOpen(false)}
-                      className="block text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition font-medium py-2 px-4 rounded-lg text-sm"
+                      className="block text-gray-700 hover:bg-red-50 hover:text-red-900 transition font-medium py-2 px-4 rounded-lg text-sm"
                     >
-                      AI Basics
+One to One Live Classes   
                     </a>
                     <a
                       href="#ml-program"
                       onClick={() => setIsOpen(false)}
-                      className="block text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition font-medium py-2 px-4 rounded-lg text-sm"
+                      className="block text-gray-700 hover:bg-red-50 hover:text-red-900 transition font-medium py-2 px-4 rounded-lg text-sm"
                     >
-                      ML Program
+                       Personalised AI Tutor
                     </a>
                     <a
                       href="#data-science"
                       onClick={() => setIsOpen(false)}
-                      className="block text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition font-medium py-2 px-4 rounded-lg text-sm"
+                      className="block text-gray-700 hover:bg-red-50 hover:text-red-900 transition font-medium py-2 px-4 rounded-lg text-sm"
                     >
-                      Data Science
+                    Live Doubt Solving
                     </a>
                     <a
                       href="#ai-tools"
                       onClick={() => setIsOpen(false)}
-                      className="block text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition font-medium py-2 px-4 rounded-lg text-sm"
+                      className="block text-gray-700 hover:bg-red-50 hover:text-red-900 transition font-medium py-2 px-4 rounded-lg text-sm"
                     >
-                      AI Tools Mastery
+                        JEE & NEET Exam Prep App
                     </a>
                   </div>
                 </div>
@@ -236,23 +247,23 @@ export default function Navbar() {
               <a
                 href="#teacher"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold py-3 px-4 rounded-lg"
+                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
               >
                 Become a Teacher
               </a>
               <a
-                href="#blog"
+                href="contact"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition font-semibold py-3 px-4 rounded-lg"
+                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
               >
-                Blog
+               Contact Us
               </a>
             </div>
           </div>
 
           {/* Footer */}
           <div className="p-6 border-t border-gray-100">
-            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all w-full">
+            <button className="bg-gradient-to-r from-red-900 to-red-900 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all w-full">
               Login
             </button>
           </div>

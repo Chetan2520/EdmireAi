@@ -3,7 +3,7 @@ import { Star, MessageCircle, Calendar, Book } from 'lucide-react';
 
 export default function HelpSection() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-700 via-purple-600 to-red-500 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-700 via-purple-600 to-red-900 p-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Section */}

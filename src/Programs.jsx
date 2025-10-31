@@ -89,7 +89,7 @@ const cardData = [
   return (
     <div className="relative w-full">
       {/* Main container: Pinned during animation, responsive height */}
-      <section ref={containerRef} className="w-full min-h-screen relative bg-gradient-to-br from-orange-50 to-orange-100 flex flex-col items-center justify-center py-8 px-4">
+      <section ref={containerRef} className="w-full min-h-screen relative bg-gradient-to-br from-red-50 to-red-900 flex flex-col items-center justify-center py-8 px-4">
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-8 text-center">
           Our Programs
@@ -107,7 +107,7 @@ const cardData = [
                   key={card.id}
                   ref={(el) => (cardsRef.current[index] = el)}
                   style={{ transform: `rotate(${rotation}deg)` }}
-                  className="bg-white shadow-xl rounded-2xl p-4 sm:p-6 flex flex-col items-start justify-between w-full max-w-xs transform-gpu transition-all duration-300 border border-gray-100 hover:border-orange-200 hover:shadow-2xl relative z-10 origin-center text-left"
+                  className="bg-white shadow-xl rounded-2xl p-4 sm:p-6 flex flex-col items-start justify-between w-full max-w-xs transform-gpu transition-all duration-300 border border-gray-100 hover:border-red-200 hover:shadow-2xl relative z-10 origin-center text-left"
                 >
                   {/* Top row: Icon and heading */}
                   <div className="flex items-center mb-3 w-full">
@@ -130,7 +130,7 @@ const cardData = [
                   <p className="text-gray-600 leading-relaxed text-xs lg:text-sm mb-4 flex-grow">{card.description}</p>
                   
                   {/* Optional: Add a call-to-action button */}
-                  <button className="mt-auto px-4 sm:px-6 py-2 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 text-sm sm:text-base self-start">
+                  <button className="mt-auto px-4 sm:px-6 py-2 bg-red-900 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 text-sm sm:text-base self-start">
                     Learn More
                   </button>
                 </div>

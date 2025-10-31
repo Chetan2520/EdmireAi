@@ -1,126 +1,115 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MessageCircle, Clock, DollarSign, BookOpen, Users } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronDown } from 'lucide-react';
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function FAQ() {
-  const faqRefs = useRef([]);
+export default function BusBookingFAQ() {
+  const [openIndex, setOpenIndex] = useState(null);
+  const itemRefs = useRef([]);
+  const containerRef = useRef(null);
 
   const faqs = [
     {
-      IconComponent: Clock,
-      question: "Can I study only one topic?",
-      answer: "One-to-one tuition provides personalized learning where a dedicated tutor focuses entirely on a single student's needs. This approach helps strengthen subject understanding and build confidence.",
-      bgColor: "bg-orange-100"
+      question: "How do I enroll in a course?",
+      answer: "Simply choose your preferred course, click on the 'Enroll Now' button, and complete the payment process. Once enrolled, you’ll get instant access to all video lectures, notes, and practice materials."
     },
     {
-      IconComponent: DollarSign,
-      question: "How much does Vedantu's one-on-one tuition cost?",
-      answer: "Vedantu's one-on-one tuition offers flexible pricing based on subject, grade level, and duration. Choose from monthly, topic-wise, or annual packages. A free trial class is available.",
-      bgColor: "bg-orange-100"
+      question: "Can I access the classes after purchase?",
+      answer: "Yes! Once you’ve purchased a course, you get lifetime access to all the classes and materials. You can revisit any lecture anytime through your dashboard."
     },
     {
-      IconComponent: BookOpen,
-      question: "How do I select a maths tutor for my child?",
-      answer: "Review tutor profiles for experience and qualifications. Vedantu offers demo classes for compatibility assessment. Read reviews and consider specialization in Class 10 Maths and CBSE/ICSE syllabus.",
-      bgColor: "bg-orange-100"
+      question: "Do you provide live or recorded classes?",
+      answer: "We offer both! You can attend live interactive classes with top educators and also access recorded sessions for revision or missed lectures."
     },
     {
-      IconComponent: Users,
-      question: "Will my child get board exam-focused study help?",
-      answer: "Yes, Vedantu's one-on-one tuition is designed for board exam preparation. Lessons follow CBSE/ICSE Class 10 Maths syllabus with regular assessments and mock tests.",
-      bgColor: "bg-orange-100"
+      question: "What if I have doubts during the course?",
+      answer: "You can post your doubts in the dedicated Q&A section or during live sessions. Our expert mentors will personally help resolve your queries quickly."
     },
     {
-      IconComponent: Clock,
-      question: "Is the class schedule flexible for my child's routine?",
-      answer: "Yes, Vedantu provides complete scheduling flexibility. Classes can be arranged at times that suit your child's routine without conflicts with school or other activities.",
-      bgColor: "bg-orange-100"
+      question: "Is there any refund policy?",
+      answer: "Yes, we offer a refund if you cancel within the first 7 days of purchase, provided less than 20% of the content has been accessed. Check our Refund Policy page for complete details."
     },
     {
-      IconComponent: Clock,
-      question: "What is the meaning of one-to-one tuition?",
-      answer: "One-to-one tuition is personalized learning where a single tutor works exclusively with one student, allowing customized lesson plans and teaching methods tailored to individual needs.",
-      bgColor: "bg-orange-100"
+      question: "Do you provide certificates after course completion?",
+      answer: "Absolutely! After completing your course and passing the final assessment, you’ll receive a verified digital certificate that can be shared on LinkedIn and your resume."
     }
   ];
 
-  useEffect(() => {
-    faqRefs.current.forEach((el, index) => {
-      gsap.fromTo(el, 
-        { opacity: 0, y: 50 }, 
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 0.8, 
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-orange-500">Have Questions?</span>{' '}
-            <span className="text-gray-800">We've Got You Covered.</span>
+    <div className=" bg-white py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <span className="bg-primary bg-clip-text text-gray-900">
+              Frequently Asked
+            </span> {" "}
+            Questions
           </h1>
-          <p className="text-gray-600 text-lg">
-            Quick answers to help you get started with confidence
+          <p className="text-base text-gray-600 mt-4">
+            Find answers to common questions about our bus booking service
           </p>
         </div>
 
-        {/* FAQ Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
+        <div ref={containerRef} className="space-y-6">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              ref={(el) => (faqRefs.current[index] = el)}
-              className="bg-white rounded-2xl shadow-sm p-6 hover:shadow-md transition-shadow opacity-0"
+              ref={(el) => (itemRefs.current[index] = el)}
+              className={`relative rounded-2xl overflow-hidden transition-all duration-300 ${
+                openIndex === index 
+                  ? 'shadow-2xl bg-gradient-to-br from-red-50 to-white border-2 border-red-200' 
+                  : 'shadow-lg bg-white hover:shadow-xl border-2 border-gray-100'
+              }`}
             >
-              <div className="flex items-start gap-4">
-                <div className={`${faq.bgColor} rounded-xl p-3 flex-shrink-0`}>
-                  <faq.IconComponent className="w-6 h-6 text-orange-600" />
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex items-start justify-between p-4 md:p-8 text-left group"
+              >
+                <span className={`text-base md:text-2xl font-bold pr-6 leading-tight transition-colors ${
+                  openIndex === index ? 'text-red-900' : 'text-gray-900 group-hover:text-red-900'
+                }`}>
+                  {faq.question}
+                </span>
+                <div 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleFAQ(index);
+                  }}
+                  className={`flex-shrink-0 w-5 h-5 lg:w-10 lg:h-10 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${
+                    openIndex === index 
+                      ? 'bg-red-900 rotate-180' 
+                      : 'bg-red-900 group-hover:bg-red-800'
+                  }`}
+                >
+                  <ChevronDown className="text-white" size={24} />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed">
-                    {faq.answer}
-                  </p>
+              </button>
+              
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="px-6 md:px-8 pb-8 pt-0">
+                  <div className="border-t-2 border-red-200 pt-6">
+                    <p className="lg:text-lg text-sm text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
+              </div>
+              
+              {/* Decorative corner accent */}
+              <div className={`absolute top-0 right-0 w-5 h-5 opacity-5 transition-opacity ${
+                openIndex === index ? 'opacity-10' : ''
+              }`}>
+                <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-red-900 to-transparent rounded-bl-full"></div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Floating Action Buttons */}
-        {/* <div className="fixed bottom-6 right-6 flex flex-col gap-3">
-          <button className="bg-white text-gray-800 px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow font-medium flex items-center gap-2">
-            Find your personal tutor
-            <span className="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">
-              ×
-            </span>
-          </button>
-          <button className="bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center ml-auto">
-            <MessageCircle size={24} />
-          </button>
-        </div> */}
       </div>
     </div>
   );

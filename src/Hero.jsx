@@ -83,19 +83,19 @@ const ExamPrepHero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
           ref={el => floatingRef.current[0] = el}
-          className="absolute top-20 left-10 w-32 h-32 bg-orange-100 rounded-full opacity-40 blur-3xl"
+          className="absolute top-20 left-10 w-32 h-32 bg-red-900 rounded-full opacity-40 blur-3xl"
         />
         <div 
           ref={el => floatingRef.current[1] = el}
-          className="absolute top-1/3 right-20 w-40 h-40 bg-orange-200 rounded-full opacity-30 blur-3xl"
+          className="absolute top-1/3 right-20 w-40 h-40 bg-red-200 rounded-full opacity-30 blur-3xl"
         />
         <div 
           ref={el => floatingRef.current[2] = el}
-          className="absolute bottom-32 left-1/4 w-36 h-36 bg-orange-100 rounded-full opacity-40 blur-3xl"
+          className="absolute bottom-32 left-1/4 w-36 h-36 bg-red-900 rounded-full opacity-40 blur-3xl"
         />
         <div 
           ref={el => floatingRef.current[3] = el}
-          className="absolute top-1/2 right-1/3 w-28 h-28 bg-orange-50 rounded-full opacity-50 blur-2xl"
+          className="absolute top-1/2 right-1/3 w-28 h-28 bg-red-50 rounded-full opacity-50 blur-2xl"
         />
       </div>
 
@@ -104,18 +104,18 @@ const ExamPrepHero = () => {
         <div className="grid lg:grid-cols-2 gap-5 lg:gap-16 items-center">
           {/* Left Column */}
           <div>
-            <div className="inline-flex items-center space-x-2 bg-orange-50 px-5 py-2.5 rounded-full mb-8">
-              <Star className="w-4 h-4 text-orange-500 fill-orange-500" />
-              <span className="text-orange-600 font-semibold text-sm">India's #1 Exam Prep Platform</span>
+            <div className="inline-flex items-center space-x-2 bg-red-50 px-5 py-2.5 rounded-full mb-8">
+              <Star className="w-4 h-4 text-red-900 fill-red-900" />
+              <span className="text-red-900 font-semibold text-sm">India's Leading Platform</span>
             </div>
 
             <h1 
               ref={headingRef}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-2 lg:mb-6"
             >
-              Crack Your Dream Exam with
-              {/* <span className="text-orange-500">  Edmire Ai</span> */}
-     <span class="text-orange-500 font-bold"> Edmire Ai</span>
+              India’s Leading Online
+              {/* <span className="text-red-900">  Edmire Ai</span> */}
+     <span class="text-red-900 font-bold"> Learning Platform</span>
             </h1>
 
             <p 
@@ -126,26 +126,26 @@ const ExamPrepHero = () => {
             </p>
 
             <div ref={ctaRef} className="flex flex-wrap gap-3 lg:gap-5">
-             <button className="group px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-orange-600 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-2xl shadow-orange-200 hover:shadow-orange-300 transform hover:-translate-y-1 hover:scale-105">
+             <button className="group px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-red-900 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-2xl shadow-red-200 hover:shadow-red-300 transform hover:-translate-y-1 hover:scale-105">
   <span>Book a Free Demo</span>
   <ArrowRight className="w-6 h-4 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
 </button>
 
-              <button className="px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-green-600 hover:bg-orange-50 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-lg transform hover:-translate-y-1">
+              <button className="px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-green-600 hover:bg-red-50 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-lg transform hover:-translate-y-1">
                 <BsWhatsapp className="w-6 h-4 lg:w-6 lg:h-6 text-green-600" />
                 <span>Chat on Whatsapp</span>
               </button>
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-5 lg:mt-12 flex flex-wrap items-center gap-3 lg:gap-8 text-gray-600">
+            {/* <div className="mt-5 lg:mt-12 flex flex-wrap items-center gap-3 lg:gap-8 text-gray-600">
               <div className="flex items-center space-x-3">
                 <div className="flex -space-x-3">
                   <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
                   <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
                   <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
                   <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
-                  <div className="w-7 h-7 lg:w-10 lg:h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white flex items-center justify-center text-white text-[8px] lg:text-xs font-bold">
+                  <div className="w-7 h-7 lg:w-10 lg:h-10 rounded-full bg-gradient-to-br from-red-400 to-red-900 border-2 border-white flex items-center justify-center text-white text-[8px] lg:text-xs font-bold">
                     50K+
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const ExamPrepHero = () => {
                 </div>
                 <span className="text-sm font-medium">4.9/5 from 10,000+ reviews</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Image */}
