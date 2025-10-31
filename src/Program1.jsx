@@ -300,8 +300,8 @@ const Program1 = () => {
                 JS
               </motion.div>
               <div>
-                <h1 className="text-xl font-bold text-red-900">JavaScript Masterclass</h1>
-                <p className="text-xs text-gray-600">1-on-1 Live Training</p>
+                <h1 className="text-xs lg:text-xl font-bold text-red-900">JavaScript Masterclass</h1>
+                <p className="text-xs lg:text-sm text-gray-600">1-on-1 Live Training</p>
               </div>
             </div>
             <div className="flex items-center gap-6">
@@ -311,15 +311,15 @@ const Program1 = () => {
                 <span className="text-gray-600">48 Sessions</span>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold text-red-900">₹4,999</div>
+                <div className="text-sm lg:text-xl font-bold text-red-900">₹4,999</div>
                 <div className="text-xs text-gray-500 line-through">₹9,999</div>
               </div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-red-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors"
+                className="bg-red-900 text-white p-1 lg:px-6 lg:py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors"
               >
-                Enroll Now
+                Enroll 
               </motion.button>
             </div>
           </div>
@@ -369,14 +369,14 @@ const Program1 = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-red-900 to-red-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg"
+                  className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg"
                 >
                   Start Learning Today →
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-red-900 text-red-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-50 transition-all"
+                  className="border-2 border-red-900 text-red-900 py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-red-50 transition-all"
                 >
                   Download Syllabus
                 </motion.button>
@@ -414,8 +414,8 @@ const Program1 = () => {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <div className="text-3xl font-black text-red-900">1000+</div>
-                <div className="text-sm text-gray-600">Happy Students</div>
+                <div className="text-xl lg:text-3xl font-black text-red-900">1000+</div>
+                <div className="text-xs lg:text-sm text-gray-600">Happy Students</div>
               </motion.div>
               <motion.div
                 className="absolute -bottom-6 -left-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100"
@@ -423,8 +423,8 @@ const Program1 = () => {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
               >
-                <div className="text-3xl font-black text-red-900">4.9⭐</div>
-                <div className="text-sm text-gray-600">Average Rating</div>
+                <div className="text-xl lg:text-3xl font-black text-red-900">4.9⭐</div>
+                <div className="text-xs lg:text-sm text-gray-600">Average Rating</div>
               </motion.div>
             </motion.div>
           </div>
