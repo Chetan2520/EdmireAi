@@ -1,32 +1,41 @@
-import React from 'react'
-import Hero from './Hero'
-import VedantuComparison from './VedantuComparison'
-import Faq from './FAQ'
-import HelpSection from './CTA'
-import Footer from './Footer'
-import Navbar from './Navbar'
-import PremiumVideoSection from './PremiumVideoSection '
-import WhyChooseUs from './WhyChooseUs'
-import Programs from './Programs'
-import KidsCourses from './KidsCourses'
-import FAQ from './FAQ'
-import Program1 from './Program1'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Hero from './Hero';
+import Footer from './Footer';
+import Navbar from './Navbar';
+import WhyChooseUs from './WhyChooseUs';
+import KidsCourses from './KidsCourses';
+import Program1 from './Program1';
+import FAQ from './FAQ';
+import PremiumVideoSection from './PremiumVideoSection ';
+import VedantuComparison from './VedantuComparison';
+// Note: Removed unused imports like HelpSection and Programs for cleanliness
 
 const App = () => {
-  return ( 
-    <div>
-    <Navbar/>
-    <Program1/>
-    <Hero/>
-      <PremiumVideoSection/>
-    <KidsCourses/>
-    <WhyChooseUs/>
-      <VedantuComparison/>
-    <FAQ/>
-<Footer/> 
-      
-    </div>
-  )
-}
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+             
+              <Hero />
+              <PremiumVideoSection />
+              <KidsCourses />
+              <WhyChooseUs />
+              <VedantuComparison/>
+              <FAQ/>
+            </div>
+          }
+        />
+        {/* Optional: Add more routes as needed, e.g., for specific sections */}
+        <Route path="/program1" element={<Program1 />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+};
 
-export default App
+export default App;

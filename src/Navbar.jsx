@@ -73,10 +73,10 @@ export default function Navbar() {
                   }`}
                 >
                   <a
-                    href="#ai-basics"
+                    href="/Program1"
                     className="block text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold px-4 py-2 text-sm"
                   >
-One to One Live Classes                  </a>
+                        One to One Live Classes</a>
                   <a
                     href="#ml-program"
                     className="block text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold px-4 py-2 text-sm"
