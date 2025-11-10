@@ -1,173 +1,164 @@
-import React, { useState } from 'react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+import logo from '/footer-logo.png'; // Apna EdmirAI logo yahan daalen
+import { Link } from 'react-router-dom';
 
-export default function CueMathFooter() {
-  const [email, setEmail] = useState('');
+const Footer = () => {
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Programs', href: '/programs' },
+    { name: 'Why EdmirAI', href: '/why-edmirai' },
+    { name: 'Become a Teacher', href: '/teach-with-us' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact Us', href: '/contact' },
+  ];
 
-  const handleSubscribe = () => {
-    if (email) {
-      alert(`Subscribed with: ${email}`);
-      setEmail('');
-    }
-  };
+const programs = [
+  {
+    grade: 'One-on-One Live Classes',
+    desc: 'Personalised 1:1 sessions with expert teachers for focused, result-driven learning.',
+    href: '/programs/nursery-5',
+  },
+  {
+    grade: 'AI-Powered Personal Tutor',
+    desc: 'Your smart learning companion that adapts to your pace and style for continuous growth.',
+    href: '/programs/6-8',
+  },
+  {
+    grade: 'Instant Live Doubt Solving',
+    desc: 'Connect to expert tutors in seconds and get instant clarity anytime, anywhere.',
+    href: '/programs/9-10',
+  },
+  {
+    grade: 'JEE & NEET Preparation',
+    desc: 'Structured, adaptive preparation for top exams with analytics, strategy, and expert guidance.',
+    href: '/programs/11-12',
+  },
+];
+
+  const features = [
+    'Personalized AI Tutor',
+    'Live One-to-One Classes',
+    'Exam-Focused Programs',
+    'Trusted by 50K+ Learners',
+  ];
 
   return (
-    <div className="w-full bg-gray-50">
-      {/* Top Section - Game Cards */}
-      {/* <div className="bg-gray-200 py-3 md:py-4 lg:py-8 px-3 md:px-4 lg:px-6">
-        <div className="max-w-6xl mx-auto flex justify-center items-center gap-3 md:gap-4 lg:gap-12 flex-wrap">
-          <div className="text-center cursor-pointer transition-transform hover:-translate-y-3 flex-shrink-0">
-            <div className="w-20 h-20 md:w-22 md:h-22 lg:w-28 lg:h-28 rounded-full bg-gray-900 flex items-center justify-center mx-auto mb-2 md:mb-3 lg:mb-4 overflow-hidden">
-              <img 
-                src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png" 
-                alt="Strategy Games"
-                className="w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 object-contain"
-              />
+    <footer className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-gray-100 px-2 lg:px-12">
+      <div className="container mx-auto px-4 py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+
+          {/* Brand & Description */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 h-5 w-40 mb-5">
+              <img src={logo} alt="EdmirAI Logo" className=" object-contain" />
             </div>
-            <h3 className="text-xs md:text-sm lg:text-xs font-semibold uppercase tracking-wider text-gray-700 px-1">Strategy Games</h3>
+            <p className="text-sm text-gray-300 mb-6 leading-relaxed">
+             LEARN SMARTER WITH EDMIRAI
+<br></br>
+Explore personalised daily learning, doubt-solving & exam prep — backed by AI.
+</p>
+            <div className="flex gap-3">
+              <a href="#" className="p-2.5 bg-white/10 rounded-full hover:bg-white/20 transition-all transform hover:scale-110">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="#" className="p-2.5 bg-white/10 rounded-full hover:bg-white/20 transition-all transform hover:scale-110">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="p-2.5 bg-white/10 rounded-full hover:bg-white/20 transition-all transform hover:scale-110">
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a href="#" className="p-2.5 bg-white/10 rounded-full hover:bg-white/20 transition-all transform hover:scale-110">
+                <Youtube className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
-          <div className="text-center cursor-pointer transition-transform hover:-translate-y-3 flex-shrink-0">
-            <div className="w-20 h-20 md:w-22 md:h-22 lg:w-28 lg:h-28 rounded-full bg-gray-900 flex items-center justify-center mx-auto mb-2 md:mb-3 lg:mb-4 overflow-hidden">
-              <img 
-                src="https://cdn-icons-png.flaticon.com/512/3875/3875172.png" 
-                alt="Logic Puzzles"
-                className="w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 object-contain"
-              />
-            </div>
-            <h3 className="text-xs md:text-sm lg:text-xs font-semibold uppercase tracking-wider text-gray-700 px-1">Logic Puzzles</h3>
+          {/* Navigation Links */}
+          <div>
+            <h4 className="font-bold text-lg mb-5 text-white">Quick Links</h4>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-gray-300 hover:text-white hover:underline transition-all flex items-center group"
+                  >
+                    <ChevronRight className="h-3 w-3 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+              
+            </ul>
           </div>
 
-          <div className="text-center cursor-pointer transition-transform hover:-translate-y-3 flex-shrink-0">
-            <div className="w-20 h-20 md:w-22 md:h-22 lg:w-28 lg:h-28 rounded-full bg-gray-900 flex items-center justify-center mx-auto mb-2 md:mb-3 lg:mb-4 overflow-hidden">
-              <img 
-                src="https://cdn-icons-png.flaticon.com/512/2645/2645891.png" 
-                alt="Mental Math"
-                className="w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 object-contain"
-              />
-            </div>
-            <h3 className="text-xs md:text-sm lg:text-xs font-semibold uppercase tracking-wider text-gray-700 px-1">Mental Math</h3>
+          {/* Programs */}
+          <div>
+            <h4 className="font-bold text-lg mb-5 text-white">Our Programs</h4>
+            <ul className="space-y-3">
+              {programs.map((prog) => (
+                <li key={prog.grade}>
+                  <a
+                    href={prog.href}
+                    className="text-xs text-gray-300 hover:text-white transition-colors block"
+                  >
+                    <span className="font-medium text-white">{prog.grade}</span>
+                    <p className="text-xs text-gray-400">{prog.desc}</p>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </div> */}
 
-      {/* Main Content Section */}
-      <div className="flex flex-col lg:flex-row bg-white">
-        {/* Left Section - Newsletter */}
-        <div className="w-full lg:w-1/3 bg-gray-50 p-3 md:p-4 lg:p-8">
-          <div className="max-w-md mx-auto">
-            <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 uppercase tracking-wider">Join Our Newsletter</h2>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-2 md:px-3 py-2 md:py-3 border border-gray-300 rounded text-sm focus:outline-none focus:border-gray-500"
-              />
-              <button 
-                onClick={handleSubscribe}
-                className="w-full sm:w-auto px-4 md:px-6 py-2 md:py-3 bg-black text-white rounded text-sm font-semibold hover:bg-gray-800 transition-colors"
+          {/* Contact & Features */}
+          <div>
+            <h4 className="font-bold text-lg mb-5 text-white">Get in Touch</h4>
+            <ul className="space-y-4 text-sm text-gray-300 mb-6">
+              <li className="flex items-start gap-2">
+                <Mail className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span>support@edmirai.com</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+                <span>+91 98765 43210</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span>Level 8, Octave 3 A, Salarpuria Sattva Knowledge City, Hyderabad, Telangana, 500081</span>
+              </li>
+            </ul>
+
+            <div className="flex gap-2 mt-6">
+              <a
+                href="#"
+                className="px-4 py-2 bg-emerald-500 text-white text-sm font-medium rounded-full hover:bg-emerald-600 transition-colors"
               >
-                Subscribe
-              </button>
+                Book Demo
+              </a>
+              <a
+                href="#"
+                className="px-4 py-2 bg-white/10 text-white text-sm font-medium rounded-full hover:bg-white/20 transition-colors flex items-center gap-1"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2C6.47 2 2 6.47 2 12.04C2 17.61 6.47 22.08 12.04 22.08C17.61 22.08 22.08 17.61 22.08 12.04C22.08 6.47 17.61 2 12.04 2ZM12.04 3.5C16.77 3.5 20.58 7.31 20.58 12.04C20.58 16.77 16.77 20.58 12.04 20.58C7.31 20.58 3.5 16.77 3.5 12.04C3.5 7.31 7.31 3.5 12.04 3.5ZM12.04 5.75C8.63 5.75 5.88 8.5 5.88 12.04C5.88 15.58 8.63 18.33 12.04 18.33C15.45 18.33 18.2 15.58 18.2 12.04C18.2 8.5 15.45 5.75 12.04 5.75Z"/>
+                </svg>
+                Download App
+              </a>
             </div>
           </div>
+
         </div>
 
-        {/* Right Section - Links */}
-        <div className="w-full lg:w-2/3 p-3 md:p-4 lg:p-8 flex flex-col lg:flex-row lg:flex-wrap gap-3 md:gap-4 lg:gap-8">
-          <div className="flex-1 min-w-0 lg:min-w-[140px]">
-            <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">About CueMath</h3>
-            <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">About Us</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Our Journey</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">FAQs</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Pricing</a></li>
-            </ul>
-          </div>
-
-          <div className="flex-1 min-w-0 lg:min-w-[140px]">
-            <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Our Programs</h3>
-            <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Tutors</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">English</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Science</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Coding</a></li>
-            </ul>
-          </div>
-
-          <div className="flex-1 min-w-0 lg:min-w-[140px]">
-            <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Resources</h3>
-            <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Blogs</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Puzzles</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">MathFit 100 Puzzles</a></li>
-            </ul>
-          </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 mt-10 pt-6 text-sm text-center  text-gray-500">
+          <p>© {new Date().getFullYear()} EdmirAI. All rights reserved.</p>
+          <p className="mt-1">
+           Designed and Developed by <Link className='underline text-gray-300' to={"https://digitalsuccesssolutions.in/"}>Digital Success Solutions.</Link>
+          </p>
         </div>
       </div>
-
-      {/* Second Row of Links */}
-      <div className="flex flex-col lg:flex-row bg-white border-t border-gray-100">
-        <div className="w-full lg:w-1/3 bg-gray-50 p-3 md:p-4 lg:p-8"></div>
-        
-        <div className="w-full lg:w-2/3 p-3 md:p-4 lg:p-8 flex flex-col lg:flex-row lg:flex-wrap gap-3 md:gap-4 lg:gap-8">
-          <div className="flex-1 min-w-0 lg:min-w-[140px]">
-            <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Events</h3>
-            <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Fests</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Webinars</a></li>
-            </ul>
-          </div>
-
-          <div className="flex-1 min-w-0 lg:min-w-[140px]">
-            <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Math Tutoring</h3>
-            <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Online Math Classes</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Online Math Courses</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Online Math Tutors</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Tuition</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Math Tutors India</a></li>
-            </ul>
-          </div>
-
-          <div className="flex-1 min-w-0 lg:min-w-[140px]">
-            <h3 className="text-xs md:text-sm font-bold mb-2 md:mb-3 uppercase tracking-wider">Partner With Us</h3>
-            <ul className="space-y-1.5 md:space-y-2">
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Become a volunteer/affiliate</a></li>
-              <li><a href="#" className="text-xs md:text-sm text-gray-700 hover:text-red-900 transition-colors block py-0.5">Become a Tutor</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Get Started Button */}
-      <div className="text-center py-4 md:py-6 bg-white border-t border-gray-100">
-        <button className="px-6 md:px-10 py-3 md:py-4 bg-yellow-400 text-black rounded font-bold text-sm md:text-base uppercase tracking-wider hover:bg-yellow-500 transition-colors">
-          Get Started
-        </button>
-      </div>
-
-      {/* Bottom Section - Office Info */}
-      <div className="bg-gray-900 text-white py-4 md:py-6 px-3 md:px-4 lg:px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row flex-wrap justify-around gap-4 md:gap-6">
-          <div className="flex-1 min-w-[250px] md:min-w-0">
-            <h3 className="text-xs md:text-sm font-bold mb-1 md:mb-2 uppercase tracking-wider">India Office</h3>
-            <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
-              Plot No. F-17/5, Golf Course Rd, Sector 42,<br />
-              Gurugram, Haryana 122009
-            </p>
-          </div>
-
-          <div className="flex-1 min-w-[250px] md:min-w-0">
-            <h3 className="text-xs md:text-sm font-bold mb-1 md:mb-2 uppercase tracking-wider">US Office</h3>
-            <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
-              CueLearn Inc, 1013 Centre Road, Suite 403-B,<br />
-              Wilmington, Delaware 19805
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </footer>
   );
-}
+};
+
+export default Footer;

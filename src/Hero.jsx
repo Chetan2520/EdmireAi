@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Play, Star } from 'lucide-react';
-import { FaWhatsappSquare } from 'react-icons/fa';
+import { ArrowRight, Star, CheckCircle, BookOpen, Users, Award, Play } from 'lucide-react';
 import { BsWhatsapp } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const ExamPrepHero = () => {
   const heroRef = useRef(null);
@@ -9,51 +9,21 @@ const ExamPrepHero = () => {
   const subheadingRef = useRef(null);
   const ctaRef = useRef(null);
   const imageRef = useRef(null);
-  const floatingRef = useRef([]);
+  const floatingRef = useRef([]); // ← JS válido
 
   useEffect(() => {
-    // Load GSAP from CDN
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
     script.async = true;
-    
+
     script.onload = () => {
       const { gsap } = window;
-      
-      // Initial animations
-      gsap.from(headingRef.current, {
-        opacity: 0,
-        y: 60,
-        duration: 1.2,
-        ease: 'power3.out'
-      });
 
-      gsap.from(subheadingRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        delay: 0.4,
-        ease: 'power3.out'
-      });
+      gsap.from(headingRef.current, { opacity: 0, y: 60, duration: 1.2, ease: 'power3.out' });
+      gsap.from(subheadingRef.current, { opacity: 0, y: 40, duration: 1, delay: 0.4, ease: 'power3.out' });
+      gsap.from(ctaRef.current?.children, { opacity: 0, y: 30, duration: 0.8, delay: 0.7, stagger: 0.2, ease: 'power3.out' });
+      gsap.from(imageRef.current, { opacity: 0, x: 100, duration: 1.3, delay: 0.6, ease: 'power3.out' });
 
-      gsap.from(ctaRef.current.children, {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        delay: 0.7,
-        stagger: 0.2,
-        ease: 'power3.out'
-      });
-
-      gsap.from(imageRef.current, {
-        opacity: 0,
-        x: 100,
-        duration: 1.3,
-        delay: 0.6,
-        ease: 'power3.out'
-      });
-
-      // Floating animation for decorative elements
       floatingRef.current.forEach((el, i) => {
         if (el) {
           gsap.to(el, {
@@ -62,123 +32,129 @@ const ExamPrepHero = () => {
             repeat: -1,
             yoyo: true,
             ease: 'power1.inOut',
-            delay: i * 0.4
+            delay: i * 0.4,
           });
         }
       });
     };
 
     document.head.appendChild(script);
-
     return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
+      if (document.head.contains(script)) document.head.removeChild(script);
     };
   }, []);
 
   return (
-    <div ref={heroRef} className=" bg-white relative overflow-hidden flex items-center">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
-          ref={el => floatingRef.current[0] = el}
-          className="absolute top-20 left-10 w-32 h-32 bg-red-900 rounded-full opacity-40 blur-3xl"
-        />
-        <div 
-          ref={el => floatingRef.current[1] = el}
-          className="absolute top-1/3 right-20 w-40 h-40 bg-red-200 rounded-full opacity-30 blur-3xl"
-        />
-        <div 
-          ref={el => floatingRef.current[2] = el}
-          className="absolute bottom-32 left-1/4 w-36 h-36 bg-red-900 rounded-full opacity-40 blur-3xl"
-        />
-        <div 
-          ref={el => floatingRef.current[3] = el}
-          className="absolute top-1/2 right-1/3 w-28 h-28 bg-red-50 rounded-full opacity-50 blur-2xl"
-        />
-      </div>
+    <>
+      {/* ====================== HERO SECTION ====================== */}
+      <div ref={heroRef} className="bg-white relative overflow-hidden flex items-center pb-12">
+        {/* Decorative floating blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              ref={(el) => (floatingRef.current[i] = el)}
+              className={`absolute w-32 h-32 rounded-full opacity-40 blur-3xl ${
+                i % 2 === 0 ? 'bg-red-900' : 'bg-red-200'
+              }`}
+              style={{
+                top: i === 0 ? '5rem' : i === 1 ? '33%' : i === 2 ? 'auto' : '50%',
+                bottom: i === 2 ? '8rem' : 'auto',
+                left: i === 0 ? '2.5rem' : i === 2 ? '25%' : 'auto',
+                right: i === 1 ? '5rem' : i === 3 ? '33%' : 'auto',
+              }}
+            />
+          ))}
+        </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-5 lg:gap-16 items-center">
-          {/* Left Column */}
-          <div>
-            <div className="inline-flex items-center space-x-2 bg-red-50 px-5 py-2.5 rounded-full mb-8">
-              <Star className="w-4 h-4 text-red-900 fill-red-900" />
-              <span className="text-red-900 font-semibold text-sm">India's Leading Platform</span>
-            </div>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-5 lg:gap-16 items-center">
+            {/* LEFT COLUMN */}
+            <div>
+              <h1
+                ref={headingRef}
+                className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-2 lg:mb-6"
+              >
+                Smarter Learning.<br />
+                <span className="text-red-900 font-bold">Better Results.</span>
+              </h1>
 
-            <h1 
-              ref={headingRef}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-2 lg:mb-6"
-            >
-              India’s Leading Online
-              {/* <span className="text-red-900">  Edmire Ai</span> */}
-     <span class="text-red-900 font-bold"> Learning Platform</span>
-            </h1>
+              <p
+                ref={subheadingRef}
+                className="text-sm md:text-base text-gray-700 mb-5 lg:mb-8 leading-relaxed max-w-xl"
+              >
+                <span className="font-semibold">
+                  An AI-Powered, Premium Personalized Learning Platform
+                </span>{' '}
+                for Grades 4-12 students and JEE & NEET aspirants.
+              </p>
 
-            <p 
-              ref={subheadingRef}
-              className="text-sm md:text-base text-gray-600 mb-5 lg:mb-8 leading-relaxed max-w-xl"
-            >
-              Join thousands of successful students. Get personalized learning paths, live classes from top educators, and comprehensive test series to excel in your exams.
-            </p>
-
-            <div ref={ctaRef} className="flex flex-wrap gap-3 lg:gap-5">
-             <button className="group px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-red-900 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-2xl shadow-red-200 hover:shadow-red-300 transform hover:-translate-y-1 hover:scale-105">
-  <span>Book a Free Demo</span>
-  <ArrowRight className="w-6 h-4 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
-</button>
-
-              <button className="px-4 py-3 lg:px-10 lg:py-5 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-green-600 hover:bg-red-50 transition-all font-bold text-sm lg:text-lg flex items-center space-x-3 shadow-lg transform hover:-translate-y-1">
-                <BsWhatsapp className="w-6 h-4 lg:w-6 lg:h-6 text-green-600" />
-                <span>Chat on Whatsapp</span>
-              </button>
-            </div>
-
-            {/* Trust indicators */}
-            {/* <div className="mt-5 lg:mt-12 flex flex-wrap items-center gap-3 lg:gap-8 text-gray-600">
-              <div className="flex items-center space-x-3">
-                <div className="flex -space-x-3">
-                  <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
-                  <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="User" className="w-7 h-7 lg:w-10 lg:h-10 rounded-full border-2 border-white object-cover" />
-                  <div className="w-7 h-7 lg:w-10 lg:h-10 rounded-full bg-gradient-to-br from-red-400 to-red-900 border-2 border-white flex items-center justify-center text-white text-[8px] lg:text-xs font-bold">
-                    50K+
+              {/* ========== 4 SERVICE BOXES ========== */}
+              <div className="grid grid-cols-2 gap-4 mb-6 lg:mb-10">
+                {[
+                  { icon: <BookOpen className="w-6 h-6 text-red-900" />, title: 'Live Classes', desc: 'Interactive sessions with top educators' },
+                  { icon: <CheckCircle className="w-6 h-6 text-red-900" />, title: 'Practice Tests', desc: 'Thousands of curated questions' },
+                  { icon: <Users className="w-6 h-6 text-red-900" />, title: 'Doubt Solving', desc: '24×7 mentor support' },
+                  { icon: <Award className="w-6 h-6 text-red-900" />, title: 'Performance Analytics', desc: 'Track progress with AI insights' },
+                ].map((service, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-start hover:shadow-lg transition-shadow"
+                  >
+                    <div className="mb-2">{service.icon}</div>
+                    <h3 className="font-semibold text-gray-900 text-sm">{service.title}</h3>
+                    <p className="text-xs text-gray-600 mt-1">{service.desc}</p>
                   </div>
-                </div>
-                <span className="text-sm font-medium">Joined this month</span>
+                ))}
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 lg:w-5 lg:h-10 text-yellow-500 " />
-                  ))}
-                </div>
-                <span className="text-sm font-medium">4.9/5 from 10,000+ reviews</span>
-              </div>
-            </div> */}
-          </div>
 
-          {/* Right Column - Image */}
-          <div ref={imageRef} className="relative">
-            <div className="relative">
-              {/* Main image */}
-              <div className="relative rounded-3xl overflow-hidden ">
-                <img 
-                  src="/Hero.png" 
+              {/* ========== CTA BUTTONS ========== */}
+              <div ref={ctaRef} className="flex flex-wrap gap-3 lg:gap-5">
+                <Link
+                  to="/contact"
+                  className="group px-4 py-3 lg:px-10 lg:py-3 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-red-900 transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-2xl shadow-red-200 hover:shadow-red-300 transform hover:-translate-y-1 hover:scale-105"
+                >
+                  <span>Book a Free Demo</span>
+                  <ArrowRight className="w-6 h-4 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <a
+                  href="https://wa.me/918867270931?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20your%20exam%20prep%20courses!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-3 lg:px-10 lg:py-3 bg-green-600 text-white rounded-2xl transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-lg transform hover:-translate-y-1"
+                >
+                  <BsWhatsapp className="w-6 h-4 lg:w-6 lg:h-6" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN - IMAGE */}
+            <div ref={imageRef} className="relative">
+              <div className="rounded-3xl overflow-hidden ">
+                <img
+                  src="/hero3.png"
                   alt="Students studying together"
                   className="w-full h-auto object-cover"
                 />
               </div>
-
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* ====================== FLOATING STATS STRIP (OVERLAPS HERO) ====================== */}
+      {/* <div className="relative z-20 -mt-8 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-6 ">
+          
+          <p>
+            <span className='font-bold text-gray-800 '>Why Parents Choose Edmirai :</span> Curriculum-aligned K-12 support | Expert JEE/NEET faculty | Actionable progress insights | Safe learning from Home
+          </p>
+        </div>
+      </div> */}
+    </>
   );
 };
 
