@@ -1,0 +1,295 @@
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { 
+  FaBookOpen, FaClipboardList, FaTachometerAlt, FaChartBar, FaMapSigns, 
+  FaBrain, FaHeadset, FaCheckCircle, FaStar, FaFire, FaArrowRight, 
+  FaLaptop, FaMedal, FaRocket, FaUsers, FaFileAlt, FaLightbulb, 
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt
+} from 'react-icons/fa';
+import { BsChevronDown } from 'react-icons/bs';
+import FAQ from './FAQ';
+
+const Program4 = () => {
+  const [activeFaq, setActiveFaq] = useState(null);
+  const heroRef = useRef(null);
+  const highlightsRef = useRef(null);
+  const { scrollYProgress } = useScroll();
+ 
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+  const heroY = useTransform(smoothProgress, [0, 0.3], [0, 150]);
+  const heroScale = useTransform(smoothProgress, [0, 0.2], [1, 0.98]);
+
+  const { scrollYProgress: highlightsProgress } = useScroll({
+    target: highlightsRef,
+    offset: ["start end", "end start"]
+  });
+  const highlightsParallax = useTransform(highlightsProgress, [0, 1], [50, -50]);
+
+  const highlights = [
+    { icon: FaBookOpen, title: 'SmartBooks / Digital Notes', description: 'High-quality topic-wise content curated to simplify difficult concepts for JEE / NEET aspirants.' },
+    { icon: FaClipboardList, title: 'Chapter-wise Practice + PYQs', description: 'Structured practice questions including past-year papers help build clarity & accuracy.' },
+    { icon: FaTachometerAlt, title: 'Full-Length Mock Tests & Test Series', description: 'Exam-pattern simulator tests improve speed, accuracy & time management.' },
+    { icon: FaChartBar, title: 'Detailed Performance Analytics', description: 'AI-powered reports help identify strong / weak areas and guide personalised revision.' },
+    { icon: FaMapSigns, title: 'Learning Gap Mapping', description: 'ExamEdge automatically detects conceptual gaps and recommends targeted practice.' },
+    { icon: FaBrain, title: 'Adaptive Learning Journeys', description: 'Each learner receives a custom preparation path based on strengths & progress.' },
+    { icon: FaHeadset, title: 'Doubt Support Integration', description: 'Instant help during prep — strengthen concepts & avoid blocks.' },
+    { icon: FaMedal, title: 'Covers JEE, NEET, BITSAT', description: 'Complete, updated & structured exam-wise preparation.' }
+  ];
+
+  return (
+    <div className="bg-white text-gray-900">
+      {/* Hero Section - Edmirai ExamEdge */}
+      <section ref={heroRef} className="relative bg-gradient-to-br from-red-50 via-white to-blue-50 py-32 overflow-hidden">
+        <div className="absolute inset-0 opacity-20" style={{ y: heroY }}>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-red-200 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-20 left-1/4 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div style={{ y: heroY, scale: heroScale }} initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <motion.h1 className="text-xl lg:text-5xl font-medium mb-6 leading-tight" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+                Edmirai ExamEdge
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">Advanced Preparation for JEE, NEET & BITSAT</span>
+                <span className="block text-2xl lg:text-4xl mt-2 font-bold">Smart. Structured. Result-Driven.</span>
+              </motion.h1>
+              <motion.p className="text-xs lg:text-base text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+                Edmirai ExamEdge is a comprehensive, adaptive test-prep platform designed to help students excel in top engineering & medical entrance exams.
+              </motion.p>
+              <motion.p className="text-xs lg:text-base text-gray-600 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
+                From concept strengthening to full-length mock tests, ExamEdge creates a personalised journey to help students secure top ranks with confidence.
+              </motion.p>
+              <div className="flex flex-wrap gap-4">
+                <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
+                  Start Free Trial <FaArrowRight />
+                </motion.button>
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border-2 border-red-900 text-red-900 py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-red-50 transition-all">
+                  View Demo Test
+                </motion.button>
+              </div>
+            </motion.div>
+            <motion.div className="relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
+              <motion.div className="relative rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+                <img src="https://images.unsplash.com/photo-1456518604156-6e7da4e2d510?w=800" alt="JEE NEET Prep Dashboard" className="w-full h-[500px] object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-8 left-6 right-6 text-white">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-lg font-semibold">Mock Test in Progress</span>
+                  </div>
+                  <p className="text-lg opacity-90">25,000+ students preparing daily</p>
+                </div>
+              </motion.div>
+              <motion.div className="absolute -top-6 -right-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100" animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }}>
+                <div className="text-xl lg:text-3xl font-black text-red-900">Top 100</div>
+                <div className="text-xs lg:text-sm text-gray-600">Ranks Secured</div>
+              </motion.div>
+              <motion.div className="absolute -bottom-6 -left-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100" animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}>
+                <div className="text-xl lg:text-3xl font-black text-red-900">4.9 <FaStar className="inline text-yellow-500" /></div>
+                <div className="text-xs lg:text-sm text-gray-600">Aspirant Rating</div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why It Works */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 text-center">
+          <motion.h2 className="text-xl lg:text-5xl font-semibold mb-8" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            Why <span className="text-red-900">Edmirai ExamEdge Works</span>
+          </motion.h2>
+          <motion.p className="text-xs lg:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            ExamEdge uses intelligent learning analytics, targeted practice, and performance-based recommendations to ensure students study smarter, not longer.<br/>
+            Every learner gets a clear roadmap — from weak-area identification to focused improvement strategies — ensuring measurable progress before the exam.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Key Highlights Section */}
+      <section ref={highlightsRef} className="py-24 bg-white relative overflow-hidden">
+        <motion.div className="absolute inset-0 opacity-5" style={{ y: highlightsParallax }}>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </motion.div>
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-xl lg:text-5xl font-semibold mb-6">
+              Key <span className="text-red-900">Highlights</span>
+            </h2>
+            <p className="text-xs lg:text-base text-gray-600 max-w-3xl mx-auto">
+              Everything you need to crack JEE, NEET & BITSAT with confidence
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {highlights.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div key={i} className="bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl shadow-lg border border-red-100 hover:shadow-2xl transition-all"
+                  initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} whileHover={{ y: -10, borderColor: '#7f1d1d' }}>
+                  <motion.div className="text-6xl mb-6 text-red-900">
+                    <Icon />
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">{item.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Who Is It For? + Outcomes */}
+      <section className="py-24 bg-gray-50 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+            {/* Who Is It For? */}
+            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="space-y-10">
+              <div>
+                <motion.h2 className="text-xl lg:text-5xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                  Who Is It <span className="text-red-900">For?</span>
+                </motion.h2>
+              </div>
+              <div className="space-y-6">
+                {["Students preparing for: JEE Main / Advanced, NEET & BITSAT", "Ideal for Grade 9–12 & droppers", "Students looking for structured, data-driven guidance"].map((item, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="flex items-start gap-4">
+                    <FaCheckCircle className="text-2xl text-red-900 mt-1 flex-shrink-0" />
+                    <p className="text-base lg:text-lg text-gray-700 font-medium">{item}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Learning Outcomes */}
+            <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="space-y-10">
+              <div>
+                <motion.h2 className="text-xl lg:text-5xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                  Learning <span className="text-red-900">Outcomes</span>
+                </motion.h2>
+              </div>
+              <div className="space-y-6">
+                {["Exam-level confidence & readiness", "Better accuracy & speed under pressure", "Stronger conceptual clarity", "Higher ranks through consistent & targeted improvement"].map((outcome, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
+                    className="flex items-start gap-4 bg-red-50 p-6 rounded-2xl border border-red-100" whileHover={{ scale: 1.02, borderColor: '#7f1d1d' }}>
+                    <FaLightbulb className="text-3xl text-red-900 mt-1 flex-shrink-0" />
+                    <p className="text-base lg:text-lg text-gray-800 font-semibold">{outcome}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose ExamEdge */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <motion.h2 className="text-xl lg:text-5xl font-semibold mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            Why Choose <span className="text-red-900">ExamEdge?</span>
+          </motion.h2>
+          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {["Highly structured & updated content", "Scientifically designed test-prep approach", "Personalised analytics → smart revision", "Doubt solving + mock testing ecosystem"].map((reason, i) => (
+              <motion.div key={i} className="bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl border border-red-100 shadow-lg" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+                <FaCheckCircle className="text-4xl text-red-900 mb-4 mx-auto" />
+                <p className="text-lg font-semibold text-gray-800">{reason}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Component */}
+      <FAQ />
+
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div className="max-w-5xl mx-auto text-center" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+            <motion.div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full text-sm font-semibold mb-8 gap-2 backdrop-blur-sm" animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+              <FaFire className="text-yellow-400" /> Limited Time: Free Mock Test + Analytics
+            </motion.div>
+            <h2 className="text-xl lg:text-5xl font-semibold mb-8">
+              Ready to Secure Your <span className="text-green-300">Dream Rank?</span>
+            </h2>
+            <p className="text-base mb-10 opacity-90">
+              Join thousands of toppers who trusted ExamEdge for their success.
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center mb-10">
+              <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 40px rgba(0,0,0,0.3)' }} whileTap={{ scale: 0.95 }} className="bg-white text-red-900 px-12 py-6 rounded-2xl font-semibold text-2xl hover:bg-gray-100 transition-all shadow-2xl flex items-center gap-3 mx-auto">
+                Start Free Trial Now <FaRocket className="text-3xl" />
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-red-900 rounded-xl flex items-center justify-center font-bold text-xl">
+                  <FaMedal />
+                </div>
+                <span className="font-bold text-2xl">Edmirai ExamEdge</span>
+              </div>
+              <p className="text-gray-400 text-base">Your complete JEE, NEET & BITSAT preparation partner.</p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-6 text-xl">Exams Covered</h4>
+              <ul className="space-y-3 text-gray-400">
+                <li><a href="#" className="hover:text-red-400 transition-colors">JEE Main</a></li>
+                <li><a href="#" className="hover:text-red-400 transition-colors">JEE Advanced</a></li>
+                <li><a href="#" className="hover:text-red-400 transition-colors">NEET</a></li>
+                <li><a href="#" className="hover:text-red-400 transition-colors">BITSAT</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-6 text-xl">Resources</h4>
+              <ul className="space-y-3 text-gray-400">
+                <li><a href="#" className="hover:text-red-400 transition-colors">Mock Tests</a></li>
+                <li><a href="#" className="hover:text-red-400 transition-colors">PYQs</a></li>
+                <li><a href="#" className="hover:text-red-400 transition-colors">SmartBooks</a></li>
+                <li><a href="#" className="hover:text-red-400 transition-colors">Analytics</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-6 text-xl">Contact</h4>
+              <ul className="space-y-3 text-gray-400">
+                <li className="flex items-center gap-3"><FaEnvelope className="text-red-400" /> support@edmirai.com</li>
+                <li className="flex items-center gap-3"><FaPhone className="text-red-400" /> +91 98765 43210</li>
+                <li className="flex items-center gap-3"><FaMapMarkerAlt className="text-red-400" /> Indore, Madhya Pradesh</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-base">
+            <p>&copy; 2025 Edmirai ExamEdge. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+      `}</style>
+    </div>
+  );
+};
+
+export default Program4;

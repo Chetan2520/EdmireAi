@@ -1,49 +1,58 @@
 import React from 'react';
-import { Sun, MessageCircle, Calculator, Code, Sparkles, Award } from 'lucide-react';
+import { Sun, MessageCircle, Calculator, Code, Sparkles, Award, Bot, Zap, Brain } from 'lucide-react';
 
 export default function KidsCourses() {
-  const courses = [
-    {
-      Icon: Sun,
-      title: 'Nursery to 5th Grade',
-      subtitle: 'Playful learning',
-      description: 'Playful learning environment fostering creativity and basic skills with experienced teachers.',
-      bgColor: 'bg-pink-50',
-      badgeColor: 'bg-red-900',
-      iconColor: 'text-yellow-500',
-      image: 'https://www.shutterstock.com/image-photo/cute-little-children-hugging-nursery-260nw-2420206409.jpg'
-    },
-    {
-      Icon: MessageCircle,
-      title: '6th to 8th Grade',
-      subtitle: 'Interactive learning',
-      description: 'Engaging sessions building core concepts and teamwork through interactive activities.',
-      bgColor: 'bg-yellow-50',
-      badgeColor: '',
-      iconColor: 'text-blue-500',
-      image: 'https://www.paperlesspost.com/blog/wp-content/uploads/062323_Blog_CommunityBuildingActivities02.png'
-    },
-    {
-      Icon: Calculator,
-      title: '9th to 10th Grade',
-      subtitle: 'Exam preparation',
-      description: 'Focused curriculum preparing for board exams with expert guidance and resources.',
-      bgColor: 'bg-blue-50',
-      badgeColor: '',
-      iconColor: 'text-green-500',
-      image: 'https://s3.amazonaws.com/prod-hmhco-vmg-craftcms-public/_transforms/seo/_large/highschool-classroom-management-hero.jpg'
-    },
-    {
-      Icon: Code,
-      title: '11th to 12th Grade',
-      subtitle: 'Advanced studies',
-      description: 'Advanced studies and career-oriented preparation with personalized mentoring.',
-      bgColor: 'bg-purple-50',
-      badgeColor: '',
-      iconColor: 'text-purple-500',
-      image: 'https://www.shutterstock.com/image-photo/asian-teacher-leader-multiethnic-diverse-600nw-2010062099.jpg'
-    }
-  ];
+const courses = [
+  {
+    Icon: Sun,
+    title: 'Edmirai One',
+    subtitle: 'One-on-One Live Classes',
+    description:
+     'Guaranteed results through 1:1 live sessions with India’s teachers. Backed by AI insights to boost learning outcomes and strengthen fundamentals.',
+     bgColor: 'bg-pink-50',
+    badgeColor: 'bg-red-900',
+    iconColor: 'text-yellow-500',
+    image:
+      'https://www.shutterstock.com/image-photo/cute-little-children-hugging-nursery-260nw-2420206409.jpg',
+  },
+  {
+    Icon: Bot,
+    title: 'Edmirai Learn',
+    subtitle: 'AI-Powered Personal Tutor',
+    description:
+      'Your smart tutor that adapts to each student’s pace and strengths — enabling continuous, personalised learning at home.',
+    bgColor: 'bg-yellow-50',
+    badgeColor: '',
+    iconColor: 'text-blue-500',
+    image:
+      'https://www.paperlesspost.com/blog/wp-content/uploads/062323_Blog_CommunityBuildingActivities02.png',
+  },
+  {
+    Icon: Zap,
+    title: 'Edmirai Connect',
+    subtitle: 'Instant Live Doubt Solving',
+    description:
+      'India’s fastest doubt-solving platform — connect to expert tutors in seconds for instant clarity and uninterrupted learning.',
+    bgColor: 'bg-blue-50',
+    badgeColor: '',
+    iconColor: 'text-green-500',
+    image:
+      'https://s3.amazonaws.com/prod-hmhco-vmg-craftcms-public/_transforms/seo/_large/highschool-classroom-management-hero.jpg',
+  },
+  {
+    Icon: Brain,
+    title: 'Edmirai ExamEdge',
+    subtitle: 'JEE & NEET Preparation',
+    description:
+      'Structured and adaptive prep system for JEE & NEET — Smartbooks, test series, progress tracking, and guided success strategy.',
+    bgColor: 'bg-purple-50',
+    badgeColor: '',
+    iconColor: 'text-purple-500',
+    image:
+      'https://www.shutterstock.com/image-photo/asian-teacher-leader-multiethnic-diverse-600nw-2010062099.jpg',
+  },
+];
+
 
   const features = [
     { Icon: Sparkles, text: 'Interactive learning sessions' },
@@ -59,17 +68,21 @@ export default function KidsCourses() {
             {/* Left side - Updated Content */}
             <div className="lg:w-1/2 text-white">
               <h1 className="text-2xl lg:text-5xl font-bold mb-3 lg:mb-6 leading-tight">
-                Fun & Engaging <span className="text-white">Courses for Kids</span>
+               Personalised Programs for Every Learner
+
               </h1>
               
-              <p className="text-gray-300 text-[10px] md:text-xs lg:text-sm mb-5 lg:mb-8 leading-relaxed">
-                Our carefully crafted programs help children from Nursery to 12th grade explore, learn, and grow. From playful learning in early grades to exam preparation in higher grades, we nurture curiosity and confidence at every stage.
+              <p className="text-gray-300 text-[10px] md:text-xs lg:text-sm mb-2 leading-relaxed">
+               From 1:1 learning to rapid doubt-solving and competitive exam prep — Edmirai gives every student the right path to grow, excel, and achieve.
               </p>
-              
+              <p className='text-gray-300 text-[10px] md:text-xs lg:text-sm mb-5 lg:mb-8 leading-relaxed'> 
+                Our programs seamlessly combine expert educators + AI-driven personalisation to ensure every learner gets the support they need.
+
+              </p>
             
               
               <button className="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg mb-0 lg:mb-4">
-                Explore Courses
+                 Let's Connect
               </button>
               
             </div>

@@ -9,14 +9,14 @@ export default function Navbar() {
   return (
     <>
       <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto ">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
               <div className="text-xl sm:text-2xl font-bold">
                 {/* <span className="text-red-900" style={{ fontFamily: 'cursive' }}>Edmire</span>
                 <span className="text-gray-800">Ai</span> */}
-                <img src='/logo2.jpg' className='w-36 h-12'></img>
+                <img src='/logo.png' className='w-36 h-full'></img>
               </div>
             </div>
 
@@ -28,12 +28,7 @@ export default function Navbar() {
               >
                 Home
               </a>
-              <a
-                href="#why"
-                className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
-              >
-                Why EdmireAI
-              </a>
+             
 
               {/* Programs Dropdown */}
               <div
@@ -97,12 +92,23 @@ export default function Navbar() {
                   </a>
                 </div>
               </div>
-
+ <a
+                href="#why"
+                className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+              >
+                Why EdmirAI
+              </a>
               <a
-                href="#teacher"
+                href="/teacher"
                 className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
               >
                 Become a Teacher
+              </a>
+               <a
+                href="#teacher"
+                className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+              >
+                Blog
               </a>
               <a
                 href="contact"
@@ -114,7 +120,7 @@ export default function Navbar() {
 
             {/* Login Button - Desktop */}
             <div className="hidden md:flex items-center">
-              <button className="bg-gradient-to-r from-red-900 to-red-900 text-white px-4 lg:px-6 py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all text-sm lg:text-base">
+              <button className="bg-gradient-to-r from-red-900 to-red-900 text-white px-4 lg:px-6  py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all text-sm lg:text-base">
                 Login
               </button>
             </div>
@@ -155,7 +161,7 @@ export default function Navbar() {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <div className="text-2xl font-bold">
-              <span className="text-red-900" style={{ fontFamily: 'cursive' }}>Edmire</span>
+              <span className="text-red-900" style={{ fontFamily: 'cursive' }}>Edmir</span>
               <span className="text-gray-800">Ai</span>
             </div>
             <button
@@ -179,13 +185,7 @@ export default function Navbar() {
               >
                 Home
               </a>
-              <a
-                href="#why"
-                onClick={() => setIsOpen(false)}
-                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
-              >
-                Why EdmireAI
-              </a>
+            
 
               {/* Programs Dropdown (Mobile) */}
               <div>
@@ -243,9 +243,22 @@ One to One Live Classes
                   </div>
                 </div>
               </div>
-
+  <a
+                href="#why"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
+              >
+                Why EdmirAI
+              </a>
+                <a
+                href="#why"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
+              >
+                Blog
+              </a>
               <a
-                href="#teacher"
+                href="/teacher"
                 onClick={() => setIsOpen(false)}
                 className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
               >
