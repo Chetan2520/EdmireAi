@@ -4,7 +4,7 @@ import {
   MessageCircle, FileText, Globe, BookOpen, DollarSign 
 } from 'lucide-react';
 
-const FAQItem = ({ icon: Icon, question, answer }) => {
+const FAQ = ({ icon: Icon, question, answer }) => {
   return (
     <div className="rounded-2xl p-5 md:p-6 bg-white shadow-md hover:shadow-lg border-2 border-gray-100 transition-shadow duration-300">
       <div className="flex items-start gap-4">
@@ -53,7 +53,7 @@ export default function EdmirAiFAQ() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {faqs.map((faq, index) => (
-            <FAQItem
+            <FAQ
               key={index}
               icon={faq.icon}
               question={faq.question}
