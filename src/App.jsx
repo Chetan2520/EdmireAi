@@ -9,7 +9,7 @@ import KidsCourses from './KidsCourses';
 import Program1 from './Program1';
 import ContactForm from './ContactForm';
 import WhatsAppIcon from './WhatsAppIcon';
-import EdmirAiFAQ from "./FAQ.jsx";
+import FAQ from './FAQ';
 // import PremiumVideoSection from './PremiumVideoSection';
 import Form from './Form';
 import BecomeTeacher from './Teacher';
@@ -36,8 +36,7 @@ const Home = () => {
       <KidsCourses />
       <WhyChooseUs />
       <WhatsAppIcon />
-      <EdmirAiFAQ />
-
+      <FAQ />
       {showForm && <Form onClose={() => setShowForm(false)} />}
     </div>
   );

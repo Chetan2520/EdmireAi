@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
 import { FaQ } from 'react-icons/fa6';
-import EdmirAiFAQ from "./FAQ.jsx";
+import FAQ from './FAQ';
 const Program1 = () => {
   const [activeModule, setActiveModule] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
@@ -224,8 +224,7 @@ const Program1 = () => {
   
     
 
-    <EdmirAiFAQ />
-
+    <FAQ />
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
