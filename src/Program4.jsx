@@ -9,7 +9,7 @@ import {
   FaMapMarkerAlt
 } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
-import FAQ from './FAQ';
+import EdmirAiFAQ from "./FAQ.jsx";
 
 const Program4 = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -204,7 +204,8 @@ const Program4 = () => {
       </section>
 
       {/* FAQ Component */}
-      <FAQ />
+      <EdmirAiFAQ />
+
 
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
