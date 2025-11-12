@@ -9,7 +9,7 @@ import {
   FaMapMarkerAlt
 } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
-import EdmirAiFAQ from "./FAQ.jsx";
+import FAQ from './FAQ';
 
 const Program4 = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -38,7 +38,7 @@ const Program4 = () => {
     { icon: FaChartBar, title: 'Detailed Performance Analytics', description: 'AI-powered reports help identify strong / weak areas and guide personalised revision.' },
     { icon: FaMapSigns, title: 'Learning Gap Mapping', description: 'ExamEdge automatically detects conceptual gaps and recommends targeted practice.' },
     { icon: FaBrain, title: 'Adaptive Learning Journeys', description: 'Each learner receives a custom preparation path based on strengths & progress.' },
-    { icon: FaHeadset, title: 'Doubt Support Integration', description: 'Instant help during prep — strengthen concepts & avoid blocks.' },
+    { icon: FaHeadset, title: 'Doubt Support Integration', description: 'Instant help during prep, strengthen concepts & avoid blocks.' },
     { icon: FaMedal, title: 'Covers JEE, NEET, BITSAT', description: 'Complete, updated & structured exam-wise preparation.' }
   ];
 
@@ -107,7 +107,7 @@ const Program4 = () => {
           </motion.h2>
           <motion.p className="text-xs lg:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
             ExamEdge uses intelligent learning analytics, targeted practice, and performance-based recommendations to ensure students study smarter, not longer.<br/>
-            Every learner gets a clear roadmap — from weak-area identification to focused improvement strategies — ensuring measurable progress before the exam.
+            Every learner gets a clear roadmap, from weak-area identification to focused improvement strategies, ensuring measurable progress before the exam.
           </motion.p>
         </div>
       </section>
@@ -204,79 +204,84 @@ const Program4 = () => {
       </section>
 
       {/* FAQ Component */}
-      <EdmirAiFAQ />
-
+      <FAQ />
 
       {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div className="max-w-5xl mx-auto text-center" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <motion.div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full text-sm font-semibold mb-8 gap-2 backdrop-blur-sm" animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-              <FaFire className="text-yellow-400" /> Limited Time: Free Mock Test + Analytics
-            </motion.div>
-            <h2 className="text-xl lg:text-5xl font-semibold mb-8">
-              Ready to Secure Your <span className="text-green-300">Dream Rank?</span>
-            </h2>
-            <p className="text-base mb-10 opacity-90">
-              Join thousands of toppers who trusted ExamEdge for their success.
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center mb-10">
-              <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 40px rgba(0,0,0,0.3)' }} whileTap={{ scale: 0.95 }} className="bg-white text-red-900 px-12 py-6 rounded-2xl font-semibold text-2xl hover:bg-gray-100 transition-all shadow-2xl flex items-center gap-3 mx-auto">
-                Start Free Trial Now <FaRocket className="text-3xl" />
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-red-900 rounded-xl flex items-center justify-center font-bold text-xl">
-                  <FaMedal />
-                </div>
-                <span className="font-bold text-2xl">Edmirai ExamEdge</span>
-              </div>
-              <p className="text-gray-400 text-base">Your complete JEE, NEET & BITSAT preparation partner.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Exams Covered</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400 transition-colors">JEE Main</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">JEE Advanced</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">NEET</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">BITSAT</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Resources</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400 transition-colors">Mock Tests</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">PYQs</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">SmartBooks</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Analytics</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Contact</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-3"><FaEnvelope className="text-red-400" /> support@edmirai.com</li>
-                <li className="flex items-center gap-3"><FaPhone className="text-red-400" /> +91 98765 43210</li>
-                <li className="flex items-center gap-3"><FaMapMarkerAlt className="text-red-400" /> Indore, Madhya Pradesh</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-base">
-            <p>&copy; 2025 Edmirai ExamEdge. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <section className="py-5 lg:py-10 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
+       {/* Subtle background elements for premium feel */}
+       <div className="absolute inset-0 opacity-5">
+         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-red-400/20 to-orange-400/20 rounded-full mix-blend-soft-light blur-3xl animate-pulse"></div>
+         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-red-400/20 to-pink-400/20 rounded-full mix-blend-soft-light blur-3xl animate-pulse delay-1000"></div>
+       </div>
+       
+       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+         <motion.div 
+           className="max-w-4xl mx-auto text-center" 
+           initial={{ opacity: 0, y: 30 }} 
+           whileInView={{ opacity: 1, y: 0 }} 
+           viewport={{ once: true }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
+         >
+           {/* Premium badge with subtle animation */}
+           <motion.div 
+             className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-xs font-medium mb-6 gap-2 backdrop-blur-md border border-white/20" 
+             animate={{ scale: [1, 1.05, 1] }} 
+             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+           >
+             <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full"></div>
+             Limited Time: Free Trial Available
+           </motion.div>
+     
+           {/* Hero headline with refined typography */}
+           <motion.h2 
+             className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.6, delay: 0.2 }}
+           >
+             Ready to Solve Any Doubt <span className="bg-gradient-to-r from-red-300/90 to-orange-300/90 bg-clip-text text-transparent">Instantly?</span>
+           </motion.h2>
+     
+           {/* Descriptive paragraph */}
+           <motion.p 
+             className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed max-w-3xl mx-auto"
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.6, delay: 0.4 }}
+           >
+             Book a free trial now or tap Chat-on-WhatsApp and experience instant help with Edmirai Connect.
+           </motion.p>
+     
+           {/* CTA Buttons with premium styling */}
+           <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">
+             <motion.button 
+               whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }} 
+               whileTap={{ scale: 0.98 }} 
+               className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
+             >
+               Book Free Trial Now 
+               <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
+             </motion.button>
+             
+             <motion.a 
+               href="https://wa.me/919876543210" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               whileHover={{ scale: 1.02, y: -2 }} 
+               whileTap={{ scale: 0.98 }} 
+               className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-green-700 hover:to-teal-700 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] backdrop-blur-sm"
+             >
+               <FaWhatsapp className="text-xl" /> 
+               Chat on WhatsApp
+             </motion.a>
+           </div>
+         </motion.div>
+       </div>
+     </section>
+     
+ 
 
       <style jsx>{`
         @keyframes blob {

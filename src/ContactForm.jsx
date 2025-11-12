@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { UserIcon, PhoneIcon, ArrowPathIcon, CheckIcon, XMarkIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 const UniqueContactForm = () => {
@@ -19,26 +18,34 @@ const UniqueContactForm = () => {
     });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus('');
 
-    emailjs.sendForm(
-      'YOUR_SERVICE_ID',     // Replace with your EmailJS Service ID
-      'YOUR_TEMPLATE_ID',    // Replace with your Template ID (must include name, phone, board, grade)
-      e.target,
-      'YOUR_PUBLIC_KEY'      // Replace with your Public Key
-    )
-      .then((result) => {
-        console.log('Email sent!', result.text);
-        setStatus('Message sent! We’ll get back soon.');
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {  // Backend URL (production mein change kar dena)
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus(data.message || 'Message sent! We’ll get back soon.');
         setFormData({ name: '', phone: '', board: '', grade: '' });
-      }, (error) => {
-        console.log('Error:', error.text);
-        setStatus('Failed to send. Please try again.');
-      })
-      .finally(() => setLoading(false));
+      } else {
+        setStatus(data.message || 'Failed to send. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('Failed to send. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

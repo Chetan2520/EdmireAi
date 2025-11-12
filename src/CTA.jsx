@@ -18,7 +18,7 @@ export default function HelpSection() {
             </h1>
 
             <p className="text-lg text-white/90 leading-relaxed">
-              We're here to help you figure out what works best — even if it's just one topic. Our Academic Counsellors will walk you through your needs and help you build your path.
+              We're here to help you figure out what works best, even if it's just one topic. Our Academic Counsellors will walk you through your needs and help you build your path.
             </p>
 
             <div className="flex items-center gap-2 text-sm">

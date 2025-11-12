@@ -93,10 +93,10 @@ const ExamPrepHero = () => {
               {/* ========== 4 SERVICE BOXES ========== */}
               <div className="grid grid-cols-2 gap-4 mb-6 lg:mb-10">
                 {[
-                  { icon: <BookOpen className="w-6 h-6 text-red-900" />, title: 'Live Classes', desc: 'Interactive sessions with top educators' },
-                  { icon: <CheckCircle className="w-6 h-6 text-red-900" />, title: 'Practice Tests', desc: 'Thousands of curated questions' },
-                  { icon: <Users className="w-6 h-6 text-red-900" />, title: 'Doubt Solving', desc: '24×7 mentor support' },
-                  { icon: <Award className="w-6 h-6 text-red-900" />, title: 'Performance Analytics', desc: 'Track progress with AI insights' },
+                  { icon: <BookOpen className="w-6 h-6 text-red-900" />, title: 'One-to-One Live Classes', desc: '' },
+                  { icon: <CheckCircle className="w-6 h-6 text-red-900" />, title: 'Personalised Ai Tutor', desc: '' },
+                  { icon: <Users className="w-6 h-6 text-red-900" />, title: 'Live Doubt Solving', desc: '' },
+                  { icon: <Award className="w-6 h-6 text-red-900" />, title: 'JEE & NEET Exam Prep Support', desc: '' },
                 ].map((service, idx) => (
                   <div
                     key={idx}
@@ -113,7 +113,7 @@ const ExamPrepHero = () => {
               <div ref={ctaRef} className="flex flex-wrap gap-3 lg:gap-5">
                 <Link
                   to="/contact"
-                  className="group px-4 py-3 lg:px-10 lg:py-3 bg-white text-gray-900 border-2 border-gray-300 rounded-2xl hover:border-red-900 transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-2xl shadow-red-200 hover:shadow-red-300 transform hover:-translate-y-1 hover:scale-105"
+                  className="group px-4 py-3 lg:px-10 lg:py-3 bg-red-900 text-white border-2 border-gray-300 rounded-2xl hover:border-red-900 transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-2xl shadow-red-200 hover:shadow-red-300 transform hover:-translate-y-1 hover:scale-105"
                 >
                   <span>Book a Free Demo</span>
                   <ArrowRight className="w-6 h-4 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
@@ -129,13 +129,14 @@ const ExamPrepHero = () => {
                   <span>Chat on WhatsApp</span>
                 </a>
               </div>
+              <p className='mt-1 ml-2'>Trusted by parents for concept clarity, exam confidence, and real results.</p>
             </div>
 
             {/* RIGHT COLUMN - IMAGE */}
             <div ref={imageRef} className="relative">
               <div className="rounded-3xl overflow-hidden ">
                 <img
-                  src="/hero3.png"
+                  src="/hero-d.jpg"
                   alt="Students studying together"
                   className="w-full h-auto object-cover"
                 />

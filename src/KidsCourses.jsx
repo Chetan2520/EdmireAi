@@ -20,19 +20,19 @@ const courses = [
     title: 'Edmirai Learn',
     subtitle: 'AI-Powered Personal Tutor',
     description:
-      'Your smart tutor that adapts to each student’s pace and strengths — enabling continuous, personalised learning at home.',
+      'Your smart tutor that adapts to each student’s pace and strengths, enabling continuous, personalised learning at home.',
     bgColor: 'bg-yellow-50',
     badgeColor: '',
     iconColor: 'text-blue-500',
     image:
-      'https://www.paperlesspost.com/blog/wp-content/uploads/062323_Blog_CommunityBuildingActivities02.png',
+      'https://www.paperlesspost.com/Blogs/wp-content/uploads/062323_Blogs_CommunityBuildingActivities02.png',
   },
   {
     Icon: Zap,
     title: 'Edmirai Connect',
     subtitle: 'Instant Live Doubt Solving',
     description:
-      'India’s fastest doubt-solving platform — connect to expert tutors in seconds for instant clarity and uninterrupted learning.',
+      'India’s fastest doubt-solving platform, connect to expert tutors in seconds for instant clarity and uninterrupted learning.',
     bgColor: 'bg-blue-50',
     badgeColor: '',
     iconColor: 'text-green-500',
@@ -44,7 +44,7 @@ const courses = [
     title: 'Edmirai ExamEdge',
     subtitle: 'JEE & NEET Preparation',
     description:
-      'Structured and adaptive prep system for JEE & NEET — Smartbooks, test series, progress tracking, and guided success strategy.',
+      'Structured and adaptive prep system for JEE & NEET, Smartbooks, test series, progress tracking, and guided success strategy.',
     bgColor: 'bg-purple-50',
     badgeColor: '',
     iconColor: 'text-purple-500',
@@ -73,7 +73,7 @@ const courses = [
               </h1>
               
               <p className="text-gray-300 text-[10px] md:text-xs lg:text-sm mb-2 leading-relaxed">
-               From 1:1 learning to rapid doubt-solving and competitive exam prep — Edmirai gives every student the right path to grow, excel, and achieve.
+               From 1:1 learning to rapid doubt-solving and competitive exam prep, Edmirai gives every student the right path to grow, excel, and achieve.
               </p>
               <p className='text-gray-300 text-[10px] md:text-xs lg:text-sm mb-5 lg:mb-8 leading-relaxed'> 
                 Our programs seamlessly combine expert educators + AI-driven personalisation to ensure every learner gets the support they need.

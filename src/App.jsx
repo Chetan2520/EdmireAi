@@ -16,6 +16,7 @@ import BecomeTeacher from './Teacher';
 import Program2 from './Program2';
 import Program3 from './Program3';
 import Program4 from './Program4';
+import ScrollToTop from './ScrollToTop';
 
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
@@ -24,7 +25,7 @@ const Home = () => {
     // Har baar reload par 5 sec baad popup dikhega
     const timer = setTimeout(() => {
       setShowForm(true);
-    }, 50000);
+    }, 5000);
 
     return () => clearTimeout(timer); // Cleanup
   }, []); // Sirf mount par
@@ -45,6 +46,7 @@ const Home = () => {
 const App = () => {
   return (
     <Router>
+    <ScrollToTop/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

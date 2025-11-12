@@ -3,11 +3,12 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { 
   FaRobot, FaBrain, FaClock, FaChartLine, FaSyncAlt, FaUserTie, 
   FaCheckCircle, FaStar, FaFire, FaArrowRight, FaLaptop, FaLightbulb,
-  FaTachometerAlt, FaUsersCog, FaRocket, 
+  FaTachometerAlt, FaUsersCog, FaRocket,  FaWhatsapp,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt
 } from 'react-icons/fa';
+
 import { BsChevronDown } from 'react-icons/bs';
 import FAQ from './FAQ';
 
@@ -56,7 +57,7 @@ const Program3 = () => {
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">AI-Powered Personal Learning Companion</span>
               </motion.h1>
               <motion.p className="text-xs lg:text-base text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-                Say goodbye to one-size-fits-all lessons. Edmirai Learn is your dedicated AI-driven tutor that adapts in real time to your pace, strengths and areas for improvement — giving you a continuous, truly personalised learning path.
+                Say goodbye to one-size-fits-all lessons. Edmirai Learn is your dedicated AI-driven tutor that adapts in real time to your pace, strengths and areas for improvement, giving you a continuous, truly personalised learning path.
               </motion.p>
               <motion.p className="text-xs lg:text-base text-gray-600 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
                 Whether you’re revising after school or getting ahead for a test, Edmirai Learn meets you where you are. With intelligent insights guiding every step, this tool complements live teaching and keeps you advancing even when your teacher isn’t in the room.
@@ -106,7 +107,7 @@ const Program3 = () => {
               Key <span className="text-red-900">Highlights</span>
             </h2>
             <p className="text-xs lg:text-base text-gray-600 max-w-3xl mx-auto">
-              The smartest way to learn — personalized, continuous, and always available
+              The smartest way to learn, personalized, continuous, and always available
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -158,7 +159,7 @@ const Program3 = () => {
                   Outcome You’ll <span className="text-red-900">Get</span>
                 </motion.h2>
                 <motion.p className="text-xs lg:text-base text-gray-600 leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-                  Real, measurable growth — every single day
+                  Real, measurable growth, every single day
                 </motion.p>
               </div>
               <div className="space-y-6">
@@ -183,74 +184,82 @@ const Program3 = () => {
       <FAQ />
 
       {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+       <section className="py-5 lg:py-10 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
+        {/* Subtle background elements for premium feel */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-red-400/20 to-orange-400/20 rounded-full mix-blend-soft-light blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-red-400/20 to-pink-400/20 rounded-full mix-blend-soft-light blur-3xl animate-pulse delay-1000"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div className="max-w-5xl mx-auto text-center" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <motion.div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full text-sm font-semibold mb-8 gap-2 backdrop-blur-sm" animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-              <FaFire className="text-yellow-400" /> Limited Time: 7-Day Free Trial
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center" 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            {/* Premium badge with subtle animation */}
+            <motion.div 
+              className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-xs font-medium mb-6 gap-2 backdrop-blur-md border border-white/20" 
+              animate={{ scale: [1, 1.05, 1] }} 
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full"></div>
+              Limited Time: Free Trial Available
             </motion.div>
-            <h2 className="text-xl lg:text-5xl font-semibold mb-8">
-              Your Personal AI Tutor Is <span className="text-green-300">Waiting</span>
-            </h2>
-            <p className="text-base mb-10 opacity-90">
-              Start learning smarter today — no gaps, no waiting, just progress.
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center mb-10">
-              <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 40px rgba(0,0,0,0.3)' }} whileTap={{ scale: 0.95 }} className="bg-white text-red-900 px-12 py-6 rounded-2xl font-semibold text-2xl hover:bg-gray-100 transition-all shadow-2xl flex items-center gap-3 mx-auto">
-                Start Free Trial Now <FaRocket className="text-3xl" />
+      
+            {/* Hero headline with refined typography */}
+            <motion.h2 
+              className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Ready to Solve Any Doubt <span className="bg-gradient-to-r from-red-300/90 to-orange-300/90 bg-clip-text text-transparent">Instantly?</span>
+            </motion.h2>
+      
+            {/* Descriptive paragraph */}
+            <motion.p 
+              className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Book a free trial now or tap Chat-on-WhatsApp and experience instant help with Edmirai Connect.
+            </motion.p>
+      
+            {/* CTA Buttons with premium styling */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">
+              <motion.button 
+                whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }} 
+                whileTap={{ scale: 0.98 }} 
+                className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
+              >
+                Book Free Trial Now 
+                <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
               </motion.button>
+              
+              <motion.a 
+                href="https://wa.me/919876543210" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                whileHover={{ scale: 1.02, y: -2 }} 
+                whileTap={{ scale: 0.98 }} 
+                className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-green-700 hover:to-teal-700 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] backdrop-blur-sm"
+              >
+                <FaWhatsapp className="text-xl" /> 
+                Chat on WhatsApp
+              </motion.a>
             </div>
           </motion.div>
         </div>
       </section>
+      
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-red-900 rounded-xl flex items-center justify-center font-bold text-xl">
-                  <FaRobot />
-                </div>
-                <span className="font-bold text-2xl">Edmirai Learn</span>
-              </div>
-              <p className="text-gray-400 text-base">Your AI-powered personal learning companion for Grades 4–12.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Features</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400 transition-colors">Adaptive Paths</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">24/7 AI Tutor</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Smart Revision</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Progress Dashboard</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Support</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400 transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Contact</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-3"><FaEnvelope className="text-red-400" /> support@edmirai.com</li>
-                <li className="flex items-center gap-3"><FaPhone className="text-red-400" /> +91 98765 43210</li>
-                <li className="flex items-center gap-3"><FaMapMarkerAlt className="text-red-400" /> Indore, Madhya Pradesh</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-base">
-            <p>&copy; 2025 Edmirai Learn. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+  
 
       <style jsx>{`
         @keyframes blob {

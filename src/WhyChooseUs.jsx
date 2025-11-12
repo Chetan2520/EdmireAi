@@ -13,32 +13,32 @@ const WhyChooseUs = () => {
     {
       icon: <FaUserGraduate className="w-6 h-6 text-white" />,
       title: "Personalised Learning That Works",
-      desc: "Every student learns differently. EdmirAI adapts to your strengths, weaknesses, and pace — ensuring measurable progress at every step.",
+      desc: "Every student learns differently. Edmirai adapts to your strengths, weaknesses, and pace, ensuring measurable progress at every step.",
     },
     {
       icon: <FaChalkboardTeacher className="w-6 h-6 text-white" />,
       title: "India’s Best 1-to-1 Learning Experience",
-      desc: "Live, personalised sessions led by expert educators ensure deep concept clarity and guided practice — not just passive watching.",
+      desc: "Live, personalised sessions led by expert educators ensure deep concept clarity and guided practice, not just passive watching.",
     },
     {
       icon: <FaBolt className="w-6 h-6 text-white" />,
       title: "Instant Doubt Solving",
-      desc: "Never stay stuck. With EdmirAI Connect, get expert help in under 90 seconds so your learning continues smoothly.",
+      desc: "Never stay stuck. With Edmirai Connect, get expert help in under 90 seconds so your learning continues smoothly.",
     },
     {
       icon: <FaBrain className="w-6 h-6 text-white" />,
       title: "AI-Powered Smart Insights",
-      desc: "Our AI identifies weak areas, recommends corrective practice, and tracks progress — enabling informed learning decisions.",
+      desc: "Our AI identifies weak areas, recommends corrective practice, and tracks progress, enabling informed learning decisions.",
     },
     {
       icon: <FaAward className="w-6 h-6 text-white" />,
       title: "Proven Success for School & Competitive Exams",
-      desc: "From strengthening fundamentals to JEE/NEET prep — EdmirAI builds mastery, confidence, and exam-ready skills.",
+      desc: "From strengthening fundamentals to JEE/NEET prep, Edmirai builds mastery, confidence, and exam-ready skills.",
     },
     {
       icon: <FaHome className="w-6 h-6 text-white" />,
       title: "Safe Learning from Home",
-      desc: "Trusted by parents — structured, distraction-free learning environment with expert support from anywhere.",
+      desc: "Trusted by parents, structured, distraction-free learning environment with expert support from anywhere.",
     },
   ];
 
@@ -47,11 +47,11 @@ const WhyChooseUs = () => {
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-          Why <span className="text-red-900">EdmirAI</span>?
+          Why <span className="text-red-900">Edmirai</span>?
         </h2>
-        <p className="text-sm lg:text-base text-gray-600 max-w-2xl mx-auto">
-          A smarter way to learn — powered by expert guidance and intelligent
-          technology. EdmirAI ensures every learner receives personalised
+        <p className="text-sm lg:text-lg text-gray-600 max-w-2xl mx-auto">
+          A smarter way to learn, powered by expert guidance and intelligent
+          technology. Edmirai ensures every learner receives personalised
           support designed to maximise academic potential and long-term growth.
         </p>
       </div>
@@ -73,7 +73,7 @@ const WhyChooseUs = () => {
                   <h3 className="text-lg font-bold text-gray-800 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <p className="text-gray-600 text-lg">{item.desc}</p>
                 </div>
               </div>
             </div>
@@ -84,8 +84,8 @@ const WhyChooseUs = () => {
         <div className="flex justify-center">
           <img
             src="/whychooseus.png"
-            alt="Why EdmirAI Illustration"
-            className="rounded-xl w-[280px] md:w-[350px] lg:w-[400px]"
+            alt="Why Edmirai Illustration"
+            className="rounded-xl w-[280px] md:w-[350px] lg:w-[450px]"
           />
         </div>
 
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
                   <h3 className="text-lg font-bold text-gray-800 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <p className="text-gray-600 text-lg">{item.desc}</p>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ const WhyChooseUs = () => {
         {/* Image Centered */}
         <img
           src="/whychooseus.png"
-          alt="Why EdmirAI Illustration"
+          alt="Why Edmirai Illustration"
           className="rounded-xl w-[250px] md:w-[300px]"
         />
 

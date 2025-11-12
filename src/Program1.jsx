@@ -4,7 +4,8 @@ import {
   FaUser, FaLaptopCode, FaGraduationCap, FaSyncAlt, FaComments, FaBook, 
   FaBullseye, FaRocket, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPhoneAlt, 
   FaUserTie, FaClipboardCheck, FaRobot, FaCheck, FaCheckCircle, FaStar, 
-  FaFire, FaArrowRight 
+  FaFire, FaArrowRight, 
+  FaWhatsapp
 } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
 import { FaQ } from 'react-icons/fa6';
@@ -41,9 +42,9 @@ const Program1 = () => {
 
   const benefits = [
     { icon: FaUser, title: 'Personalised 1-to-1 Teaching', description: 'Every class is tailored to the student’s pace, strengths, weaknesses & learning preferences.' },
-    { icon: FaBook, title: 'Covers All Boards', description: 'We support CBSE, ICSE, State Boards, IB & IGCSE — personalising content to match school curriculum.' },
+    { icon: FaBook, title: 'Covers All Boards', description: 'We support CBSE, ICSE, State Boards, IB & IGCSE, personalising content to match school curriculum.' },
     { icon: FaGraduationCap, title: 'Concept-Level Mastery', description: 'Step-by-step concept clarity with guided practice and doubt-solving.' },
-    { icon: FaSyncAlt, title: 'Customised Sessions Based on Student Needs', description: 'Classes can be personalised for school syllabus support, competitive exams, Olympiads & more — based on student goals and requests.' },
+    { icon: FaSyncAlt, title: 'Customised Sessions Based on Student Needs', description: 'Classes can be personalised for school syllabus support, competitive exams, Olympiads & more, based on student goals and requests.' },
     { icon: FaComments, title: 'Interactive Sessions + Real-Time Feedback', description: 'Instant corrections & constructive feedback to improve accuracy & understanding.' },
     { icon: FaPhoneAlt, title: 'Direct Communication With Teachers', description: 'Students & parents can communicate directly with their assigned teachers for guidance, clarification & planning.' },
     { icon: FaUserTie, title: 'Dedicated Personal Mentor', description: 'Each student is assigned a mentor who tracks performance, monitors class quality, coordinates with teachers & parents, and ensures measurable results.' },
@@ -98,10 +99,10 @@ const Program1 = () => {
                 Edmirai One
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">One-on-One Personalised Live Classes</span>
               </motion.h1>
-              <motion.p className="text-xs lg:text-base text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-                Guaranteed Results. Guided by Experts.<br/>
+              <motion.p className="text-xl lg:text-xl text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+               <b>Guaranteed Results. Guided by Experts.</b> <br/> <br/>
                 Edmirai One offers the most personalised learning experience through dedicated 1-to-1 live classes conducted by expert educators.
-                Powered by AI-driven insights, every session adapts to the student’s pace, ensuring continuous improvement, stronger fundamentals, and real academic success.
+                Powered by AI-driven insights.
               </motion.p>
               <div className="flex flex-wrap gap-4">
                 <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
@@ -147,7 +148,7 @@ const Program1 = () => {
             <h2 className="text-xl lg:text-5xl font-semibold mb-6">
               What Makes<span className="text-red-900"> Edmirai One Special?</span>
             </h2>
-            <p className="text-xs lg:text-base text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs lg:text-lg text-gray-600 max-w-3xl mx-auto">
               Unlike group classes, Edmirai One ensures 100% individual attention, helping students learn faster, understand deeply, and stay consistently on track.
             </p>
           </motion.div>
@@ -161,7 +162,7 @@ const Program1 = () => {
                     <Icon />
                   </motion.div>
                   <h3 className="text-xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
+                  <p className="text-[18px] text-gray-600 leading-relaxed">{benefit.description}</p>
                 </motion.div>
               );
             })}
@@ -177,14 +178,14 @@ const Program1 = () => {
             <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="space-y-10">
               <div>
                 <motion.h2 className="text-xl lg:text-5xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  Who Is It <span className="text-red-900">For?</span>
+                  Who is it for?
                 </motion.h2>
-                <motion.p className="text-xs lg:text-base text-gray-600 leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                <motion.p className="text-xs lg:text-xl text-gray-600 leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
                   Perfectly designed for students who want personalised guidance and guaranteed results.
                 </motion.p>
               </div>
               <div className="space-y-6">
-                {["Grades 4–12", "All boards — CBSE, ICSE, State Boards, IB & IGCSE", "Students preparing for school exams, boards, Olympiads & beyond"].map((item, i) => (
+                {["Grades 4–12", "All boards, CBSE, ICSE, State Boards, IB & IGCSE", "Students preparing for school exams, boards, Olympiads & beyond"].map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="flex items-start gap-4">
                     <FaCheckCircle className="text-2xl text-red-900 mt-1 flex-shrink-0" />
                     <p className="text-base lg:text-lg text-gray-700 font-medium">{item}</p>
@@ -197,9 +198,9 @@ const Program1 = () => {
             <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="space-y-10">
               <div>
                 <motion.h2 className="text-xl lg:text-5xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                  Learning <span className="text-red-900">Outcomes</span>
+                  Learning <span className="text-red-900">Outcomes!</span>
                 </motion.h2>
-                <motion.p className="text-xs lg:text-base text-gray-600 leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                <motion.p className="text-xs lg:text-xl text-gray-600 leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
                   What your child will achieve with Edmirai One
                 </motion.p>
               </div>
@@ -227,92 +228,81 @@ const Program1 = () => {
     <FAQ />
 
       {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div className="max-w-5xl mx-auto text-center" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <motion.div className="inline-flex items-center px-6 py-3 bg-white/20 rounded-full text-sm font-semibold mb-8 gap-2 backdrop-blur-sm" animate={{ y: [0, -5, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-              <FaFire className="text-yellow-400" /> Limited Time Offer - 50% OFF
-            </motion.div>
-            <h2 className="text-xl lg:text-5xl font-semibold mb-8">Ready to Start Your JavaScript Journey?</h2>
-            <p className="text-base mb-10 opacity-90">Join 1000+ students who have successfully transformed their careers with us</p>
-            <div className="flex items-center justify-center gap-8 mb-10">
-              <div><div className="text-6xl font-cursive">₹4,999</div><div className="text-base opacity-75">One-time payment</div></div>
-              <div className="text-4xl opacity-50">|</div>
-              <div><div className="text-4xl font-bold line-through opacity-50">₹9,999</div><div className="text-lg text-green-300 font-semibold">Save ₹5,000</div></div>
-            </div>
-            <div className="flex flex-wrap gap-6 justify-center mb-10">
-              <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 40px rgba(0,0,0,0.3)' }} whileTap={{ scale: 0.95 }} className="bg-white text-red-900 px-12 py-6 rounded-2xl font-semibold text-2xl hover:bg-gray-100 transition-all shadow-2xl flex items-center gap-3 mx-auto">
-                Enroll Now & Save 50% <FaRocket className="text-3xl" />
-              </motion.button>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border-2 border-white text-white px-12 py-6 rounded-2xl font-semibold text-2xl hover:bg-white/10 transition-all">
-                Talk to Mentor
-              </motion.button>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 pt-12 border-t border-white/20">
-              <div className="flex items-center justify-center gap-3">
-                <FaCheckCircle className="text-3xl text-green-400" />
-                <span className="text-lg">7-day money-back guarantee</span>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                <FaCheckCircle className="text-3xl text-green-400" />
-                <span className="text-lg">Lifetime access to materials</span>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                <FaCheckCircle className="text-3xl text-green-400" />
-                <span className="text-lg">Certificate upon completion</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+ <section className="py-5 lg:py-10 bg-gradient-to-br from-red-900 via-red-800 to-gray-900 text-white relative overflow-hidden">
+  {/* Subtle background elements for premium feel */}
+  <div className="absolute inset-0 opacity-5">
+    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-red-400/20 to-orange-400/20 rounded-full mix-blend-soft-light blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-red-400/20 to-pink-400/20 rounded-full mix-blend-soft-light blur-3xl animate-pulse delay-1000"></div>
+  </div>
+  
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <motion.div 
+      className="max-w-4xl mx-auto text-center" 
+      initial={{ opacity: 0, y: 30 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      {/* Premium badge with subtle animation */}
+      <motion.div 
+        className="inline-flex items-center px-4 py-2 bg-white/10 rounded-full text-xs font-medium mb-6 gap-2 backdrop-blur-md border border-white/20" 
+        animate={{ scale: [1, 1.05, 1] }} 
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full"></div>
+        Limited Time: Free Trial Available
+      </motion.div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-red-900 rounded-xl flex items-center justify-center font-bold text-xl">JS</div>
-                <span className="font-bold text-2xl">JavaScript Masterclass</span>
-              </div>
-              <p className="text-gray-400 text-base">Transform your career with professional JavaScript training.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Quick Links</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400 transition-colors">About Course</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Syllabus</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Instructor</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Testimonials</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Support</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400 transition-colors">FAQ</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Refund Policy</a></li>
-                <li><a href="#" className="hover:text-red-400 transition-colors">Terms & Conditions</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Contact</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-3"><FaEnvelope className="text-red-400" /> support@jsmaster.com</li>
-                <li className="flex items-center gap-3"><FaPhone className="text-red-400" /> +91 98765 43210</li>
-                <li className="flex items-center gap-3"><FaMapMarkerAlt className="text-red-400" /> Indore, Madhya Pradesh</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-base">
-            <p>&copy; 2025 JavaScript Masterclass. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      {/* Hero headline with refined typography */}
+      <motion.h2 
+        className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        Ready to Solve Any Doubt <span className="bg-gradient-to-r from-red-300/90 to-orange-300/90 bg-clip-text text-transparent">Instantly?</span>
+      </motion.h2>
 
+      {/* Descriptive paragraph */}
+      <motion.p 
+        className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed max-w-3xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        Book a free trial now or tap Chat-on-WhatsApp and experience instant help with Edmirai Connect.
+      </motion.p>
+
+      {/* CTA Buttons with premium styling */}
+      <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">
+        <motion.button 
+          whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }} 
+          whileTap={{ scale: 0.98 }} 
+          className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
+        >
+          Book Free Trial Now 
+          <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
+        </motion.button>
+        
+        <motion.a 
+          href="https://wa.me/919876543210" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          whileHover={{ scale: 1.02, y: -2 }} 
+          whileTap={{ scale: 0.98 }} 
+          className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-green-700 hover:to-teal-700 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] backdrop-blur-sm"
+        >
+          <FaWhatsapp className="text-xl" /> 
+          Chat on WhatsApp
+        </motion.a>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+ 
       <style jsx>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }

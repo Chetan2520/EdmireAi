@@ -66,7 +66,7 @@ const JoinFaculty = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div style={{ y: heroY, scale: heroScale }} initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                Teach With Us — Join the <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">Edmirai Teaching Revolution</span>
+                Teach With Us, Join the <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">Edmirai Teaching Revolution</span>
               </motion.h1>
               <motion.p className="text-xl lg:text-2xl font-medium mb-6 text-gray-700">
                 Shape the Future. Earn Rewardingly. Teach With Purpose.
@@ -76,7 +76,7 @@ const JoinFaculty = () => {
                 Now we’re looking for passionate educators to lead this change.
               </motion.p>
 
-              <div className="flex flex-wrap gap-6 mb-10">
+              {/* <div className="flex flex-wrap gap-6 mb-10">
                 <div className="bg-white/90 backdrop-blur p-5 rounded-2xl shadow-lg border border-red-100">
                   <div className="text-3xl font-black text-red-900 flex items-center gap-2">
                     <FaRupeeSign />1L – 3L
@@ -95,7 +95,7 @@ const JoinFaculty = () => {
                   </div>
                   <div className="text-sm text-gray-600">Active Students</div>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
@@ -116,7 +116,7 @@ const JoinFaculty = () => {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-8 bg-gray-50">
+      {/* <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-12 text-gray-700">
             <div className="flex items-center gap-3"><FaShieldAlt className="text-red-900 text-2xl" /><span className="font-medium">Verified by IIT Alumni</span></div>
@@ -124,7 +124,7 @@ const JoinFaculty = () => {
             <div className="flex items-center gap-3"><FaStar className="text-yellow-500 text-2xl" /><span className="font-medium">4.9/5 Faculty Rating</span></div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Join + Form */}
       <section className="py-24 bg-white">
@@ -151,7 +151,7 @@ const JoinFaculty = () => {
 
             {/* Right: Form */}
             <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} className="bg-gradient-to-br from-red-50 to-white p-10 rounded-3xl shadow-2xl border border-red-100">
-              <h3 className="text-3xl font-bold text-center mb-8">Apply in 1 Minute</h3>
+              <h3 className="text-4xl font-bold text-center mb-8">Connect with us</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Full Name" className={`w-full px-6 py-4 rounded-xl border ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-red-900 focus:ring-4 focus:ring-red-100 transition`} />
                 {errors.name && <p className="text-red-600 text-sm -mt-3 ml-2">{errors.name}</p>}
@@ -163,7 +163,7 @@ const JoinFaculty = () => {
                 {errors.phone && <p className="text-red-600 text-sm -mt-3 ml-2">{errors.phone}</p>}
 
                 <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} type="submit" className="w-full bg-gradient-to-r from-red-900 to-red-800 text-white font-bold py-5 rounded-xl text-xl shadow-xl flex items-center justify-center gap-3 hover:from-red-800 hover:to-red-700 transition">
-                  <FaRocket /> Send Application Now
+                  <FaRocket /> Become a Teacher
                 </motion.button>
 
                 <p className="text-center text-gray-600 mt-4">
@@ -205,46 +205,7 @@ const JoinFaculty = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-red-900 rounded-xl flex items-center justify-center text-2xl"><FaUserGraduate /></div>
-                <span className="font-bold text-2xl">Edmirai Faculty</span>
-              </div>
-              <p className="text-gray-400">Shape India’s future. One student at a time.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Teach</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400">Join as Teacher</a></li>
-                <li><a href="#" className="hover:text-red-400">Teaching Tools</a></li>
-                <li><a href="#" className="hover:text-red-400">Success Stories</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Support</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-red-400">Help Center</a></li>
-                <li><a href="#" className="hover:text-red-400">Contact Faculty Team</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-xl">Contact</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center gap-3"><FaEnvelope className="text-red-400" /> faculty@edmirai.com</li>
-                <li className="flex items-center gap-3"><FaPhone className="text-red-400" /> +91 98765 43210</li>
-                <li className="flex items-center gap-3"><FaMapMarkerAlt className="text-red-400" /> Indore, Madhya Pradesh</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Edmirai. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+   
 
       <style jsx>{`
         @keyframes blob {
