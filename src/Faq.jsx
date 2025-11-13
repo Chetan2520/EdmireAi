@@ -4,7 +4,7 @@ import {
   MessageCircle, FileText, Globe, BookOpen, DollarSign 
 } from 'lucide-react';
 
-const FAQ = ({ icon: Icon, question, answer }) => {
+const FAQItem = ({ icon: Icon, question, answer }) => {
   return (
     <div className="rounded-2xl p-5 md:p-6 bg-white shadow-md hover:shadow-lg border-2 border-gray-100 transition-shadow duration-300">
       <div className="flex items-start gap-4">
@@ -24,7 +24,7 @@ const FAQ = ({ icon: Icon, question, answer }) => {
   );
 };
 
-export default function EdmiraiFAQ() {
+export default function FAQ() {
   const faqs = [
     { icon: Bot, question: "What is Edmirai?", answer: "Edmirai is an AI-powered personalised learning platform offering 1-to-1 live classes, instant doubt-solving, and smart insights for Grades 4–12 and competitive exam aspirants." },
     { icon: Users, question: "Who can enroll at Edmirai?", answer: "Students from Grades 4–12 across all boards, CBSE, ICSE, State Boards, IB & IGCSE, and those preparing for competitive exams like JEE, NEET & BITSAT can join." },
@@ -53,7 +53,7 @@ export default function EdmiraiFAQ() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {faqs.map((faq, index) => (
-            <FAQ
+            <FAQItem
               key={index}
               icon={faq.icon}
               question={faq.question}
