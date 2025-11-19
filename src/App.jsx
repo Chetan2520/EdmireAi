@@ -9,7 +9,6 @@ import KidsCourses from './KidsCourses';
 import Program1 from './Program1';
 import ContactForm from './ContactForm';
 import WhatsAppIcon from './WhatsAppIcon';
-import FAQ from './FAQ';
 // import PremiumVideoSection from './PremiumVideoSection';
 import Form from './Form';
 import BecomeTeacher from './Teacher';
@@ -17,6 +16,7 @@ import Program2 from './Program2';
 import Program3 from './Program3';
 import Program4 from './Program4';
 import ScrollToTop from './ScrollToTop';
+import FAQ from './FAQs';
 
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
@@ -37,7 +37,7 @@ const Home = () => {
       <KidsCourses />
       <WhyChooseUs />
       <WhatsAppIcon />
-      <FAQ />
+       <FAQ />
       {showForm && <Form onClose={() => setShowForm(false)} />}
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { 
   Bot, Users, Sparkles, Video, ShieldCheck, Brain, 
   MessageCircle, FileText, Globe, BookOpen, DollarSign 

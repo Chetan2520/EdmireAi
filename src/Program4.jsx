@@ -10,7 +10,7 @@ import {
   FaWhatsapp
 } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
-import FAQ from './FAQ';
+import FAQ from './FAQs';
 import { useNavigate } from 'react-router-dom';
 
 const Program4 = () => {

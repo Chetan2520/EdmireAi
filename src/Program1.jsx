@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
 import { FaQ } from 'react-icons/fa6';
-import FAQ from './FAQ';
+import FAQ from './FAQs';
 import { useNavigate } from 'react-router-dom';
 const Program1 = () => {
   const [activeModule, setActiveModule] = useState(null);
