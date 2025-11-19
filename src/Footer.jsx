@@ -14,22 +14,22 @@ const Footer = () => {
     {
       grade: 'One-on-One Live Classes',
       desc: 'Personalised 1:1 sessions with expert teachers',
-      href: '/programs/nursery-5',
+      href: '/program1',
     },
     {
       grade: 'AI-Powered Personal Tutor',
       desc: 'Smart learning companion for continuous growth',
-      href: '/programs/6-8',
+      href: '/program3',
     },
     {
       grade: 'Instant Live Doubt Solving',
       desc: 'Connect to expert tutors in seconds',
-      href: '/programs/9-10',
+      href: '/program2',
     },
     {
       grade: 'JEE & NEET Preparation',
       desc: 'Structured exam prep with expert guidance',
-      href: '/programs/11-12',
+      href: '/program4',
     },
   ];
 
@@ -196,7 +196,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-xs lg:text-sm hover:text-red-400 transition-colors"
               >
-                Designed by Digital Success Solutions
+                Designed and Developed by Digital Success Solutions
               </a>
             </div>
           </div>

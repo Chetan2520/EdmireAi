@@ -12,6 +12,7 @@ import {
 
 import { BsChevronDown } from 'react-icons/bs';
 import FAQ from './FAQ';
+import { useNavigate } from 'react-router-dom';
 
 const Program2 = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -32,7 +33,7 @@ const Program2 = () => {
     offset: ["start end", "end start"]
   });
   const benefitsParallax = useTransform(benefitsProgress, [0, 1], [50, -50]);
-
+   const navigate = useNavigate();
   const benefits = [
     { icon: FaClock, title: 'Instant Tutor Access (< 90 Seconds)', description: 'Get on a live session with a subject-expert tutor in less time than it takes to refresh a page.' },
     { icon: FaInfinity, title: 'Unlimited Doubts, Zero Hassle', description: 'Ask as many questions across Maths, Science & all K-12 subjects, until you’re fully clear.' },
@@ -58,7 +59,7 @@ const Program2 = () => {
                 Edmirai Connect
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">Instant Live Doubt-Solving, Anytime, Anywhere</span>
               </motion.h1>
-              <motion.p className="text-xs lg:text-base text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+              <motion.p className="text-xl lg:text-xl text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
                 Stuck on a tricky question? With Edmirai Connect, you’re never left waiting. Connect to expert tutors in under 90 seconds from home, and get clear, step-by-step solutions, because learning shouldn’t pause.
               </motion.p>
               <div className="flex flex-wrap gap-4">
@@ -232,14 +233,15 @@ const Program2 = () => {
      
            {/* CTA Buttons with premium styling */}
            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">
-             <motion.button 
-               whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }} 
-               whileTap={{ scale: 0.98 }} 
-               className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
-             >
-               Book Free Trial Now 
-               <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
-             </motion.button>
+           <motion.button
+                 onClick={() => navigate("/contact")}
+                 whileHover={{ scale: 1.02, y: -2, boxShadow: "0 20px 50px rgba(0,0,0,0.4)" }}
+                 whileTap={{ scale: 0.98 }}
+                 className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
+               >
+                 Book Free Trial Now
+                 <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
+               </motion.button>
              
              <motion.a 
                href="https://wa.me/919876543210" 

@@ -11,13 +11,14 @@ import {
 
 import { BsChevronDown } from 'react-icons/bs';
 import FAQ from './FAQ';
+import { useNavigate } from 'react-router-dom';
 
 const Program3 = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const heroRef = useRef(null);
   const benefitsRef = useRef(null);
   const { scrollYProgress } = useScroll();
- 
+    const navigate = useNavigate();
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -56,20 +57,19 @@ const Program3 = () => {
                 Edmirai Learn
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">AI-Powered Personal Learning Companion</span>
               </motion.h1>
-              <motion.p className="text-xs lg:text-base text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-                Say goodbye to one-size-fits-all lessons. Edmirai Learn is your dedicated AI-driven tutor that adapts in real time to your pace, strengths and areas for improvement, giving you a continuous, truly personalised learning path.
+              <motion.p className="text-xl lg:text-xl text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+             Edmirai Learn is your dedicated AI-driven tutor that adapts in real time to your pace, strengths and areas for improvement, giving you a continuous, truly personalised learning path.   Whether you’re revising after school or getting ahead for a test, Edmirai Learn meets you where you are.
+              
               </motion.p>
-              <motion.p className="text-xs lg:text-base text-gray-600 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
-                Whether you’re revising after school or getting ahead for a test, Edmirai Learn meets you where you are. With intelligent insights guiding every step, this tool complements live teaching and keeps you advancing even when your teacher isn’t in the room.
-              </motion.p>
-              <div className="flex flex-wrap gap-4">
-                <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
-                  Start Free Trial <FaArrowRight />
-                </motion.button>
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border-2 border-red-900 text-red-900 py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-red-50 transition-all">
-                  See How It Works
-                </motion.button>
-              </div>
+             
+                <div className="flex flex-wrap gap-4">
+                              <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
+                                Book Free Trial Now <FaArrowRight />
+                              </motion.button>
+                              <motion.a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-600 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all shadow-lg flex items-center gap-3">
+                                <FaWhatsapp className="text-2xl" /> Chat on WhatsApp
+                              </motion.a>
+                            </div>
             </motion.div>
             <motion.div className="relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <motion.div className="relative rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
@@ -233,14 +233,15 @@ const Program3 = () => {
       
             {/* CTA Buttons with premium styling */}
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">
-              <motion.button 
-                whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }} 
-                whileTap={{ scale: 0.98 }} 
-                className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
-              >
-                Book Free Trial Now 
-                <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+            <motion.button
+                  onClick={() => navigate("/contact")}
+                  whileHover={{ scale: 1.02, y: -2, boxShadow: "0 20px 50px rgba(0,0,0,0.4)" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
+                >
+                  Book Free Trial Now
+                  <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
+                </motion.button>
               
               <motion.a 
                 href="https://wa.me/919876543210" 

@@ -37,7 +37,7 @@ const Home = () => {
       <KidsCourses />
       <WhyChooseUs />
       <WhatsAppIcon />
-      {/* <FAQ /> */}
+      <FAQ />
       {showForm && <Form onClose={() => setShowForm(false)} />}
     </div>
   );

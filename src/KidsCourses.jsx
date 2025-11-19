@@ -77,7 +77,6 @@ const courses = [
               </p>
               <p className='text-gray-300 text-[10px] md:text-xs lg:text-sm mb-5 lg:mb-8 leading-relaxed'> 
                 Our programs seamlessly combine expert educators + AI-driven personalisation to ensure every learner gets the support they need.
-
               </p>
             
               

@@ -6,17 +6,19 @@ import {
   FaLaptop, FaMedal, FaRocket, FaUsers, FaFileAlt, FaLightbulb, 
   FaEnvelope,
   FaPhone,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaWhatsapp
 } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
 import FAQ from './FAQ';
+import { useNavigate } from 'react-router-dom';
 
 const Program4 = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const heroRef = useRef(null);
   const highlightsRef = useRef(null);
   const { scrollYProgress } = useScroll();
- 
+    const navigate = useNavigate();
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -56,23 +58,21 @@ const Program4 = () => {
             <motion.div style={{ y: heroY, scale: heroScale }} initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 className="text-xl lg:text-5xl font-medium mb-6 leading-tight" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
                 Edmirai ExamEdge
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">Advanced Preparation for JEE, NEET & BITSAT</span>
-                <span className="block text-2xl lg:text-4xl mt-2 font-bold">Smart. Structured. Result-Driven.</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">Adaptive Test-Prep App to crack JEE & NEET Exam.</span>
+                <span className="text-xl lg:text-xl text-gray-700 mb-10 leading-relaxed">Smart. Structured. Result-Driven.</span>
               </motion.h1>
-              <motion.p className="text-xs lg:text-base text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-                Edmirai ExamEdge is a comprehensive, adaptive test-prep platform designed to help students excel in top engineering & medical entrance exams.
+              <motion.p className="text-xl lg:text-xl text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+                Edmirai ExamEdge is a comprehensive, adaptive test-prep platform designed to help students excel in top engineering & medical entrance exams.   From concept strengthening to full-length mock tests, ExamEdge creates a personalised journey to help students secure top ranks with confidence.
               </motion.p>
-              <motion.p className="text-xs lg:text-base text-gray-600 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
-                From concept strengthening to full-length mock tests, ExamEdge creates a personalised journey to help students secure top ranks with confidence.
-              </motion.p>
-              <div className="flex flex-wrap gap-4">
-                <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
-                  Start Free Trial <FaArrowRight />
-                </motion.button>
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="border-2 border-red-900 text-red-900 py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-red-50 transition-all">
-                  View Demo Test
-                </motion.button>
-              </div>
+            
+               <div className="flex flex-wrap gap-4">
+                             <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
+                               Book Free Trial Now <FaArrowRight />
+                             </motion.button>
+                             <motion.a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-600 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all shadow-lg flex items-center gap-3">
+                               <FaWhatsapp className="text-2xl" /> Chat on WhatsApp
+                             </motion.a>
+                           </div>
             </motion.div>
             <motion.div className="relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <motion.div className="relative rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
@@ -106,7 +106,7 @@ const Program4 = () => {
             Why <span className="text-red-900">Edmirai ExamEdge Works</span>
           </motion.h2>
           <motion.p className="text-xs lg:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            ExamEdge uses intelligent learning analytics, targeted practice, and performance-based recommendations to ensure students study smarter, not longer.<br/>
+            ExamEdge uses intelligent learning analytics, targeted practice, and performance-based recommendations to ensure students study smarter, not longer.
             Every learner gets a clear roadmap, from weak-area identification to focused improvement strategies, ensuring measurable progress before the exam.
           </motion.p>
         </div>
@@ -256,14 +256,15 @@ const Program4 = () => {
      
            {/* CTA Buttons with premium styling */}
            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">
-             <motion.button 
-               whileHover={{ scale: 1.02, y: -2, boxShadow: '0 20px 50px rgba(0,0,0,0.4)' }} 
-               whileTap={{ scale: 0.98 }} 
-               className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
-             >
-               Book Free Trial Now 
-               <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
-             </motion.button>
+           <motion.button
+                 onClick={() => navigate("/contact")}
+                 whileHover={{ scale: 1.02, y: -2, boxShadow: "0 20px 50px rgba(0,0,0,0.4)" }}
+                 whileTap={{ scale: 0.98 }}
+                 className="bg-white text-red-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl flex items-center gap-3 mx-auto sm:mx-0 min-w-[200px] border-0"
+               >
+                 Book Free Trial Now
+                 <FaArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
+               </motion.button>
              
              <motion.a 
                href="https://wa.me/919876543210" 

@@ -47,7 +47,7 @@ const ExamPrepHero = () => {
   return (
     <>
       {/* ====================== HERO SECTION ====================== */}
-      <div ref={heroRef} className="bg-white relative overflow-hidden flex items-center pb-12">
+      <div ref={heroRef} id='home' className="bg-white  relative overflow-hidden flex items-center pb-12">
         {/* Decorative floating blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(4)].map((_, i) => (
@@ -85,7 +85,7 @@ const ExamPrepHero = () => {
                 className="text-sm md:text-base text-gray-700 mb-5 lg:mb-8 leading-relaxed max-w-xl"
               >
                 <span className="font-semibold">
-                  An AI-Powered, Premium Personalized Learning Platform
+                  An AI-Powered, Premium Personalised Learning Platform
                 </span>{' '}
                 for Grades 4-12 students and JEE & NEET aspirants.
               </p>
@@ -136,7 +136,7 @@ const ExamPrepHero = () => {
             <div ref={imageRef} className="relative">
               <div className="rounded-3xl overflow-hidden ">
                 <img
-                  src="/hero-d.jpg"
+                  src="/hero-d.png"
                   alt="Students studying together"
                   className="w-full h-auto object-cover"
                 />

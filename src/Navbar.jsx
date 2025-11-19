@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Link as ScrollLink } from "react-scroll";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showPrograms, setShowPrograms] = useState(false);
@@ -87,7 +87,7 @@ export default function Navbar() {
 
                     {/* Edmirai Learn */}
                     <Link
-                      to="/Program2"
+                      to="/Program3"
                       className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300"
                     >
                       <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
@@ -103,7 +103,7 @@ export default function Navbar() {
 
                     {/* Edmirai Connect */}
                     <Link
-                      to="/Program3"
+                      to="/Program2"
                       className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300"
                     >
                       <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
@@ -135,12 +135,21 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              <Link
+              {/* <Link
                 to="#why"
                 className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
               >
                 Why Edmirai
-              </Link>
+              </Link> */}
+              <ScrollLink
+              className="cursor-pointer text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+        to="why"
+        smooth={true}
+        duration={600}
+        offset={-70}   // navbar height adjust
+      >
+           Why Edmirai
+      </ScrollLink>
              <Link
                 to="/teacher"
                 className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
@@ -149,7 +158,7 @@ export default function Navbar() {
               </Link>
              
              <Link
-                to="contact"
+                to="/contact"
                 className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
               >
                Contact Us
@@ -266,7 +275,7 @@ export default function Navbar() {
                       </div>
                     </Link>
                    <Link
-                      to="/Program2"
+                      to="/Program3"
                       onClick={() => setIsOpen(false)}
                       className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition"
                     >
@@ -281,7 +290,7 @@ export default function Navbar() {
                       </div>
                     </Link>
                    <Link
-                      to="/Program3"
+                      to="/Program2"
                       onClick={() => setIsOpen(false)}
                       className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition"
                     >
@@ -313,13 +322,15 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              <Link
-                to="#why"
-                onClick={() => setIsOpen(false)}
-                className="text-gray-800 hover:bg-red-50 hover:text-red-900 transition font-semibold py-3 px-4 rounded-lg"
-              >
-                Why Edmirai
-              </Link>
+            <ScrollLink
+              className="cursor-pointer text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
+        to="why"
+        smooth={true}
+        duration={600}
+        offset={-70}   // navbar height adjust
+      >
+           Why Edmirai
+      </ScrollLink>
               
              <Link
                 to="/teacher"
