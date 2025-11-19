@@ -116,14 +116,14 @@ const Program1 = () => {
             </motion.div>
             <motion.div className="relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <motion.div className="relative rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Coding workspace" className="w-full h-[500px] object-cover" />
+                <img src="/edmire-one.png" alt="Coding workspace" className="w-full h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-6 right-6 text-white">
-                  <div className="flex items-center gap-3 mb-3">
+                  {/* <div className="flex items-center gap-3 mb-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                     <span className="text-lg font-semibold">Live Session in Progress</span>
-                  </div>
-                  <p className="text-lg opacity-90">Join 1000+ students learning JavaScript</p>
+                  </div> */}
+                  {/* <p className="text-lg opacity-90">Join 1000+ students learning JavaScript</p> */}
                 </div>
               </motion.div>
               <motion.div className="absolute -top-6 -right-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100" style={{ y: useTransform(scrollYProgress, [0, 0.1], [0, -20]) }} animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }}>

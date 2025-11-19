@@ -55,7 +55,7 @@ const Program3 = () => {
             <motion.div style={{ y: heroY, scale: heroScale }} initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 className="text-xl lg:text-5xl font-medium mb-6 leading-tight" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
                 Edmirai Learn
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">AI-Powered Personal Learning Companion</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-900 to-red-600">AI-Powered Learning Companion</span>
               </motion.h1>
               <motion.p className="text-xl lg:text-xl text-gray-700 mb-10 leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
              Edmirai Learn is your dedicated AI-driven tutor that adapts in real time to your pace, strengths and areas for improvement, giving you a continuous, truly personalised learning path.   Whether you’re revising after school or getting ahead for a test, Edmirai Learn meets you where you are.
@@ -73,7 +73,7 @@ const Program3 = () => {
             </motion.div>
             <motion.div className="relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <motion.div className="relative rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-                <img src="https://images.unsplash.com/photo-1534665482403-a909d0d97c90?w=800" alt="AI Learning Dashboard" className="w-full h-[500px] object-cover" />
+                <img src="/edmire-learn.png" alt="AI Learning Dashboard" className="w-full h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-6 right-6 text-white">
                   <div className="flex items-center gap-3 mb-3">
