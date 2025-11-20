@@ -76,7 +76,7 @@ const Program4 = () => {
             </motion.div>
             <motion.div className="relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <motion.div className="relative rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-                <img src="https://images.unsplash.com/photo-1456518604156-6e7da4e2d510?w=800" alt="JEE NEET Prep Dashboard" className="w-full h-[500px] object-cover" />
+                <img src="/edmiraiexam.png" alt="JEE NEET Prep Dashboard" className="w-full h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-6 right-6 text-white">
                   <div className="flex items-center gap-3 mb-3">

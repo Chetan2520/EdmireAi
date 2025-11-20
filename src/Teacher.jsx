@@ -100,7 +100,7 @@ const JoinFaculty = () => {
 
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800" alt="Passionate Teacher" className="w-full h-[500px] object-cover" />
+                <img src="/teacher2.png" alt="Passionate Teacher" className="w-full h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-6 right-6 text-white">
                   <div className="flex items-center gap-3 mb-3">

@@ -81,10 +81,10 @@ const Form = ({ onClose }) => {
 
           <div className="text-center mb-5 lg:mb-8">
             <h2 className="text-xl lg:text-3xl font-bold bg-gray-700 bg-clip-text text-transparent">
-              Book Free Demo
+             Book Your Free Demo Now !!
             </h2>
             <p className="text-gray-600 text-sm lg:text-sm mt-0 lg:mt-2 font-medium">
-              Personalized learning starts here
+              Personalised learning starts here.
             </p>
           </div>
 
