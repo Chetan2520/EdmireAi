@@ -141,15 +141,13 @@ export default function Navbar() {
               >
                 Why Edmirai
               </Link> */}
-              <ScrollLink
-              className="cursor-pointer text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
-        to="why"
-        smooth={true}
-        duration={600}
-        offset={-70}   // navbar height adjust
-      >
-           Why Edmirai
-      </ScrollLink>
+              <Link
+  to="/#why"
+  className="cursor-pointer text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg"
+>
+  Why Edmirai
+</Link>
+
              <Link
                 to="/teacher"
                 className="text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
@@ -322,15 +320,13 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-            <ScrollLink
-              className="cursor-pointer text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg text-sm lg:text-base"
-        to="why"
-        smooth={true}
-        duration={600}
-        offset={-70}   // navbar height adjust
-      >
-           Why Edmirai
-      </ScrollLink>
+           <Link
+  to="/#why"
+  className="cursor-pointer text-gray-800 hover:text-red-900 transition font-semibold px-3 py-2 rounded-lg"
+>
+  Why Edmirai
+</Link>
+
               
              <Link
                 to="/teacher"

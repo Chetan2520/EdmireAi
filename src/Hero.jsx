@@ -4,11 +4,18 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const ExamPrepHero = () => {
+  const services = [
+    { icon: <BookOpen className="w-6 h-6 text-red-900" />, title: 'One-to-One Live Classes' },
+    { icon: <CheckCircle className="w-6 h-6 text-red-900" />, title: 'Personalised AI Tutor' },
+    { icon: <Users className="w-6 h-6 text-red-900" />, title: 'Live Doubt Solving' },
+    { icon: <Award className="w-6 h-6 text-red-900" />, title: 'JEE & NEET Exam Prep Support' },
+  ];
+
   return (
     <>
       {/* ====================== HERO SECTION ====================== */}
       <div id="home" className="bg-white relative overflow-hidden flex items-center pb-12">
-        {/* Decorative static blobs (no animation) */}
+        {/* Decorative static blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(4)].map((_, i) => (
             <div
@@ -38,26 +45,24 @@ const ExamPrepHero = () => {
 
               <p className="text-sm md:text-base text-gray-700 mb-5 lg:mb-8 leading-relaxed max-w-xl">
                 <span className="font-semibold">
-                  An AI-Powered, Premium Personalised Learning Platform
+                  An AI-Powered, Personalised Learning Platform
                 </span>{' '}
                 for Grades 4-12 students and JEE & NEET aspirants.
               </p>
 
-              {/* ========== 4 SERVICE BOXES ========== */}
+              {/* ========== 4 SERVICE BOXES (NOW CLICKABLE) ========== */}
               <div className="grid grid-cols-2 gap-4 mb-6 lg:mb-10">
-                {[
-                  { icon: <BookOpen className="w-6 h-6 text-red-900" />, title: 'One-to-One Live Classes' },
-                  { icon: <CheckCircle className="w-6 h-6 text-red-900" />, title: 'Personalised Ai Tutor' },
-                  { icon: <Users className="w-6 h-6 text-red-900" />, title: 'Live Doubt Solving' },
-                  { icon: <Award className="w-6 h-6 text-red-900" />, title: 'JEE & NEET Exam Prep Support' },
-                ].map((service, idx) => (
-                  <div
+                {services.map((service, idx) => (
+                  <Link
                     key={idx}
-                    className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-start hover:shadow-lg transition-shadow"
+                    to={`/program${idx+1}`}                     // ← Change this route if needed
+                    className="block rounded-xl transition-all hover:shadow-xl hover:scale-105"
                   >
-                    <div className="mb-2">{service.icon}</div>
-                    <h3 className="font-semibold text-gray-900 text-sm">{service.title}</h3>
-                  </div>
+                    <div className="bg-[#ff00001a] border border-gray-200 rounded-xl p-4 flex flex-col items-start h-full cursor-pointer">
+                      <div className="mb-2">{service.icon}</div>
+                      <h3 className="font-bold text-gray-900 text-sm">{service.title}</h3>
+                    </div>
+                  </Link>
                 ))}
               </div>
 
@@ -75,7 +80,7 @@ const ExamPrepHero = () => {
                   href="https://wa.me/918867270931?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20your%20exam%20prep%20courses!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-3 lg:px-10 lg:py-3 bg-green-600 text-white rounded-2xl transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-lg transform0 hover:-translate-y-1"
+                  className="px-4 py-3 lg:px-10 lg:py-3 bg-green-600 text-white rounded-2xl transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-lg transform hover:-translate-y-1"
                 >
                   <BsWhatsapp className="w-6 h-4 lg:w-6 lg:h-6" />
                   <span>Chat on WhatsApp</span>

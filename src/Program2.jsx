@@ -12,7 +12,7 @@ import {
 
 import { BsChevronDown } from 'react-icons/bs';
 import FAQ from './FAQs';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Program2 = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -63,9 +63,9 @@ const Program2 = () => {
                 Stuck on a tricky question? With Edmirai Connect, you’re never left waiting. Connect to expert tutors in under 90 seconds from home, and get clear, step-by-step solutions, because learning shouldn’t pause.
               </motion.p>
               <div className="flex flex-wrap gap-4">
-                <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
-                  Book Free Trial Now <FaArrowRight />
-                </motion.button>
+                                 <Link to={"/contact"} whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
+                              Book Free Trial Now <FaArrowRight />
+                            </Link>
                 <motion.a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-600 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all shadow-lg flex items-center gap-3">
                   <FaWhatsapp className="text-2xl" /> Chat on WhatsApp
                 </motion.a>
@@ -80,17 +80,9 @@ const Program2 = () => {
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                     <span className="text-lg font-semibold">Live Doubt Session</span>
                   </div>
-                  <p className="text-lg opacity-90">5000+ doubts solved today</p>
                 </div>
               </motion.div>
-              <motion.div className="absolute -top-6 -right-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100" style={{ y: useTransform(scrollYProgress, [0, 0.1], [0, -20]) }} animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }}>
-                <div className="text-xl lg:text-3xl font-black text-red-900">90s</div>
-                <div className="text-xs lg:text-sm text-gray-600">Avg. Connect Time</div>
-              </motion.div>
-              <motion.div className="absolute -bottom-6 -left-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100" style={{ y: useTransform(scrollYProgress, [0, 0.1], [0, 20]) }} animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}>
-                <div className="text-xl lg:text-3xl font-black text-red-900">4.9 <FaStar className="inline text-yellow-500" /></div>
-                <div className="text-xs lg:text-sm text-gray-600">Parent Rating</div>
-              </motion.div>
+             
             </motion.div>
           </div>
         </div>
@@ -143,7 +135,7 @@ const Program2 = () => {
                 </motion.p>
               </div>
               <div className="space-y-6">
-                {["Students in Grades 4–12", "All boards: CBSE, ICSE, State Boards, IB & IGCSE", "Learners doing school homework, board exams, Olympiads, or exam prep"].map((item, i) => (
+                {["Students in Grades 4–12","Maths and Science Subjects.", "All boards: CBSE, ICSE, State Boards, IB & IGCSE", "Learners doing school homework, board exams, Olympiads, or exam prep"].map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="flex items-start gap-4">
                     <FaCheckCircle className="text-2xl text-red-900 mt-1 flex-shrink-0" />
                     <p className="text-base lg:text-lg text-gray-700 font-medium">{item}</p>
@@ -220,16 +212,7 @@ const Program2 = () => {
              Ready to Solve Any Doubt <span className="bg-gradient-to-r from-red-300/90 to-orange-300/90 bg-clip-text text-transparent">Instantly?</span>
            </motion.h2>
      
-           {/* Descriptive paragraph */}
-           <motion.p 
-             className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed max-w-3xl mx-auto"
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6, delay: 0.4 }}
-           >
-             Book a free trial now or tap Chat-on-WhatsApp and experience instant help with Edmirai Connect.
-           </motion.p>
+      
      
            {/* CTA Buttons with premium styling */}
            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">

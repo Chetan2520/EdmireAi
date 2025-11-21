@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaUserGraduate,
   FaChalkboardTeacher,
@@ -7,12 +7,23 @@ import {
   FaAward,
   FaHome,
 } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
+
 
 const WhyChooseUs = () => {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (hash === "#why") {
+      const section = document.getElementById("why");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [hash]);
   const features = [
     {
       icon: <FaUserGraduate className="w-6 h-6 text-white" />,
-      title: "Personalised Learning That Works",
+      title: "Personalised Learning that Works",
       desc: "Every student learns differently. Edmirai adapts to your strengths, weaknesses, and pace, ensuring measurable progress at every step.",
     },
     {

@@ -80,9 +80,9 @@ export default function KidsCourses() {
               </p>
             
               
-              <button className="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg mb-0 lg:mb-4">
+              <Link to="/contact" className="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg mb-0 lg:mb-4">
                 Let's Connect
-              </button>
+              </Link>
               
             </div>
 

@@ -80,7 +80,7 @@ const Form = ({ onClose }) => {
           </button>
 
           <div className="text-center mb-5 lg:mb-8">
-            <h2 className="text-xl lg:text-3xl font-bold bg-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-xl lg:text-2xl font-bold bg-red-900 bg-clip-text text-transparent">
              Book Your Free Demo Now !!
             </h2>
             <p className="text-gray-600 text-sm lg:text-sm mt-0 lg:mt-2 font-medium">
@@ -129,9 +129,9 @@ const Form = ({ onClose }) => {
               className="w-full px-5 py-2 lg:py-4 bg-white/70 backdrop-blur-sm border border-white/40 rounded-2xl focus:border-pink-500 focus:ring-4 focus:ring-pink-200 outline-none transition-all duration-300"
             >
               <option value="">Select Grade</option>
-              {[...Array(12)].map((_, i) => (
+              {[...Array(9)].map((_, i) => (
                 <option key={i + 1} value={`Class ${i + 1}`}>
-                  Class {i + 1}
+                  Class {i + 4}
                 </option>
               ))}
             </select>

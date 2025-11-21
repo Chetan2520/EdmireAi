@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, ChevronRight, ArrowRight } from 'lucide-react';
 import { BiLogoPlayStore } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const navLinks = [
@@ -56,49 +57,49 @@ const Footer = () => {
               <div className="mb-6 lg:mb-8">
                 <p className="text-xs lg:text-sm font-semibold text-gray-300 mb-3 lg:mb-4">Follow Us</p>
                 <div className="flex gap-2 lg:gap-3">
-                  <a 
+                  {/* <a 
                     href="#" 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
                   >
                     <Facebook className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
-                  </a>
+                  </a> */}
                   <a 
                     href="#" 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
                   >
                     <Instagram className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
                   </a>
-                  <a 
+                  {/* <a 
                     href="#" 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
                   >
                     <Twitter className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
-                  </a>
-                  <a 
+                  </a> */}
+                  {/* <a 
                     href="#" 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
                   >
                     <Youtube className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-2 lg:gap-3">
-                <a
-                  href=""
+                <Link
+                  to="/contact"
                   className="group px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-red-800 to-red-900 text-white font-semibold rounded-xl text-sm lg:text-base transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  Book Free Demo
+                  Request a Callback
                   <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
+                </Link>
+                {/* <a
                   href=""
                   className="px-4 lg:px-6 py-1.5 lg:py-2 bg-white/5 text-white font-semibold rounded-xl hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center gap-2 text-sm lg:text-base"
                 >
                   <BiLogoPlayStore className='w-8 h-8 lg:w-10 lg:h-10'/>
                   Get App
-                </a>
+                </a> */}
               </div>
             </div>
 
@@ -163,7 +164,7 @@ const Footer = () => {
                   <div className="flex-1">
                     <p className="text-xs text-gray-500 mb-1">Phone</p>
                     <a href="tel:+919876543210" className="text-xs lg:text-sm text-gray-300 hover:text-white transition-colors">
-                      +91 98765 43210
+                      +91 88672 70931
                     </a>
                   </div>
                 </li>

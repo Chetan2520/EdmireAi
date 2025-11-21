@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { 
-  FaUserGraduate, FaRupeeSign, FaUsers, FaTrophy, FaLaptop, FaBrain, 
+import {
+  FaUserGraduate, FaRupeeSign, FaUsers, FaTrophy, FaLaptop, FaBrain,
   FaRocket, FaCheckCircle, FaStar, FaArrowRight, FaPhone, FaEnvelope,
   FaMapMarkerAlt, FaShieldAlt, FaChartLine, FaHeadset, FaMedal
 } from 'react-icons/fa';
@@ -14,11 +14,22 @@ const JoinFaculty = () => {
   });
   const [errors, setErrors] = useState({});
   const heroRef = useRef(null);
+  const formRef = useRef(null); // ⭐ NEW: Reference to form section
+
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   const heroY = useTransform(smoothProgress, [0, 0.3], [0, 120]);
   const heroScale = useTransform(smoothProgress, [0, 0.2], [1, 0.98]);
+
+  const handleScrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,8 +65,12 @@ const JoinFaculty = () => {
 
   return (
     <div className="bg-white text-gray-900">
+
       {/* Hero Section */}
-      <section ref={heroRef} className="relative bg-gradient-to-br from-red-50 via-white to-blue-50 py-32 overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative bg-gradient-to-br from-red-50 via-white to-blue-50 py-32 overflow-hidden"
+      >
         <div className="absolute inset-0 opacity-20" style={{ y: heroY }}>
           <div className="absolute top-20 left-10 w-32 h-32 bg-red-200 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
           <div className="absolute top-40 right-20 w-48 h-48 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
@@ -72,30 +87,8 @@ const JoinFaculty = () => {
                 Shape the Future. Earn Rewardingly. Teach With Purpose.
               </motion.p>
               <motion.p className="text-base lg:text-lg text-gray-600 mb-8 leading-relaxed">
-                At Edmirai, we’re transforming online learning in India with personalized 1-on-1 classes, AI tools, instant doubt solving & JEE/NEET prep. 
-                Now we’re looking for passionate educators to lead this change.
+                At Edmirai, we’re transforming online learning in India with personalized 1-on-1 classes, AI tools, instant doubt solving & JEE/NEET prep. Now we’re looking for passionate educators to lead this change.
               </motion.p>
-
-              {/* <div className="flex flex-wrap gap-6 mb-10">
-                <div className="bg-white/90 backdrop-blur p-5 rounded-2xl shadow-lg border border-red-100">
-                  <div className="text-3xl font-black text-red-900 flex items-center gap-2">
-                    <FaRupeeSign />1L – 3L
-                  </div>
-                  <div className="text-sm text-gray-600">per month</div>
-                </div>
-                <div className="bg-white/90 backdrop-blur p-5 rounded-2xl shadow-lg border border-red-100">
-                  <div className="text-3xl font-black text-red-900 flex items-center gap-2">
-                    <FaRupeeSign />1200–3000
-                  </div>
-                  <div className="text-sm text-gray-600">per hour</div>
-                </div>
-                <div className="bg-white/90 backdrop-blur p-5 rounded-2xl shadow-lg border border-red-100">
-                  <div className="text-3xl font-black text-red-900 flex items-center gap-2">
-                    <FaUsers />10K+
-                  </div>
-                  <div className="text-sm text-gray-600">Active Students</div>
-                </div>
-              </div> */}
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
@@ -115,21 +108,11 @@ const JoinFaculty = () => {
         </div>
       </section>
 
-      {/* Trust Bar */}
-      {/* <section className="py-8 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-12 text-gray-700">
-            <div className="flex items-center gap-3"><FaShieldAlt className="text-red-900 text-2xl" /><span className="font-medium">Verified by IIT Alumni</span></div>
-            <div className="flex items-center gap-3"><FaUserGraduate className="text-red-900 text-2xl" /><span className="font-medium">500+ Top Educators</span></div>
-            <div className="flex items-center gap-3"><FaStar className="text-yellow-500 text-2xl" /><span className="font-medium">4.9/5 Faculty Rating</span></div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Why Join + Form */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto items-start">
+
             {/* Left: Why Join */}
             <div className="space-y-10">
               <motion.h2 className="text-4xl lg:text-5xl font-bold" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}>
@@ -150,8 +133,14 @@ const JoinFaculty = () => {
             </div>
 
             {/* Right: Form */}
-            <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} className="bg-gradient-to-br from-red-50 to-white p-10 rounded-3xl shadow-2xl border border-red-100">
+            <motion.div
+              ref={formRef}  // ⭐ Attached reference
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="bg-gradient-to-br from-red-50 to-white p-10 rounded-3xl shadow-2xl border border-red-100"
+            >
               <h3 className="text-4xl font-bold text-center mb-8">Connect with us</h3>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Full Name" className={`w-full px-6 py-4 rounded-xl border ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-red-900 focus:ring-4 focus:ring-red-100 transition`} />
                 {errors.name && <p className="text-red-600 text-sm -mt-3 ml-2">{errors.name}</p>}
@@ -199,13 +188,17 @@ const JoinFaculty = () => {
           <motion.p className="text-xl mb-12 max-w-3xl mx-auto opacity-90" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2 }}>
             Become a part of Edmirai’s teaching community and help build the future of personalized learning in India.
           </motion.p>
-          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-white text-red-900 px-16 py-6 rounded-2xl font-bold text-2xl shadow-2xl flex items-center gap-4 mx-auto">
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleScrollToForm}   // ⭐ Scroll to form on click
+            className="bg-white text-red-900 px-16 py-6 rounded-2xl font-bold text-2xl shadow-2xl flex items-center gap-4 mx-auto"
+          >
             Apply Now & Start Earning <FaArrowRight className="text-3xl" />
           </motion.button>
         </div>
       </section>
-
-   
 
       <style jsx>{`
         @keyframes blob {

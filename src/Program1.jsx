@@ -10,7 +10,7 @@ import {
 import { BsChevronDown } from 'react-icons/bs';
 import { FaQ } from 'react-icons/fa6';
 import FAQ from './FAQs';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Program1 = () => {
   const [activeModule, setActiveModule] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
@@ -106,9 +106,9 @@ const Program1 = () => {
                 Powered by AI-driven insights.
               </motion.p>
               <div className="flex flex-wrap gap-4">
-                            <motion.button whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
+                            <Link to={"/contact"} whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
                               Book Free Trial Now <FaArrowRight />
-                            </motion.button>
+                            </Link>
                             <motion.a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-600 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all shadow-lg flex items-center gap-3">
                               <FaWhatsapp className="text-2xl" /> Chat on WhatsApp
                             </motion.a>
@@ -116,24 +116,13 @@ const Program1 = () => {
             </motion.div>
             <motion.div className="relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <motion.div className="relative rounded-3xl overflow-hidden shadow-2xl" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-                <img src="/edmire-one.png" alt="Coding workspace" className="w-full h-[500px] object-cover" />
+                <img src="/edmire-one.jpg" alt="Coding workspace" className="w-full h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-6 right-6 text-white">
-                  {/* <div className="flex items-center gap-3 mb-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-lg font-semibold">Live Session in Progress</span>
-                  </div> */}
-                  {/* <p className="text-lg opacity-90">Join 1000+ students learning JavaScript</p> */}
+         
                 </div>
               </motion.div>
-              <motion.div className="absolute -top-6 -right-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100" style={{ y: useTransform(scrollYProgress, [0, 0.1], [0, -20]) }} animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }}>
-                <div className="text-xl lg:text-3xl font-black text-red-900">1000+</div>
-                <div className="text-xs lg:text-sm text-gray-600">Happy Students</div>
-              </motion.div>
-              <motion.div className="absolute -bottom-6 -left-6 bg-white/90 p-5 rounded-2xl shadow-2xl border border-gray-100" style={{ y: useTransform(scrollYProgress, [0, 0.1], [0, 20]) }} animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}>
-                <div className="text-xl lg:text-3xl font-black text-red-900">4.9 <FaStar className="inline text-yellow-500" /></div>
-                <div className="text-xs lg:text-sm text-gray-600">Average Rating</div>
-              </motion.div>
+             
             </motion.div>
           </div>
         </div>
@@ -186,7 +175,7 @@ const Program1 = () => {
                 </motion.p>
               </div>
               <div className="space-y-6">
-                {["Grades 4–12", "All boards, CBSE, ICSE, State Boards, IB & IGCSE", "Students preparing for school exams, boards, Olympiads & beyond"].map((item, i) => (
+                {["Grades 4–12","All Subjects", "All boards, CBSE, ICSE, State Boards, IB & IGCSE", "Students preparing for school exams, boards, Olympiads & beyond"].map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="flex items-start gap-4">
                     <FaCheckCircle className="text-2xl text-red-900 mt-1 flex-shrink-0" />
                     <p className="text-base lg:text-lg text-gray-700 font-medium">{item}</p>
@@ -262,19 +251,10 @@ const Program1 = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Ready to Solve Any Doubt <span className="bg-gradient-to-r from-red-300/90 to-orange-300/90 bg-clip-text text-transparent">Instantly?</span>
+     Ready to Start Your 1:1 Personalised <span className="bg-gradient-to-r from-red-300/90 to-orange-300/90 bg-clip-text text-transparent">Learning Journey.</span>
       </motion.h2>
 
-      {/* Descriptive paragraph */}
-      <motion.p 
-        className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed max-w-3xl mx-auto"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        Book a free trial now or tap Chat-on-WhatsApp and experience instant help with Edmirai Connect.
-      </motion.p>
+   
 
       {/* CTA Buttons with premium styling */}
       <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center mb-8">

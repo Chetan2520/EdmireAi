@@ -140,9 +140,9 @@ const UniqueContactForm = () => {
                 className="w-full px-3 py-3 border-2 border-red-900/20 rounded-xl focus:outline-none focus:border-red-900/50 focus:ring-2 focus:ring-red-900/20 transition-all duration-300 text-gray-700"
               >
                 <option value="">Choose Grade</option>
-                {[...Array(12)].map((_, i) => (
+                {[...Array(9)].map((_, i) => (
                   <option key={i + 1} value={`Class ${i + 1}`}>
-                    Class {i + 1}
+                    Class {i + 4}
                   </option>
                 ))}
               </select>
@@ -161,7 +161,7 @@ const UniqueContactForm = () => {
                 </>
               ) : (
                 <>
-                  <span>Submit Inquiry</span>
+                  <span>Submit Enquiry</span>
                   <SparklesIcon className="w-5 h-5" />
                 </>
               )}
