@@ -23,7 +23,7 @@ const Form = ({ onClose }) => {
     setStatus('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {  // Backend URL 
+      const response = await fetch('https://edmirai-backend.vercel.app/api/contact', {  // Backend URL 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

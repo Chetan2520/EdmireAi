@@ -24,7 +24,7 @@ const UniqueContactForm = () => {
     setStatus('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {  // Backend URL (production mein change kar dena)
+      const response = await fetch('https://edmirai-backend.vercel.app/api/contact', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
