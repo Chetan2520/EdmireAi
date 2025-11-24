@@ -64,7 +64,7 @@ const Footer = () => {
                     <Facebook className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
                   </a> */}
                   <a 
-                    href="#" 
+                    href="https://www.instagram.com/learnwith_edmirai?igsh=MTNwb3IybzMzZ3pkbA==" 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
                   >
                     <Instagram className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
