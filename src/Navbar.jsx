@@ -206,8 +206,7 @@ export default function Navbar() {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <div className="text-2xl font-bold">
-              <span className="text-red-900" style={{ fontFamily: 'cursive' }}>Edmir</span>
-              <span className="text-gray-800">Ai</span>
+              <img src='/logo.png' className='w-24 h-full' alt="Logo"></img>
             </div>
             <button
               onClick={() => setIsOpen(false)}
