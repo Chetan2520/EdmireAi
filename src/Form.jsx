@@ -51,7 +51,7 @@ const Form = ({ onClose }) => {
   const handleWhatsApp = () => {
     const msg = `Hi! Free Demo Booking:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nBoard: ${formData.board || 'Not selected'}\nGrade: ${formData.grade || 'Not selected'}`;
 
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/918867270931?text=${encodeURIComponent(msg)}`, '_blank');
     onClose();
   };
 
@@ -81,7 +81,7 @@ const Form = ({ onClose }) => {
           </button>
 
           <div className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-red-900 to-pink-800 bg-clip-text text-transparent">
+            <h2 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-red-900 to-pink-800 bg-clip-text text-transparent">
               Book Your Free Demo Now !!
             </h2>
             <p className="text-gray-600 text-sm lg:text-base mt-2 font-medium">

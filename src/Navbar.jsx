@@ -17,7 +17,7 @@ export default function Navbar() {
               <div className="text-xl sm:text-2xl font-bold">
                 {/* <span className="text-red-900" style={{ fontFamily: 'cursive' }}>Edmire</span>
                 <span className="text-gray-800">Ai</span> */}
-                <img src='/logo.png' className='w-36 h-full' alt="Logo"></img>
+                <img src='/logo.png' className='w-36 h-full ml-5' alt="Logo"></img>
               </div>
             </div>
 
