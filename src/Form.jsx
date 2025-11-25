@@ -36,7 +36,7 @@ const Form = ({ onClose }) => {
       if (response.ok) {
         setStatus(data.message || 'Message sent! We’ll get back soon.');
         setFormData({ name: '', phone: '', board: '', grade: '' });
-        setTimeout(() => onClose(), 1500); // Close after showing success
+        setTimeout(() => onClose(), 1500);
       } else {
         setStatus(data.message || 'Failed to send. Please try again.');
       }
@@ -48,7 +48,17 @@ const Form = ({ onClose }) => {
     }
   };
 
+  // WhatsApp button ab bhi same formData use karega, lekin name & phone mandatory
   const handleWhatsApp = () => {
+    if (!formData.name.trim()) {
+      setStatus('Please enter Student Name');
+      return;
+    }
+    if (!formData.phone.trim()) {
+      setStatus('Please enter Phone Number');
+      return;
+    }
+
     const msg = `Hi! Free Demo Booking:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nBoard: ${formData.board || 'Not selected'}\nGrade: ${formData.grade || 'Not selected'}`;
 
     window.open(`https://wa.me/918867270931?text=${encodeURIComponent(msg)}`, '_blank');
@@ -57,14 +67,14 @@ const Form = ({ onClose }) => {
 
   return (
     <>
-      {/* Glassy Backdrop */}
+      {/* Same Glassy Backdrop */}
       <div
         className="fixed inset-0 bg-white/60 backdrop-blur-2xl z-40"
         onClick={onClose}
         style={{ backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
       />
 
-      {/* Premium Glass Card */}
+      {/* Same Premium Glass Card */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div
           className="relative w-full max-w-md bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 lg:p-8 border border-white/30"
@@ -99,7 +109,6 @@ const Form = ({ onClose }) => {
               onChange={handleChange}
               className="w-full px-5 py-4 bg-white/70 backdrop-blur-sm border border-white/40 rounded-2xl focus:border-purple-500 focus:ring-4 focus:ring-purple-200 outline-none transition-all duration-300"
             />
-
             <input
               type="tel"
               name="phone"
@@ -125,7 +134,6 @@ const Form = ({ onClose }) => {
               <option value="IGCSE">IGCSE</option>
             </select>
 
-            {/* FIXED GRADE SELECT – Ab sahi value jayegi WhatsApp pe */}
             <select
               name="grade"
               required
@@ -149,7 +157,7 @@ const Form = ({ onClose }) => {
                   : 'bg-red-100/90 text-red-800 border border-red-300'
               }`}>
                 <span className="text-2xl">
-                  {status.includes('sent') || status.includes('soon') ? '✓' : '✕'}
+                  {status.includes('sent') || status.includes('soon') ? '' : ''}
                 </span>
                 <span>{status}</span>
               </div>
@@ -163,7 +171,6 @@ const Form = ({ onClose }) => {
               >
                 {loading ? (
                   <>
-                    <span className="animate-spin text-xl">⟳</span>
                     Sending...
                   </>
                 ) : (
@@ -171,6 +178,7 @@ const Form = ({ onClose }) => {
                 )}
               </button>
 
+              {/* WhatsApp button ab bhi same dikhega, lekin validation add hai */}
               <button
                 type="button"
                 onClick={handleWhatsApp}
