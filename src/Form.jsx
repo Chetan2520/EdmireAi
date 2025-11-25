@@ -176,7 +176,6 @@ const Form = ({ onClose }) => {
                 onClick={handleWhatsApp}
                 className="flex-1 bg-gradient-to-r from-emerald-600 to-green-700 text-white font-bold py-4 rounded-2xl shadow-2xl hover:shadow-green-500/40 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
               >
-                <span className="text-2xl">WhatsApp</span>
                 WhatsApp Now
               </button>
             </div>
