@@ -109,7 +109,7 @@ const Program1 = () => {
                             <Link to={"/contact"} whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(127, 29, 29, 0.3)' }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900 to-red-800 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:from-red-800 hover:to-red-700 transition-all shadow-lg flex items-center gap-3">
                               Book Free Trial Now <FaArrowRight />
                             </Link>
-                            <motion.a href="https://wa.me/918867270931" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-600 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all shadow-lg flex items-center gap-3">
+                            <motion.a href="https://wa.me/917794078833" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-600 text-white py-2 px-4 lg:px-8 lg:py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition-all shadow-lg flex items-center gap-3">
                               <FaWhatsapp className="text-2xl" /> Chat on WhatsApp
                             </motion.a>
                           </div>
@@ -269,7 +269,7 @@ const Program1 = () => {
     </motion.button>
         
         <motion.a 
-          href="https://wa.me/918867270931" 
+          href="https://wa.me/917794078833" 
           target="_blank" 
           rel="noopener noreferrer" 
           whileHover={{ scale: 1.02, y: -2 }} 

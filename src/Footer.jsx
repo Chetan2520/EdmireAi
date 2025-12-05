@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, ChevronRight, ArrowRight } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, ChevronRight, ArrowRight, LinkedinIcon } from 'lucide-react';
 import { BiLogoPlayStore } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
@@ -57,12 +57,12 @@ const Footer = () => {
               <div className="mb-6 lg:mb-8">
                 <p className="text-xs lg:text-sm font-semibold text-gray-300 mb-3 lg:mb-4">Follow Us</p>
                 <div className="flex gap-2 lg:gap-3">
-                  {/* <a 
-                    href="#" 
+                  <a 
+                    href="https://in.linkedin.com/company/edmirai " 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
                   >
-                    <Facebook className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
-                  </a> */}
+                    <LinkedinIcon className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
+                  </a>
                   <a 
                     href="https://www.instagram.com/learnwithedmirai?utm_source=qr&igsh=MTNwb3IybzMzZ3pkbA==" 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
@@ -75,12 +75,12 @@ const Footer = () => {
                   >
                     <Twitter className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
                   </a> */}
-                  {/* <a 
-                    href="#" 
+                  <a 
+                    href="https://www.youtube.com/channel/UCdG8f22CjS14rVPGgMa13OA" 
                     className="group p-2 lg:p-3 bg-white/5 rounded-xl hover:bg-red-500/20 border border-white/10 hover:border-red-500/50 transition-all duration-300"
                   >
                     <Youtube className="h-4 w-4 lg:h-5 lg:w-5 text-gray-400 group-hover:text-red-400 transition-colors" />
-                  </a> */}
+                  </a>
                 </div>
               </div>
 
@@ -111,7 +111,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="group text-xs lg:text-sm text-gray-400 hover:text-white transition-all flex items-center gap-1.5 lg:gap-2"
+                      className="group text-xs lg:text-base text-gray-400 hover:text-white transition-all flex items-center gap-1.5 lg:gap-2"
                     >
                       <ChevronRight className="h-3 w-3 lg:h-4 lg:w-4 opacity-0 -ml-4 lg:-ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all text-red-400" />
                       <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
@@ -124,18 +124,18 @@ const Footer = () => {
             {/* Programs - Spans 3 columns */}
             <div className="lg:col-span-3">
               <h4 className="font-bold text-base lg:text-lg mb-4 lg:mb-6 text-white">Our Programs</h4>
-              <ul className="space-y-2 lg:space-y-4">
+              <ul className="">
                 {programs.map((prog) => (
                   <li key={prog.grade}>
                     <a
                       href={prog.href}
                       className="group block p-2 lg:p-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 transition-all"
                     >
-                      <span className="font-semibold text-xs lg:text-sm text-white group-hover:text-red-400 transition-colors flex items-center gap-1.5 lg:gap-2">
+                      <span className="font-semibold text-xs lg:text-base text-white group-hover:text-red-400 transition-colors flex items-center gap-1.5 lg:gap-2">
                         {prog.grade}
                         <ChevronRight className="h-2.5 w-2.5 lg:h-3 lg:w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </span>
-                      <p className="text-xs text-gray-500 mt-1 leading-tight lg:leading-relaxed">{prog.desc}</p>
+                      <p className="text-xs lg:text-sm text-gray-500 t-1 leading-tight lg:leading-relaxed">{prog.desc}</p>
                     </a>
                   </li>
                 ))}
@@ -151,8 +151,8 @@ const Footer = () => {
                     <Mail className="h-4 w-4 lg:h-5 lg:w-5 text-red-400 flex-shrink-0" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs text-gray-500 mb-1">Email</p>
-                    <a href="mailto:support@edmirai.com" className="text-xs lg:text-sm text-gray-300 hover:text-white transition-colors">
+                    <p className="text-xs lg:text-sm text-gray-500 mb-1">Email</p>
+                    <a href="mailto:support@edmirai.com" className="text-xs lg:text-base text-gray-300 hover:text-white transition-colors">
                       support@edmirai.com
                     </a>
                   </div>
@@ -162,8 +162,8 @@ const Footer = () => {
                     <Phone className="h-4 w-4 lg:h-5 lg:w-5 text-red-400 flex-shrink-0" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs text-gray-500 mb-1">Phone</p>
-                    <a href="tel:+918867270931" className="text-xs lg:text-sm text-gray-300 hover:text-white transition-colors">
+                    <p className="text-xs lg:text-sm text-gray-500 mb-1">Phone</p>
+                    <a href="tel:+917794078833" className="text-xs lg:text-base text-gray-300 hover:text-white transition-colors">
                       +91 88672 70931
                     </a>
                   </div>
@@ -173,7 +173,7 @@ const Footer = () => {
                     <MapPin className="h-4 w-4 lg:h-5 lg:w-5 text-red-400 flex-shrink-0" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs text-gray-500 mb-1">Address</p>
+                    <p className="text-xs lg:text-sm text-gray-500 mb-1">Address</p>
                     <p className="text-xs lg:text-sm text-gray-300 leading-tight lg:leading-relaxed">
                       Level 8, Octave 3 A, Salarpuria Sattva Knowledge City, Hyderabad, Telangana, 500081
                     </p>

@@ -4,11 +4,29 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const ExamPrepHero = () => {
+  // Yahan maine 'path' add kiya hai har service ke liye.
+  // Aap '/live-classes', '/ai-tutor' ko apne actual routes se replace kar lein.
   const services = [
-    { icon: <BookOpen className="w-6 h-6 text-red-900" />, title: 'One-to-One Live Classes' },
-    { icon: <CheckCircle className="w-6 h-6 text-red-900" />, title: 'Personalised AI Tutor' },
-    { icon: <Users className="w-6 h-6 text-red-900" />, title: 'Live Doubt Solving' },
-    { icon: <Award className="w-6 h-6 text-red-900" />, title: 'JEE & NEET Exam Prep Support' },
+    { 
+      icon: <BookOpen className="w-6 h-6 text-red-900" />, 
+      title: 'One-to-One Live Classes',
+      path: '/Program1' // <-- Yahan apna URL dalein
+    },
+    { 
+      icon: <CheckCircle className="w-6 h-6 text-red-900" />, 
+      title: 'Personalised AI Tutor',
+      path: '/Program3' // <-- Yahan apna URL dalein
+    },
+    { 
+      icon: <Users className="w-6 h-6 text-red-900" />, 
+      title: 'Live Doubt Solving',
+      path: '/Program2' // <-- Yahan apna URL dalein
+    },
+    { 
+      icon: <Award className="w-6 h-6 text-red-900" />, 
+      title: 'JEE & NEET Exam Prep Support',
+      path: '/Program4' // <-- Yahan apna URL dalein
+    },
   ];
 
   return (
@@ -50,12 +68,12 @@ const ExamPrepHero = () => {
                 for Grades 4-12 students and JEE & NEET aspirants.
               </p>
 
-              {/* ========== 4 SERVICE BOXES (NOW CLICKABLE) ========== */}
+              {/* ========== 4 SERVICE BOXES (NOW CLICKABLE WITH CUSTOM LINKS) ========== */}
               <div className="grid grid-cols-2 gap-4 mb-6 lg:mb-10">
                 {services.map((service, idx) => (
                   <Link
                     key={idx}
-                    to={`/program${idx+1}`}                     // ← Change this route if needed
+                    to={service.path} // <-- Ab ye service object se path lega
                     className="block rounded-xl transition-all hover:shadow-xl hover:scale-105"
                   >
                     <div className="bg-[#ff00001a] border border-gray-200 rounded-xl p-4 flex flex-col items-start h-full cursor-pointer">
@@ -77,7 +95,7 @@ const ExamPrepHero = () => {
                 </Link>
 
                 <a
-                  href="https://wa.me/918867270931?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20your%20exam%20prep%20courses!"
+                  href="https://wa.me/917794078833?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20your%20exam%20prep%20courses!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-3 lg:px-10 lg:py-3 bg-green-600 text-white rounded-2xl transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-lg transform hover:-translate-y-1"
@@ -87,7 +105,7 @@ const ExamPrepHero = () => {
                 </a>
               </div>
 
-              <p className="mt-1 ml-2">
+              <p className="mt-1 ml-2 text-gray-800">
                 Trusted by parents for concept clarity, exam confidence, and real results.
               </p>
             </div>

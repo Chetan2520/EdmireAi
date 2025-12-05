@@ -61,7 +61,7 @@ const Form = ({ onClose }) => {
 
     const msg = `Hi! Free Demo Booking:\n\nName: ${formData.name}\nPhone: ${formData.phone}\nBoard: ${formData.board || 'Not selected'}\nGrade: ${formData.grade || 'Not selected'}`;
 
-    window.open(`https://wa.me/918867270931?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/917794078833?text=${encodeURIComponent(msg)}`, '_blank');
     onClose();
   };
 

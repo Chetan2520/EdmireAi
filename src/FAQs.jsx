@@ -1,30 +1,25 @@
-
 import { 
   Bot, Users, Sparkles, Video, ShieldCheck, Brain, 
   MessageCircle, FileText, Globe, BookOpen, DollarSign 
 } from 'lucide-react';
-
-const FAQItem = ({ icon: Icon, question, answer }) => {
-  return (
-    <div className="rounded-2xl p-5 md:p-6 bg-white shadow-md hover:shadow-lg border-2 border-gray-100 transition-shadow duration-300">
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-          <Icon className="w-5 h-5 text-red-900" />
-        </div>
-        <div className="flex-1">
-          <h3 className="font-semibold text-gray-900 text-lg">
-            {question}
-          </h3>
-          <p className="mt-2 text-sm md:text-base text-gray-600 leading-relaxed">
-            {answer}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function FAQ() {
+  const { hash } = useLocation();
+
+  // Scroll logic for #faq link
+  useEffect(() => {
+    if (hash === "#faq") {
+      const section = document.getElementById("faq");
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
   const faqs = [
     { icon: Bot, question: "What is Edmirai?", answer: "Edmirai is an AI-powered personalised learning platform offering 1-to-1 live classes, instant doubt-solving, and smart insights for Grades 4–12 and competitive exam aspirants." },
     { icon: Users, question: "Who can enroll at Edmirai?", answer: "Students from Grades 4–12 across all boards, CBSE, ICSE, State Boards, IB & IGCSE, and those preparing for competitive exams like JEE, NEET & BITSAT can join." },
@@ -40,25 +35,38 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-20 px-4">
+    <section 
+      id="faq" 
+      className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-20 px-4 scroll-mt-24"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
             Got Questions? We've Got Answers!
           </h2>
-          {/* <p className="mt-3 text-gray-600 text-base md:text-lg">
-            Quick answers to help you get started with confidence
-          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {faqs.map((faq, index) => (
-            <FAQItem
-              key={index}
-              icon={faq.icon}
-              question={faq.question}
-              answer={faq.answer}
-            />
+            <div 
+              key={index} 
+              className="rounded-2xl p-5 md:p-6 bg-white shadow-md hover:shadow-lg border-2 border-gray-100 transition-shadow duration-300"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                  {/* Icon ko direct render kiya */}
+                  <faq.icon className="w-5 h-5 text-red-900" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 text-lg">
+                    {faq.question}
+                  </h3>
+                  <p className="mt-2 text-sm md:text-base text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

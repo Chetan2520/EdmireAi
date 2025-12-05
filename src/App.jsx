@@ -17,18 +17,18 @@ import Program3 from './Program3';
 import Program4 from './Program4';
 import ScrollToTop from './ScrollToTop';
 import FAQ from './FAQs';
+import CallIcon from './CallIcon';
 
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    // Har baar reload par 5 sec baad popup dikhega
     const timer = setTimeout(() => {
       setShowForm(true);
-    }, 5000);
+    }, 12000);
 
     return () => clearTimeout(timer); // Cleanup
-  }, []); // Sirf mount par
+  }, []); 
 
   return (
     <div className="relative">
@@ -36,7 +36,8 @@ const Home = () => {
       {/* <PremiumVideoSection /> */}
       <KidsCourses />
       <WhyChooseUs />
-      <WhatsAppIcon />
+        <WhatsAppIcon />
+   <CallIcon/>
        <FAQ />
       {showForm && <Form onClose={() => setShowForm(false)} />}
     </div>
