@@ -4,28 +4,31 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const ExamPrepHero = () => {
-  // Yahan maine 'path' add kiya hai har service ke liye.
-  // Aap '/live-classes', '/ai-tutor' ko apne actual routes se replace kar lein.
+  // Updated services with new design structure
   const services = [
     { 
-      icon: <BookOpen className="w-6 h-6 text-red-900" />, 
-      title: 'One-to-One Live Classes',
-      path: '/Program1' // <-- Yahan apna URL dalein
+      icon: <BookOpen className="w-8 h-8 text-red-900" />, 
+      title: 'Edmirai One',
+      subtitle: 'One-to-One Live Classes',
+      path: '/Program1'
     },
     { 
-      icon: <CheckCircle className="w-6 h-6 text-red-900" />, 
-      title: 'Personalised AI Tutor',
-      path: '/Program3' // <-- Yahan apna URL dalein
+      icon: <CheckCircle className="w-8 h-8 text-red-900" />, 
+      title: 'Edmirai Learn',
+      subtitle: 'Personalised AI Tutor',
+      path: '/Program3'
     },
     { 
-      icon: <Users className="w-6 h-6 text-red-900" />, 
-      title: 'Live Doubt Solving',
-      path: '/Program2' // <-- Yahan apna URL dalein
+      icon: <Users className="w-8 h-8 text-red-900" />, 
+      title: 'Edmirai Connect',
+      subtitle: 'Live Doubt Solving',
+      path: '/Program2'
     },
     { 
-      icon: <Award className="w-6 h-6 text-red-900" />, 
-      title: 'JEE & NEET Exam Prep Support',
-      path: '/Program4' // <-- Yahan apna URL dalein
+      icon: <Award className="w-8 h-8 text-red-900" />, 
+      title: 'Edmirai ExamEdge',
+      subtitle: 'JEE & NEET  Prep ',
+      path: '/Program4'
     },
   ];
 
@@ -68,17 +71,29 @@ const ExamPrepHero = () => {
                 for Grades 4-12 students and JEE & NEET aspirants.
               </p>
 
-              {/* ========== 4 SERVICE BOXES (NOW CLICKABLE WITH CUSTOM LINKS) ========== */}
+              {/* ========== 4 SERVICE BOXES (NEW DESIGN LIKE IMAGE) ========== */}
               <div className="grid grid-cols-2 gap-4 mb-6 lg:mb-10">
                 {services.map((service, idx) => (
                   <Link
                     key={idx}
-                    to={service.path} // <-- Ab ye service object se path lega
-                    className="block rounded-xl transition-all hover:shadow-xl hover:scale-105"
+                    to={service.path}
+                    className="block rounded-2xl transition-all"
                   >
-                    <div className="bg-[#ff00001a] border border-gray-200 rounded-xl p-4 flex flex-col items-start h-full cursor-pointer">
-                      <div className="mb-2">{service.icon}</div>
-                      <h3 className="font-bold text-gray-900 text-sm">{service.title}</h3>
+                    <div className="bg-red-50 border border-red-100 rounded-2xl p-2 lg:p-4 flex flex-col lg:flex-row items-center gap-4 h-full cursor-pointer ">
+                      {/* Icon Container */}
+                      <div className="bg-red-100 rounded-xl p-3 flex-shrink-0">
+                        {service.icon}
+                      </div>
+                      
+                      {/* Text Content */}
+                      <div className="flex flex-col items-center">
+                        <h3 className="font-bold text-gray-900 text-base leading-tight">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 items-center text-sm mt-1">
+                          {service.subtitle}
+                        </p>
+                      </div>
                     </div>
                   </Link>
                 ))}
@@ -95,7 +110,7 @@ const ExamPrepHero = () => {
                 </Link>
 
                 <a
-                  href="https://wa.me/917794078833?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20your%20exam%20prep%20courses!"
+                  href="https://wa.me/917794078833?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20your%20Programmes."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-3 lg:px-10 lg:py-3 bg-green-600 text-white rounded-2xl transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-lg transform hover:-translate-y-1"

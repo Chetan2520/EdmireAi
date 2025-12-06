@@ -1,8 +1,22 @@
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, ChevronRight, ArrowRight, LinkedinIcon } from 'lucide-react';
+import { useEffect } from 'react';
 import { BiLogoPlayStore } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const { hash } = useLocation();
+
+  // Scroll logic for #faq link
+  useEffect(() => {
+    if (hash === "#about") {
+      const section = document.getElementById("#about");
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [hash]);
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Programs', href: '/program1' },
@@ -35,7 +49,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-gray-100">
+    <footer id='#about' className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-gray-100">
       <div className="max-w-screen-2xl mx-auto px-4 lg:px-20">
         
         {/* Main Footer Content */}
@@ -92,6 +106,7 @@ const Footer = () => {
                 >
                   Request a Callback
                   <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4 group-hover:translate-x-1 transition-transform" />
+                 
                 </Link>
                 {/* <a
                   href=""
@@ -101,6 +116,7 @@ const Footer = () => {
                   Get App
                 </a> */}
               </div>
+               <p className='text-gray-400 text-sm mt-3'>Edmirai is a future focused Edtech company transforming learning through advanced artificial intelligence. Our AI-driven solutions deliver personalised, efficient, and affordable education for every student. We empower learners with smarter ways to study, practise, ask doubts, and prepare for competitive exams.</p>
             </div>
 
             {/* Navigation Links - Spans 2 columns */}

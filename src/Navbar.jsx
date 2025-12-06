@@ -181,7 +181,7 @@ export default function Navbar() {
                 >
                   <div className="grid grid-cols-2 gap-2 px-3">
                     {/* 1. About Us */}
-                    <Link to="/about" className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300">
+                    <Link to="/#about" className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300">
                       <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center group-hover:bg-amber-200 transition-colors">
                         <svg className="w-6 h-6 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -415,7 +415,7 @@ export default function Navbar() {
                 >
                   <div className="pl-2 space-y-2 mt-1">
                     {/* About Us Mobile */}
-                    <Link to="/about" onClick={() => setIsOpen(false)} className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition">
+                    <Link to="/#about" onClick={() => setIsOpen(false)} className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition">
                       <div className="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
