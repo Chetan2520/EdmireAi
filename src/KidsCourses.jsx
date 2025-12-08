@@ -78,7 +78,7 @@ export default function KidsCourses() {
               <p className='text-gray-300 text-[10px] md:text-xs lg:text-sm mb-5 lg:mb-8 leading-relaxed'> 
                 Our programs seamlessly combine expert educators + AI-driven personalisation to ensure every learner gets the support they need.
               </p>
-            
+              
               
               <Link to="/contact" className="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg mb-0 lg:mb-4">
                 Let's Connect
@@ -92,7 +92,8 @@ export default function KidsCourses() {
                 {courses.map((course, index) => (
                   <div 
                     key={index}
-                    className={`${course.bgColor} rounded-2xl p-6 relative shadow-lg `}
+                    // FIX: Set the card to be a flex container (column) and take full height
+                    className={`${course.bgColor} rounded-2xl p-6 relative shadow-lg flex flex-col h-full`} 
                   >
                     {course.badge && (
                       <span className={`absolute top-3 left-3 ${course.badgeColor} text-white px-3 py-1 rounded-full text-xs font-bold`}>
@@ -100,29 +101,35 @@ export default function KidsCourses() {
                       </span>
                     )}
                     
-                    <div className="flex flex-col items-start gap-3 mt-2">
-                      <div className={`${course.iconColor} bg-white rounded-xl p-1 lg:p-2 shadow-md`}>
-                        <course.Icon className="w-8 h-8" strokeWidth={2} />
+                    {/* FIX: Use flex-grow and justify-between on the inner content to push the button down */}
+                    <div className="flex flex-col items-start gap-3 mt-2 flex-grow justify-between">
+                      
+                      {/* Course Content (Icon, Title, Description) */}
+                      <div> 
+                        <div className={`${course.iconColor} bg-white w-11  lg:w-13  rounded-xl p-1 lg:p-2 shadow-md`}>
+                          <course.Icon className="w-8 h-8" strokeWidth={2} />
+                        </div>
+                        
+                        <div className="flex-1 mt-2">
+                          <p className={`text-xs font-semibold mb-1 ${course.titleColor || 'text-blue-600'}`}>
+                            {course.title}
+                          </p>
+                          <h3 className="text-sm lg:text-lg font-bold text-gray-900 mb-2">
+                            {course.subtitle}
+                          </h3>
+                          <p className="text-gray-600 text-[10px] md:text-xs lg:text-sm mb-4">
+                            {course.description}
+                          </p>
+                        </div>
                       </div>
                       
-                      <div className="flex-1">
-                        <p className={`text-xs  font-semibold mb-1 ${course.titleColor || 'text-blue-600'}`}>
-                          {course.title}
-                        </p>
-                        <h3 className="text-sm lg:text-lg font-bold text-gray-900 mb-2">
-                          {course.subtitle}
-                        </h3>
-                        <p className="text-gray-600 text-[10px] md:text-xs lg:text-sm  mb-4">
-                          {course.description}
-                        </p>
-                        
-                        <Link 
-                          to={`/Program${index + 1}`}
-                          className="bg-red-900 hover:bg-red-800 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm w-full text-center block"
-                        >
-                          Explore
-                        </Link>
-                      </div>
+                      {/* Explore Button (Will be pushed to the bottom by justify-between) */}
+                      <Link 
+                        to={`/Program${index + 1}`}
+                        className="bg-red-900 hover:bg-red-800 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm w-full text-center block"
+                      >
+                        Explore
+                      </Link>
                     </div>
                   </div>
                 ))}
