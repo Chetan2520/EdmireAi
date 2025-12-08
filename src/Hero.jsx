@@ -110,7 +110,7 @@ const ExamPrepHero = () => {
                 </Link>
 
                 <a
-                  href="https://wa.me/917794078833?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20our%20products!"
+                  href="https://wa.me/917794078833?text=Hi%2C%20I'd%20like%20to%20know%20more%20about%20your%20products!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-3 lg:px-10 lg:py-3 bg-green-600 text-white rounded-2xl transition-all font-semibold text-sm lg:text-base flex items-center space-x-3 shadow-lg transform hover:-translate-y-1"

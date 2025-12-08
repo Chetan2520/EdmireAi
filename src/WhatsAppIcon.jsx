@@ -14,7 +14,7 @@ const WhatsAppIcon = () => {
 
       {/* Main Anchor Tag */}
     <a 
-  href={`https://wa.me/${phoneNumber}?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20our%20products!`}
+  href={`https://wa.me/${phoneNumber}?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20products!`}
   target="_blank"
   rel="noopener noreferrer"
   className="relative flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border border-green-50 transition-transform duration-300 hover:scale-110 active:scale-95"
