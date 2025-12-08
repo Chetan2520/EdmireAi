@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import {
   FaUserGraduate, FaRupeeSign, FaUsers, FaTrophy, FaLaptop, FaBrain,
   FaRocket, FaCheckCircle, FaStar, FaArrowRight, FaPhone, FaEnvelope,
-  FaMapMarkerAlt, FaShieldAlt, FaChartLine, FaHeadset, FaMedal
+  FaMapMarkerAlt, FaShieldAlt, FaChartLine, FaHeadset, FaMedal, FaSpinner, FaTimes
 } from 'react-icons/fa';
 
 const JoinFaculty = () => {
@@ -13,8 +13,11 @@ const JoinFaculty = () => {
     phone: ''
   });
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState(''); // Status message for API feedback
+  const [loading, setLoading] = useState(false); // Loading state for button
+  
   const heroRef = useRef(null);
-  const formRef = useRef(null); // ⭐ NEW: Reference to form section
+  const formRef = useRef(null); 
 
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
@@ -35,24 +38,55 @@ const JoinFaculty = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
+    setStatus(''); // Clear status on new input
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = 'Name required';
-    if (!formData.email.includes('@')) newErrors.email = 'Valid email required';
-    if (formData.phone.length < 10) newErrors.phone = 'Valid phone required';
+    // Client-side validation
+    if (!formData.name.trim()) newErrors.name = 'Full Name is required.';
+    if (!formData.email.includes('@') || !formData.email.includes('.')) newErrors.email = 'Valid email is required.';
+    if (formData.phone.length < 10 || isNaN(formData.phone)) newErrors.phone = 'Valid phone number is required (min 10 digits).';
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      setStatus('');
       return;
     }
 
-    alert('Application submitted! We’ll contact you within 24 hours.');
-    console.log('Edmirai Faculty Application:', formData);
-    setFormData({ name: '', email: '', phone: '' });
+    setLoading(true);
+    setErrors({});
+    setStatus('');
+    
+    try {
+      // 🚨 API Endpoint check: Ensure this matches your server.js route path!
+      const API_URL = 'https://edmirai-backend.vercel.app/api/faculty/apply'; 
+      
+      const response = await fetch(API_URL, { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus(data.message || 'Application submitted successfully! We will contact you soon.');
+        setFormData({ name: '', email: '', phone: '' }); // Clear form on success
+      } else {
+        // Handle server errors (e.g., MongoDB duplicate error, validation)
+        setStatus(data.message || 'Failed to submit application. Please check details.');
+      }
+    } catch (error) {
+      console.error('API/Network Error:', error);
+      setStatus('Network Error: Could not connect to the server. Check if backend is running.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const benefits = [
@@ -62,6 +96,17 @@ const JoinFaculty = () => {
     { icon: FaBrain, title: 'Full support + resources', desc: 'AI dashboard, curriculum, training & community.' },
     { icon: FaMedal, title: 'Grow as a professional', desc: 'Build reputation, teach top exams, become a leader.' }
   ];
+
+  // Helper function for status colors
+  const getStatusClasses = () => {
+    if (status.includes('success') || status.includes('submitted')) {
+      return 'bg-green-100 text-green-800 border-green-300';
+    } else if (status) {
+      return 'bg-red-100 text-red-800 border-red-300';
+    }
+    return '';
+  };
+
 
   return (
     <div className="bg-white text-gray-900">
@@ -134,7 +179,7 @@ const JoinFaculty = () => {
 
             {/* Right: Form */}
             <motion.div
-              ref={formRef}  // ⭐ Attached reference
+              ref={formRef}
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               className="bg-gradient-to-br from-red-50 to-white p-10 rounded-3xl shadow-2xl border border-red-100"
@@ -151,9 +196,35 @@ const JoinFaculty = () => {
                 <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Your Phone Number" className={`w-full px-6 py-4 rounded-xl border ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-red-900 focus:ring-4 focus:ring-red-100 transition`} />
                 {errors.phone && <p className="text-red-600 text-sm -mt-3 ml-2">{errors.phone}</p>}
 
-                <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} type="submit" className="w-full bg-gradient-to-r from-red-900 to-red-800 text-white font-bold py-5 rounded-xl text-xl shadow-xl flex items-center justify-center gap-3 hover:from-red-800 hover:to-red-700 transition">
-                  <FaRocket /> Become a Teacher
+                <motion.button 
+                  whileHover={{ scale: 1.03 }} 
+                  whileTap={{ scale: 0.98 }} 
+                  type="submit" 
+                  disabled={loading}
+                  className="w-full bg-gradient-to-r from-red-900 to-red-800 text-white font-bold py-5 rounded-xl text-xl shadow-xl flex items-center justify-center gap-3 hover:from-red-800 hover:to-red-700 transition disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {loading ? (
+                    <>
+                      <FaSpinner className="animate-spin" /> Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <FaRocket /> Become a Teacher
+                    </>
+                  )}
                 </motion.button>
+
+                {/* Status Message Display */}
+                {status && (
+                  <div className={`p-4 rounded-xl text-center font-medium border ${getStatusClasses()} flex items-center justify-center gap-2`}>
+                    {status.includes('success') || status.includes('submitted') ? (
+                      <FaCheckCircle className="text-green-600" />
+                    ) : (
+                      <FaTimes className="text-red-600" />
+                    )}
+                    <span>{status}</span>
+                  </div>
+                )}
 
                 <p className="text-center text-gray-600 mt-4">
                   We’ll call you in <strong className="text-red-900">24 hours</strong> for a quick chat.
@@ -192,7 +263,7 @@ const JoinFaculty = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={handleScrollToForm}   // ⭐ Scroll to form on click
+            onClick={handleScrollToForm}
             className="bg-white text-red-900 px-16 py-6 rounded-2xl font-bold text-2xl shadow-2xl flex items-center gap-4 mx-auto"
           >
             Apply Now & Start Earning <FaArrowRight className="text-3xl" />
