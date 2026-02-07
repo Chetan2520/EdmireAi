@@ -7,7 +7,6 @@ import { useLocation } from 'react-router-dom';
 
 export default function FAQ() {
   const { hash } = useLocation();
-
   // Scroll logic for #faq link
   useEffect(() => {
     if (hash === "#faq") {
