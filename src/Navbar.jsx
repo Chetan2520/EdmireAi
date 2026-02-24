@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   // Programs State
   const [showPrograms, setShowPrograms] = useState(false);
   const [showMobilePrograms, setShowMobilePrograms] = useState(false);
@@ -73,8 +73,8 @@ export default function Navbar() {
                 </button>
                 <div
                   className={`absolute top-full left-0 mt-2 bg-white border border-gray-100 rounded-2xl shadow-2xl py-4 min-w-[600px] transition-all duration-200 z-50 ${showPrograms
-                      ? 'opacity-100 translate-y-0 visible'
-                      : 'opacity-0 -translate-y-2 invisible pointer-events-none'
+                    ? 'opacity-100 translate-y-0 visible'
+                    : 'opacity-0 -translate-y-2 invisible pointer-events-none'
                     }`}
                 >
                   <div className="grid grid-cols-2 gap-2 px-3">
@@ -175,8 +175,8 @@ export default function Navbar() {
                 */}
                 <div
                   className={`absolute top-full right-0 mt-2 bg-white border border-gray-100 rounded-2xl shadow-2xl py-4 min-w-[600px] transition-all duration-200 z-50 ${showMore
-                      ? 'opacity-100 translate-y-0 visible'
-                      : 'opacity-0 -translate-y-2 invisible pointer-events-none'
+                    ? 'opacity-100 translate-y-0 visible'
+                    : 'opacity-0 -translate-y-2 invisible pointer-events-none'
                     }`}
                 >
                   <div className="grid grid-cols-2 gap-2 px-3">
@@ -194,7 +194,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* 2. Blog */}
-                    <Link to="/blog" className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300">
+                    <Link to="/blogs" className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300">
                       <div className="flex-shrink-0 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-cyan-200 transition-colors">
                         <svg className="w-6 h-6 text-cyan-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -207,7 +207,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* 3. FAQs */}
-                    <Link    to="/#faq" className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300">
+                    <Link to="/#faq" className="group flex items-start gap-3 p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-50 hover:to-orange-50 transition-all duration-300">
                       <div className="flex-shrink-0 w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center group-hover:bg-pink-200 transition-colors">
                         <svg className="w-6 h-6 text-pink-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -426,9 +426,9 @@ export default function Navbar() {
                         <p className="text-xs text-gray-600">Our mission</p>
                       </div>
                     </Link>
-                    
+
                     {/* Blog Mobile */}
-                    <Link to="/blog" onClick={() => setIsOpen(false)} className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition">
+                    <Link to="/blogs" onClick={() => setIsOpen(false)} className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition">
                       <div className="flex-shrink-0 w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 text-cyan-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -441,7 +441,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* FAQs Mobile */}
-                    <Link    to="/#faq" onClick={() => setIsOpen(false)} className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition">
+                    <Link to="/#faq" onClick={() => setIsOpen(false)} className="flex items-start gap-3 p-3 rounded-lg hover:bg-red-50 transition">
                       <div className="flex-shrink-0 w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center">
                         <svg className="w-5 h-5 text-pink-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

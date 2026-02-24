@@ -24,7 +24,7 @@ const UniqueContactForm = () => {
     setStatus('');
 
     try {
-      const response = await fetch('https://edmirai-backend.vercel.app/api/contact', { 
+      const response = await fetch('https://edmirai-backend.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -170,11 +170,10 @@ const UniqueContactForm = () => {
 
           {/* Status Message */}
           {status && (
-            <div className={`p-4 rounded-xl text-center font-medium flex items-center justify-center space-x-2 ${
-              status.includes('sent') || status.includes('soon')
+            <div className={`p-4 rounded-xl text-center font-medium flex items-center justify-center space-x-2 ${status.includes('sent') || status.includes('soon')
                 ? 'bg-green-100/80 text-green-800 border border-green-300/50'
                 : 'bg-red-100/80 text-red-800 border border-red-300/50'
-            }`}>
+              }`}>
               {status.includes('sent') || status.includes('soon') ? (
                 <CheckIcon className="w-5 h-5" />
               ) : (

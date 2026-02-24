@@ -18,6 +18,9 @@ import Program4 from './Program4';
 import ScrollToTop from './ScrollToTop';
 import FAQ from './FAQs';
 import CallIcon from './CallIcon';
+import Blogs from './Blogs';
+import BlogDetail from './BlogDetail';
+import AdminPanel from './AdminPanel';
 
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
@@ -28,7 +31,7 @@ const Home = () => {
     }, 12000);
 
     return () => clearTimeout(timer); // Cleanup
-  }, []); 
+  }, []);
 
   return (
     <div className="relative">
@@ -36,9 +39,9 @@ const Home = () => {
       {/* <PremiumVideoSection /> */}
       <KidsCourses />
       <WhyChooseUs />
-        <WhatsAppIcon />
-   <CallIcon/>
-       <FAQ />
+      <WhatsAppIcon />
+      <CallIcon />
+      <FAQ />
       {showForm && <Form onClose={() => setShowForm(false)} />}
     </div>
   );
@@ -47,16 +50,19 @@ const Home = () => {
 const App = () => {
   return (
     <Router>
-    <ScrollToTop/>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/teacher" element={<BecomeTeacher />} />
         <Route path="/program1" element={<Program1 />} />
-          <Route path="/program2" element={<Program2 />} />
-            <Route path="/program3" element={<Program3 />} />
-              <Route path="/program4" element={<Program4 />} />
+        <Route path="/program2" element={<Program2 />} />
+        <Route path="/program3" element={<Program3 />} />
+        <Route path="/program4" element={<Program4 />} />
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
+        <Route path="/adminedmirai" element={<AdminPanel />} />
       </Routes>
       <Footer />
     </Router>
