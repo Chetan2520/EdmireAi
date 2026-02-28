@@ -238,12 +238,14 @@ export default function Navbar() {
             </div>
 
             {/* Login Button - Desktop */}
+            <Link to="https://one.edmirai.com/login">
             <div className="hidden md:flex items-center">
               <button className="bg-gradient-to-r from-red-900 to-red-900 text-white px-4 lg:px-6  py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all text-sm lg:text-base">
                 Login
               </button>
             </div>
-
+            </Link>
+            
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
