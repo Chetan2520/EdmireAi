@@ -245,7 +245,7 @@ export default function Navbar() {
               </button>
             </div>
             </Link>
-            
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -475,11 +475,13 @@ export default function Navbar() {
           </div>
 
           {/* Footer */}
+          <Link to="https://one.edmirai.com/login">
           <div className="p-6 border-t border-gray-100">
             <button className="bg-gradient-to-r from-red-900 to-red-900 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all w-full">
               Login
             </button>
           </div>
+          </Link>
         </div>
       </div>
     </>
