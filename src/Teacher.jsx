@@ -62,7 +62,7 @@ const JoinFaculty = () => {
     
     try {
       // 🚨 API Endpoint check: Ensure this matches your server.js route path!
-      const API_URL = 'https://edmirai-backend.vercel.app/api/faculty/apply'; 
+      const API_URL = 'https://edmirai.com/php/facultyApply.php'; 
       
       const response = await fetch(API_URL, { 
         method: 'POST',

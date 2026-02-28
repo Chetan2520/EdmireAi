@@ -24,8 +24,7 @@ const UniqueContactForm = () => {
     setStatus('');
 
     try {
-      const response = await fetch('https://edmirai-backend.vercel.app/api/contact', {
-        method: 'POST',
+const response = await fetch('https://edmirai.com/php/sendMail.php', {        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
